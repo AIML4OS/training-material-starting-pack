@@ -18,7 +18,7 @@
     "href": "index.html#introducing-quarto-to-create-training-resources",
     "title": "Creating and disseminating educational resources for SSPCloud users",
     "section": "2.2 Introducing Quarto  to create training resources",
-    "text": "2.2 Introducing Quarto  to create training resources\nQuarto is an open source program for creating Python  and  reproducible tutorials. It makes it possible to mix seamlessly code and text in the same document and can handle many output formats, including html, pdf or notebook (.ipynb extension). Quarto is strongly recommended for the development of educational resources.\n\nThis tutorial assumes that educational resources and training material will be made available in two forms:\n\nQuarto websites, mixing text and code chunks;\nInteractive environment (see ☝️)"
+    "text": "2.2 Introducing Quarto  to create training resources\nQuarto is an open source program for creating Python  and  reproducible tutorials. It makes it possible to mix seamlessly code and text in the same document and can handle many output formats, including html, pdf or notebook (.ipynb extension). Quarto is strongly recommended for the development of educational resources.\n\nThis tutorial assumes that educational resources and training material will be made available in two forms:\n\nQuarto websites, mixing text and code chunks;\nInteractive environment (see ☝️)."
   },
   {
     "objectID": "index.html#step-1-create-a-github-repository-from-a-template",
