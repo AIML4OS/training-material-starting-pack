@@ -159,8 +159,8 @@ Here is what to do to re-use a template:
 
 
 - Choose carefully the owner and the name of the new repository:
-  - _Owner_: by default the owner is the creator of the fork, but it may be preferable to choose a Github organization (for instance the `AIML4OS` organization);
-  - _Name_: give the repository a meaningful name, for instance _"Intro_To_Deep_Learning"_ or _"Intro_To_Linear_Regression"_.
+  - `Owner`: by default the owner is the creator of the fork, but it may be preferable to choose a Github organization (for instance the `AIML4OS` organization);
+  - `Name`: give the repository a meaningful name, for instance _"Intro_To_Deep_Learning"_ or _"Intro_To_Linear_Regression"_.
 
 ## Step 2: define your development configuration on the SSPCloud
 
