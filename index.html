@@ -449,17 +449,17 @@ Figure&nbsp;1: Use this template button on <code>Github</code>
 <section id="step-2-define-your-development-configuration-on-the-sspcloud" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="step-2-define-your-development-configuration-on-the-sspcloud"><span class="header-section-number">3.2</span> Step 2: define your development configuration on the SSPCloud</h2>
 <!-- get started with `Quarto`   -->
-<p>SSPCloud is not only useful to disseminate educational resources; it is also the right place to develop them. Doing so will facilitate resource dissemination as the environment used for training will be equivalent to the one used for development. In other words, we strongly recommend that you develop on SSPCloud because this will help a lot to make your educational resources reproducible.</p>
-<p>Some elements of this development environment will be used to provide a ready-to-use configuration for learners. However, learners don’t need to be familiar with the technical concepts behind them, as the pre-configured environments are there so that learners can concentrate on acquiring skills.</p>
+<p>SSPCloud is not only useful to disseminate educational resources; it is also the right place to develop them. Doing so will facilitate resource dissemination as the environment used for training will be equivalent to the one used for development. In other words, <strong>we strongly recommend that you develop on SSPCloud because this will help a lot to make your educational resources reproducible</strong>.</p>
+<p>Some elements of this development environment will be re-used to provide a ready-to-use configuration for learners. However, learners don’t need to be familiar with the technical concepts of configuration: pre-configured environments do exist so that learners can concentrate on acquiring skills!</p>
 <section id="what-is-a-configuration-and-why-is-it-useful" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="what-is-a-configuration-and-why-is-it-useful"><span class="header-section-number">3.2.1</span> What is a configuration and why is it useful?</h3>
-<p>The best way to develop resources on the SSPCloud is to define your own development configuration. In technical terms, a configuration is just a service available on the SSPCloud (eg: <code>RStudio</code> or <code>VSCode</code>) with additional user-defined settings such as: the Github repository you want to work on, your Github credentials, the size of memory and number of CPU you want to use, the initialization script you want to run…</p>
+<p>The best way to develop resources on the SSPCloud is to define your own development configuration. In technical terms, <strong>a configuration is just a service available on the SSPCloud (eg: <code>RStudio</code> or <code>VSCode</code>) with additional user-defined settings</strong> such as: the Github repository you want to work on, your Github credentials, the size of memory and number of CPU you want to use, the initialization script you want to run…</p>
 <p>Defining a configuration has two advantage:</p>
 <ul>
-<li>it lets you define the technical environment you want to use for a specific project;</li>
+<li>it lets you define explicitly the technical environment you want to use for a specific project;</li>
 <li>you can resume working on your project at any time in only one click, and be sure that the technical environment remains exactly the same.</li>
 </ul>
-<p>Your ready to use configurations are listed on the right side of the “My services” tab. To use a configuration, you just have to click on <code>Launch</code> (red rectangle). You can modify or delete an existing configuration by clicking on the contextual menu (green rectangle).</p>
+<p>Your ready-to-use configurations are listed on the right-hand-side of the “My services” tab. To use a configuration, you just have to click on <code>Launch</code> (red rectangle). You can modify or delete an existing configuration by clicking on the contextual menu (green rectangle).</p>
 <p><img src="pics/SSPCloud4.png" class="img-fluid" width="600"></p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
@@ -515,7 +515,7 @@ Warning
 </li>
 <li>In the “Repository” field of the “Git” tab, paste the URL of the repository you created in step 1 (for instance: <code>https://www.github.com/AIML4OS/Intro_To_Linear_Regression</code>);</li>
 <li>In the “Network Access” tab, enable access to your service through port 5000;</li>
-<li>In the “Initialization scripts” tab, paste this URL <code>https://raw.githubusercontent.com/AIML4OS/AIML4OS-template-quarto-python/refs/heads/main/init.sh</code>;</li>
+<li>In the “Initialization scripts” tab, paste this URL <code>https://raw.githubusercontent.com/{OWNER}/{REPO}/refs/heads/main/init.sh</code>, after replacing <code>OWNER</code> and <code>REPO</code> by the owner and repository name you chose in step 1;</li>
 </ul></li>
 <li>Click on Save configuration;</li>
 <li>Click on Launch;</li>
