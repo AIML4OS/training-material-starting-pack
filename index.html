@@ -454,20 +454,20 @@ Figure&nbsp;1: Use this template button on <code>Github</code>
 <section id="what-is-a-configuration-and-why-is-it-useful" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="what-is-a-configuration-and-why-is-it-useful"><span class="header-section-number">3.2.1</span> What is a configuration and why is it useful?</h3>
 <p>The best way to develop resources on the SSPCloud is to define your own development configuration. In technical terms, <strong>a configuration is just a service available on the SSPCloud (eg: <code>RStudio</code> or <code>VSCode</code>) with additional user-defined settings</strong> such as: the Github repository you want to work on, your Github credentials, the size of memory and number of CPU you want to use, the initialization script you want to run…</p>
-<p>Defining a configuration has two advantage:</p>
+<p>Defining a configuration has two advantages:</p>
 <ul>
 <li>it lets you define explicitly the technical environment you want to use for a specific project;</li>
 <li>you can resume working on your project at any time in only one click, and be sure that the technical environment remains exactly the same.</li>
 </ul>
 <p>Your ready-to-use configurations are listed on the right-hand-side of the “My services” tab. To use a configuration, you just have to click on <code>Launch</code> (red rectangle). You can modify or delete an existing configuration by clicking on the contextual menu (green rectangle).</p>
 <p><img src="pics/SSPCloud4.png" class="img-fluid" width="600"></p>
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -494,7 +494,7 @@ Warning
 </li>
 <li>In the “Repository” field of the “Git” tab, paste the URL of the repository you created in step 1 (for instance: <code>https://www.github.com/AIML4OS/Intro_To_Linear_Regression</code>);</li>
 <li>In the “Network Access” tab, enable access to your service through port 5000;</li>
-<li>(optional) In the “Initialization scripts” tab, paste the URL of your init script (for instance: <code>https://raw.githubusercontent.com/AIML4OS/AIML4OS-template-quarto-r/refs/heads/main/init.sh</code>);</li>
+<li>(optional) In the “Initialization scripts” tab, paste this URL <code>https://raw.githubusercontent.com/{OWNER}/{REPO}/refs/heads/main/init.sh</code>, after replacing <code>OWNER</code> and <code>REPO</code> by the owner and repository name you chose in step 1;</li>
 </ul></li>
 <li>Click on Save configuration;</li>
 <li>Click on Launch;</li>
