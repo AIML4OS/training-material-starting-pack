@@ -876,18 +876,17 @@ Python users only: accessing the automatically built <code>Jupyter Notebook</cod
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Up to now, we mostly focused on the production and the deployment of static content. A small precision need to be done for producing and giving access to Jupyter Notebooks.</p>
+<p>Up to now, we mostly focused on the production and the deployment of static content. A small precision needs to be done for producing and giving access to Jupyter Notebooks.</p>
 <p>Regarding the production side, it is automatically done by the Github Actions file provided on the Python template. This line in <code>.github/worfklows/prod.yml</code></p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4b: Render Quarto in uv virtual environment (HTML)</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Render in ipynb</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run</span><span class="kw">:</span><span class="at"> uv run quarto render --to ipynb</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Notebooks are automatically made available through the website deployed via Github Actions. Their location on this site depends on the path of the qmd used to build them. For example, for the example python template, the notebook is accessible via <a href="https://inseefrlab.github.io/AIML4OS-template-quarto-python/chapters/chapter1.ipynb">this link</a>. If you try to open it directly via the browser, you will get a raw file. The aim of the init script we’re about to present is to use sspcloud to make this file usable.</p>
+<p>Notebooks are automatically made available through the website deployed via Github Actions. Their location on the website depends on the location of of the qmd used to build them within the Git repository. For example, in the Python template, the notebook will be accessible via <a href="https://inseefrlab.github.io/AIML4OS-template-quarto-python/chapters/chapter1.ipynb">this link</a> because the qmd file is located in the <code>AIML4OS-template-quarto-python/chapters/</code> folder of the repository.</p>
 </div>
 </div>
 <section id="create-an-initialization-script-to-prepare-your-environment-for-trainees" class="level3" data-number="3.5.1">
 <h3 data-number="3.5.1" class="anchored" data-anchor-id="create-an-initialization-script-to-prepare-your-environment-for-trainees"><span class="header-section-number">3.5.1</span> Create an initialization script to prepare your environment for trainees</h3>
-<p>Up to now, we have covered initiaization of the trainers’ development environment.</p>
-<p>However, while the pre-configuration of a development environment is practical but not essential when building educational resources, it is mandatory when making ready-to-use tutorials available to trainees. For this purpose, <em>templates</em> offer an example to be edited. depending on the URL on which your resources are made available.</p>
+<p>Up to now, we have explained how to initialize and pre-configure the <strong>trainers’</strong> development environment. It is important to understand that while this pre-configuration is convenient but not essential when building educational resources, defining such a pre-configured environment is <strong>mandatory</strong> when making ready-to-use tutorials available to trainees. For this purpose, <em>templates</em> offer an example to be edited, depending on the URL on which your resources are made available.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true"><code>Python</code> <i class="fa-brands fa-python" aria-label="python"></i></a></li></ul>
 <div class="tab-content">
@@ -905,7 +904,7 @@ Python users only: accessing the automatically built <code>Jupyter Notebook</cod
 </section>
 <section id="create-an-auto-launch-url" class="level3" data-number="3.5.2">
 <h3 data-number="3.5.2" class="anchored" data-anchor-id="create-an-auto-launch-url"><span class="header-section-number">3.5.2</span> Create an auto launch URL</h3>
-<p>An interesting feature of SSPCloud is that you can make a whole training environment available through one URL link. For instance, you can provide trainees with an interactive environment that contains a Jupyter notebook, the data used by the notebook, all dependencies used by the notebook and sufficient resources to run the code, all in one click. To do so, just follow two steps:</p>
+<p>A convenient feature of SSPCloud is that you can make a whole training environment available through one URL link. For instance, you can provide trainees with an interactive environment that contains a Jupyter notebook, the data used by the notebook, all dependencies used by the notebook and sufficient resources to run the code, all in one click. To do so, just follow two steps:</p>
 <ul>
 <li><p>Define all aspects of the training environment using the usual interface. Here are the elements you will probably want to configure:</p>
 <ul>
@@ -917,7 +916,20 @@ Python users only: accessing the automatically built <code>Jupyter Notebook</cod
 <li><p>Copy the link provided at the top of the interface by clicking on “Copy Auto Launch URL”, and paste it wherever you want. Anyone with an SSPCloud account can access the content. Do not forget to test your link a few times to be sure it works!</p></li>
 </ul>
 <p><img src="pics/SSPCloud5.png" class="img-fluid" width="600"></p>
-<p>Regarding the initialization script, previous section gave you indication on how to personnalize it. You must put the raw github url of the script. For instance, if your github repository follows the <code>Python</code> template (https://github.com/InseeFrLab/AIML4OS-template-quarto-python), the init script might be found on <code>sspcloud/init-trainees.sh</code> file. You must use the raw file available on Github. It is available by clicking on the raw button when opening the file on Github. The url should have a pattern similar to this one: <a href="https://raw.githubusercontent.com/InseeFrLab/AIML4OS-template-quarto-python/refs/heads/main/sspcloud/init-trainees.sh" class="uri">https://raw.githubusercontent.com/InseeFrLab/AIML4OS-template-quarto-python/refs/heads/main/sspcloud/init-trainees.sh</a>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How to use the initialization script
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Previous sections demonstrated how to personnalize the initialization script. Here is an important remark on how to use it: you must put the <strong>raw github URL</strong> of the script in the <code>Initialization scripts</code> field of the configuration. This URL is available by clicking on the <code>raw</code> button when opening the file on Github (see screenshot below). The URL should have a pattern similar to this one: <a href="https://raw.githubusercontent.com/InseeFrLab/AIML4OS-template-quarto-python/refs/heads/main/sspcloud/init-trainees.sh" class="uri">https://raw.githubusercontent.com/InseeFrLab/AIML4OS-template-quarto-python/refs/heads/main/sspcloud/init-trainees.sh</a>.</p>
+<p><img src="pics/SSPCloud9.png" class="img-fluid" width="600"></p>
+</div>
+</div>
 </section>
 <section id="create-a-launch-button-for-your-website-bonus" class="level3" data-number="3.5.3">
 <h3 data-number="3.5.3" class="anchored" data-anchor-id="create-a-launch-button-for-your-website-bonus"><span class="header-section-number">3.5.3</span> Create a launch button for your website (bonus)</h3>
