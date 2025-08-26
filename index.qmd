@@ -128,7 +128,7 @@ This tutorial assumes that educational resources and training material will be m
 
 ### What are templates and why use them?
 
-The very first step towards developing educational resources consists in creating a `Github` repository that will contain them all. We recommend that you use the templates developed specifically for the AIML4OS project. There are two different templates, depending on the language you want to use. They are both hosted on {{< fa brands github >}}: 
+The very first step towards developing educational resources consists in creating a `Github` repository that will contain them all. We recommend that you use the templates developed specifically for the AIML4OS project. There are two different templates, depending on the language you want to use. They are both hosted on Github {{< fa brands github >}}: 
 
 * {{< fa brands r-project >}}: [template](https://github.com/AIML4OS/AIML4OS-template-quarto-r)
 * `Python` {{< fa brands python >}}: [template](https://github.com/AIML4OS/AIML4OS-template-quarto-python).
@@ -136,7 +136,7 @@ The very first step towards developing educational resources consists in creatin
 These templates contain all what you need to produce resources that can be easily made available as websites or as interactive environments on the SSP Cloud. More precisely, these templates contain:
 
 - a minimal `Quarto` website with graphical elements reflecting AIML4OS aesthetic;
-- a minimal example of a `Quarto` document producing a Jupyter Notebook ({{< fa brands python >}} `Python` only);
+- a minimal example of a `Quarto` document producing a Jupyter Notebook ({{< fa brands python >}} only);
 - a minimal example of a `Quarto` document mixing Markdown text and `R` code ({{< fa brands r-project >}} only);
 - what is needed to manage dependencies (what packages are needed to run the codes, and in which version);
 - scripts for `Github Actions` workflow for automated deployment (don't be afraid, see below!).
