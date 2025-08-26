@@ -621,7 +621,7 @@ Previous sections demonstrated how to personnalize the initialization script. He
 
 ### Create a launch button for your website (bonus)
 
-Let's say you have done everything described before. Then you end up with a very long URL, let's say <https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=Python%20tutorial%20example&version=2.3.15&s3=region-79669f20&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FInseeFrLab%2FAIML4OS-template-quarto-python%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&autoLaunch=true>. 
+Let's say you have done everything described before. Then you end up with a very long auto launch URL, let's say <https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=Python%20tutorial%20example&version=2.3.15&s3=region-79669f20&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FInseeFrLab%2FAIML4OS-template-quarto-python%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&autoLaunch=true>. 
 
 You can of course ask trainees to copy and paste this url, enter it in the search bar of their browser and launch the search to access the site. But it's more user-friendly to have a ready-to-use button. Just take this one for Python as a basis and replace it with your own quick launch URL:
 
