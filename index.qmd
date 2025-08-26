@@ -154,6 +154,7 @@ Here is what to do to re-use a template:
 
 - Go to the `Github` {{< fa brands github >}} page of the chosen template;
 - Click on the _"Use this template"_ button and then on _"Create a new repository"_ (see @fig-template);
+
 ![Use this template button on `Github`](https://docs.github.com/assets/cb-76823/mw-1440/images/help/repository/use-this-template-button.webp){#fig-template width=50% fig-align="center"}
 
 
