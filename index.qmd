@@ -558,10 +558,12 @@ A few important remarks on automated deployment:
 
 __This step is optional__, depending on whether your resources include interactive environments (Jupyter notebooks for `Python`, interactive Quarto documents with `R` chunks for `R`). You can skip this step if your resources consist only in a Quarto website.
 
+
+
 ::: {.callout-warning}
 ## Python users only: accessing the automatically built `Jupyter Notebook`
 
-Up to now, we mostly focused on the production and the deployment of static content. A small precision need to be done for producing and giving access to Jupyter Notebooks. 
+Up to now, we mostly focused on the production and the deployment of static content. A small precision needs to be done for producing and giving access to Jupyter Notebooks. 
 
 Regarding the production side, it is automatically done by the Github Actions file provided on the Python template. This line in `.github/worfklows/prod.yml` 
 
@@ -571,15 +573,13 @@ Regarding the production side, it is automatically done by the Github Actions fi
   run: uv run quarto render --to ipynb
 ```
 
-Notebooks are automatically made available through the website deployed via Github Actions. Their location on this site depends on the path of the qmd used to build them. For example, for the example python template, the notebook is accessible via [this link](https://inseefrlab.github.io/AIML4OS-template-quarto-python/chapters/chapter1.ipynb). If you try to open it directly via the browser, you will get a raw file. The aim of the init script we're about to present is to use sspcloud to make this file usable.
+Notebooks are automatically made available through the website deployed via Github Actions. Their location on the website depends on the location of of the qmd used to build them within the Git repository. For example, in the Python template, the notebook will be accessible via [this link](https://inseefrlab.github.io/AIML4OS-template-quarto-python/chapters/chapter1.ipynb) because the qmd file is located in the `AIML4OS-template-quarto-python/chapters/` folder of the repository.
 
 :::
 
 ### Create an initialization script to prepare your environment for trainees
 
-Up to now, we have covered initiaization of the trainers' development environment.
-
-However, while the pre-configuration of a development environment is practical but not essential when building educational resources, it is mandatory when making ready-to-use tutorials available to trainees. For this purpose, _templates_ offer an example to be edited. depending on the URL on which your resources are made available.
+Up to now, we have explained how to initialize and pre-configure the __trainers'__ development environment. It is important to understand that while this pre-configuration is convenient but not essential when building educational resources, defining such a pre-configured environment is __mandatory__ when making ready-to-use tutorials available to trainees. For this purpose, _templates_ offer an example to be edited, depending on the URL on which your resources are made available.
 
 ::: {.panel-tabset}
 ## `Python` {{< fa brands python >}}
@@ -597,7 +597,7 @@ By customizing this script, you should have a ready-to-use environment. To test 
 
 ### Create an auto launch URL
 
-An interesting feature of SSPCloud is that you can make a whole training environment available through one URL link. For instance, you can provide trainees with an interactive environment that contains a Jupyter notebook, the data used by the notebook, all dependencies used by the notebook and sufficient resources to run the code, all in one click. To do so, just follow two steps:
+A convenient feature of SSPCloud is that you can make a whole training environment available through one URL link. For instance, you can provide trainees with an interactive environment that contains a Jupyter notebook, the data used by the notebook, all dependencies used by the notebook and sufficient resources to run the code, all in one click. To do so, just follow two steps:
 
 - Define all aspects of the training environment using the usual interface. Here are the elements you will probably want to configure:
 
@@ -610,7 +610,14 @@ An interesting feature of SSPCloud is that you can make a whole training environ
 
 ![](pics/SSPCloud5.png){width=600}
 
-Regarding the initialization script, previous section gave you indication on how to personnalize it. You must put the raw github url of the script. For instance, if your github repository follows the `Python` template (https://github.com/InseeFrLab/AIML4OS-template-quarto-python), the init script might be found on `sspcloud/init-trainees.sh` file. You must use the raw file available on Github. It is available by clicking on the raw button when opening the file on Github. The url should have a pattern similar to this one: <https://raw.githubusercontent.com/InseeFrLab/AIML4OS-template-quarto-python/refs/heads/main/sspcloud/init-trainees.sh>.
+::: {.callout-important}
+## How to use the initialization script
+
+Previous sections demonstrated how to personnalize the initialization script. Here is an important remark on how to use it: you must put the __raw github URL__ of the script in the `Initialization scripts` field of the configuration. This URL is available by clicking on the `raw` button when opening the file on Github (see screenshot below). The URL should have a pattern similar to this one: <https://raw.githubusercontent.com/InseeFrLab/AIML4OS-template-quarto-python/refs/heads/main/sspcloud/init-trainees.sh>.
+
+![](pics/SSPCloud9.png){width=600}
+:::
+
 
 ### Create a launch button for your website (bonus)
 
