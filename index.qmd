@@ -174,7 +174,7 @@ Some elements of this development environment will be re-used to provide a ready
 
 The best way to develop resources on the SSPCloud is to define your own development configuration. In technical terms, __a configuration is just a service available on the SSPCloud (eg: `RStudio` or `VSCode`) with additional user-defined settings__ such as: the Github repository you want to work on, your Github credentials, the size of memory and number of CPU you want to use, the initialization script you want to run...
 
-Defining a configuration has two advantage:
+Defining a configuration has two advantages:
 
 - it lets you define explicitly the technical environment you want to use for a specific project;
 - you can resume working on your project at any time in only one click, and be sure that the technical environment remains exactly the same.
@@ -184,7 +184,7 @@ Your ready-to-use configurations are listed on the right-hand-side of the "My se
 ![](pics/SSPCloud4.png){width=600}
 
 
-::: {.callout-warning collapse="false"}
+::: {.callout-note collapse="false"}
 Defining a configuration may seem complicated the first time you do it, but you will get used to it in no time.
 :::
 
@@ -202,7 +202,7 @@ Here is how to define a ready to use development configuration using the SSPClou
   + In the "Friendly Name" field, choose a meaningful name (for instance `dev_Intro_To_Linear_Regression`);   
   + In the "Repository" field of the "Git" tab, paste the URL of the repository you created in step 1 (for instance: `https://www.github.com/AIML4OS/Intro_To_Linear_Regression`);
   + In the "Network Access" tab, enable access to your service through port 5000;
-  + (optional) In the "Initialization scripts" tab, paste the URL of your init script (for instance: `https://raw.githubusercontent.com/AIML4OS/AIML4OS-template-quarto-r/refs/heads/main/init.sh`);
+  + (optional) In the "Initialization scripts" tab, paste this URL `https://raw.githubusercontent.com/{OWNER}/{REPO}/refs/heads/main/init.sh`, after replacing `OWNER` and `REPO` by the owner and repository name you chose in step 1;
 - Click on Save configuration;
 - Click on Launch;
 - Open the Rstudio service;
