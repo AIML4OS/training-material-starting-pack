@@ -515,16 +515,22 @@ The main message is: __by combining GitHub Actions with GitHub Pages, you can se
 When developing resources, you will most likely use the `main` branch. However, for `Github Actions` to work, you need an additional branch `gh-pages` used by Github to deploy websites. This one will be rewritten automatically by `Github` after every Github Actions workflow. However, you need to create it first. __This should be done only once.__ Quarto documentation gives this command to create that branch. __Be careful with that command, do not use before having done a first push on Github.__
 
 ```{.bash}
-git checkout --orphan gh-pages
+
+git checkout --orphan gh-pages # Create an empty branch called gh-pages 
 git reset --hard # make sure all changes are committed before running this!
 git commit --allow-empty -m "Initialising gh-pages branch"
-git push origin gh-pages
+git push origin gh-pages # Pushing so that the gh-pages branch exists on the remote repo
 git checkout main
 ```
 
+### Publishing from the `main` branch
+
+After running these commands, go to your repository on Github, click on __Settings__, then on __Pages__. Under "Build and deployment", under "Source", select __Deploy from a branch__. Under "Build and deployment", use the branch dropdown menu and select the `main` branch. From then on, your website should be deployed anytime you push to the `main` branch.
+
+
 ### Define a Github Actions workflow
 
-You need to define a Github Actions workflow to automate output construction and deployment. A GHA workflow is a list of instructions (for instance: install `R`, install packages...) that are executed automatically every time a certain event happens (for instance every time you push on the main branch). A GHA workflow is defined using specific `yaml` scripts, located in the `.github/workflows` directory of your repository. The templates already contain standard workflows that you can use as a starting point. We recommend that you have a careful look at these workflows; comments were added so that they are easy to follow.
+You need to define a Github Actions workflow to automate output construction and deployment. A GHA workflow is a list of instructions (for instance: install `R`, install packages...) that are executed automatically every time a certain event happens (for instance every time you push on the main branch). A GHA workflow is defined using specific `yaml` scripts, located in the `.github/workflows` directory of your repository. __The templates already contain standard workflows that you can use as a starting point.__ We recommend that you have a careful look at these workflows; comments were added so that they are easy to follow.
 
 A few important remarks on automated deployment:
 
