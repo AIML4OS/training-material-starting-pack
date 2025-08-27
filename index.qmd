@@ -483,7 +483,8 @@ For more information, see the [official documentation](https://rstudio.github.io
 
 ## `Python` {{< fa brands python >}}
 
-`uv` is a fast Python package manager that helps you **track and manage dependencies per project**, similarly to `renv` for R. Using `uv`, you can ensure your project is reproducible, fast to install, and easy to deploy.
+`uv` is a fast Python package manager that helps you **track and manage dependencies per project**, similarly to `renv` for R. More precisely, `uv` can be used to create a __virtual environment__ for your Python project. A virtual environment contains your project's Python and its packages, and is isolated from other projects and the system's Python. This means that different projects can use different versions of packages (and even different versions of Python!) without conflicts. `uv` helps create and manage these virtual environments easily, making sure all needed packages for your project are installed and kept organized. Using `uv`, you can ensure your project is reproducible, fast to install, and easy to deploy.
+
 
 Here is the very short introduction on how to use `uv`:
 
@@ -494,8 +495,6 @@ Here is the very short introduction on how to use `uv`:
 - When you want to recreate your environment from scratch on a new machine (or in a new service), you must run the command `uv sync`. This command will install all packages specified in the `pyproject.toml` file (and their own dependencies). __You do not need to use this command if you use use the Python template__ because the initialization script already runs `uv sync`.
 
 :::
-
-
 
 
 ## Step 4: set up a Github pages website
