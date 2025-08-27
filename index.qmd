@@ -485,37 +485,14 @@ For more information, see the [official documentation](https://rstudio.github.io
 
 `uv` is a fast Python package manager that helps you **track and manage dependencies per project**, similarly to `renv` for R. Using `uv`, you can ensure your project is reproducible, fast to install, and easy to deploy.
 
-More precisely, using `uv` introduces the following files to your project:
+Here is the very short introduction on how to use `uv`:
 
-- The `pyproject.toml` file defines your dependencies and project metadata;
+- The basic command to start using `uv` is `uv init`. This command adds to your project the `pyproject.toml` file that defines the project dependencies and metadata. This file is the central piece of the dependency management.  __You do not need to use this command if you use the Python template__ because this has already been done (the template already contains a `pyproject.toml` file).
 
-- To start using `uv`, run:
+- When you start using a new package in your project, you must explicitly add it to the dependencies by running the command `uv add [package_name]`. This command will add this package to the `pyproject.toml` file.
 
-  ```bash
-  uv init
-  ```
+- When you want to recreate your environment from scratch on a new machine (or in a new service), you must run the command `uv sync`. This command will install all packages specified in the `pyproject.toml` file (and their own dependencies). __You do not need to use this command if you use use the Python template__ because the initialization script already runs `uv sync`.
 
-This creates a `pyproject.toml` for your project if it doesn’t exist yet. This file will be the central piece of the dependency management. 
-
-- To add a package:
-
-  ```bash
-  uv add pandas
-  ```
-
-- To recreate your environment from scratch on a new machine (or new service):
-
-  ```bash
-  uv sync
-  ```
-
-This will install all packages exactly as specified in `uv.lock`. Finally, you need to change the command used to run your preview `quarto preview --port 5000 --host 0.0.0.0` to be
-
-```bash
-uv run quarto preview --port 5000 --host 0.0.0.0
-```
-
-By that command, you say quarto to use your `uv` environment
 :::
 
 
