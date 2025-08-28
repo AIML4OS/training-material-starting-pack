@@ -135,7 +135,7 @@ The very first step towards developing educational resources consists in creatin
 
 These templates contain all what you need to produce resources that can be easily made available as websites or as interactive environments on the SSP Cloud. More precisely, these templates contain:
 
-- a minimal `Quarto` website with graphical elements reflecting AIML4OS aesthetic;
+- a minimal `Quarto` website with visual elements reflecting AIML4OS aesthetic;
 - a minimal example of a `Quarto` document producing a Jupyter Notebook ({{< fa brands python >}} only);
 - a minimal example of a `Quarto` document mixing Markdown text and `R` code ({{< fa brands r-project >}} only);
 - what is needed to manage dependencies (what packages are needed to run the codes, and in which version);
@@ -318,7 +318,7 @@ To obtain the S3 path to your data, use the File Explorer to navigate and find t
 ![](pics/SSPCloud8.png){width=700}
 
 
-### Developing educational content in Quarto format
+### How write Quarto documents?
 
 Most of the resources you will develop will take the form of Quarto documents, that you will either provide to final users or compile to final outputs (for instance, websites or Jupyter notebooks). As a consequence, you must learn how to use Quarto. Fortunately, Quarto is easy to use, has an amazing documentation and there are plenty of resources online to help you.
 
@@ -326,7 +326,7 @@ To to get started with Quarto documents, there are three basic elements you shou
 
 #### The header
 
-Your Quarto document typically starts with a **YAML header** to define metadata such as author, title, and so on. Here is a simple example. You can also have a look at the headers of the Quarto files available in the templates.
+Your Quarto document typically starts with a **YAML header** to define metadata such as author, title, and so on. Here is a simple example. You can also have a look at the headers of the Quarto files available in the templates. One particular important setting is the `format` setting: it tells what output should be produced (html, notebook...) when compiling Quarto compiles the document.
 
 ~~~yaml
 ---
@@ -407,7 +407,10 @@ plt.show()
 
 ### Developing and previewing a website
 
-The first kind of output you may want to produce is a static website, consisting in a series of html documents. Developing a website with the AIML4OS templates is very easy: you just have to write text and code chunks in the existing `qmd` files (`index.qmd` and `chapter1.qmd`). You can also extend the structure of the website by adding new Quarto documents (preferably in the `chapters` subdirectory). These new chapters must then be added to the structure of the website by modifying the `_quarto.yml` file in two places: in the `render` argument, and in the `contents` of the `sidebar` argument. Importantly, there is no difference between Python and `R` when developing a Quarto website.
+The first kind of output you may want to produce is a static website, consisting in a series of html documents. Developing a website with the AIML4OS templates is very easy: you just have to write text and code chunks in the existing `qmd` files (`index.qmd` and `chapter1.qmd`). You can also extend the structure of the website by adding new Quarto documents (preferably in the `chapters` subdirectory). These new chapters must then be added to the structure of the website by modifying the `_quarto.yml` file in two places: in the `render` argument, and in the `contents` of the `sidebar` argument. Two important remarks:
+
+- There is no difference between Python and `R` when developing a Quarto website;
+- The `index.qmd` file is the starting page of your website. __You should not delete or rename it.__
 
 It is often convenient to have a look at what this website looks like while developing it. You can preview your website from command line by executing:
 
@@ -462,7 +465,7 @@ quarto render --to ipynb
 
 ### Managing dependencies when developing resources
 
-A major challenge in any data science project is to make sure that its codes can be re-run without error by someone working in a different environment (this is called __portability__). Various technical requirements must be met to ensure portability; one of them is to keep track of all packages needed to run the code (and of the exact version of each package!), so that a new user can reinstall them easily. This section explains how to manage these dependencies using the right tools.
+A major challenge in any data science project is to __make sure that its codes can be re-run without error by someone working in a different environment__ (this is called __portability__). Various technical requirements must be met to ensure portability; one of them is to keep track of all packages needed to run the code (and of the exact version of each package!), so that a new user can reinstall them easily. This section explains how to manage these dependencies using the right tools.
 
 The dependency management tool depends on the language you use:
 
@@ -513,7 +516,7 @@ __This step is optional__, depending on whether your resources include a website
 
 ### What are Github Actions and Github pages and why are they useful?
 
-If you are developing a website for educational purposes, you probably want to publish it online. If you perform the publication manually (building the website, then publishing it), you'll have to re-do this series of tasks every time you change your website. This is time-consuming, repetitive and boring. But fortunately, you can automate this process thanks to GitHub Actions and Github Pages:
+If you are developing a website or Jupyter Notebooks for educational purposes, you probably want to publish them online. If you perform the publication manually (building the website/notebooks, then publishing them), you'll have to re-do this series of tasks every time you change your website. This is time-consuming, repetitive and boring. But fortunately, you can automate this process thanks to GitHub Actions and Github Pages:
 
 - GitHub Actions is a tool built into GitHub that runs pre-defined tasks like testing, building, and deploying code when specific events occur in a repository. For instance, GitHub Actions may perform a series of task every time you push on the `main` branch of your repository, without you doing anything manually. 
 - GitHub Pages is a another tool from Github that lets you publish static websites directly from a GitHub repository; it is often used for project documentation or personal portfolios.
