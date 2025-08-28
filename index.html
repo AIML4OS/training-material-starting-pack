@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4df3b0c4fafa0f66eafcead0ee6cff11.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d68be38d83eca2bb035acf846ffba811.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
@@ -199,11 +199,12 @@ window.Quarto = {
   </ul></li>
   <li><a href="#step-3-develop-resources-with-quarto" id="toc-step-3-develop-resources-with-quarto" class="nav-link" data-scroll-target="#step-3-develop-resources-with-quarto"><span class="header-section-number">3.3</span> Step 3: develop resources with Quarto</a>
   <ul class="collapse">
-  <li><a href="#manage-data-if-needed" id="toc-manage-data-if-needed" class="nav-link" data-scroll-target="#manage-data-if-needed"><span class="header-section-number">3.3.1</span> Manage data (if needed)</a></li>
-  <li><a href="#developing-educational-content-in-quarto-format" id="toc-developing-educational-content-in-quarto-format" class="nav-link" data-scroll-target="#developing-educational-content-in-quarto-format"><span class="header-section-number">3.3.2</span> Developing educational content in Quarto format</a></li>
-  <li><a href="#developing-and-previewing-a-website" id="toc-developing-and-previewing-a-website" class="nav-link" data-scroll-target="#developing-and-previewing-a-website"><span class="header-section-number">3.3.3</span> Developing and previewing a website</a></li>
-  <li><a href="#developing-interactive-scripts" id="toc-developing-interactive-scripts" class="nav-link" data-scroll-target="#developing-interactive-scripts"><span class="header-section-number">3.3.4</span> Developing interactive scripts</a></li>
-  <li><a href="#managing-dependencies-when-developing-resources" id="toc-managing-dependencies-when-developing-resources" class="nav-link" data-scroll-target="#managing-dependencies-when-developing-resources"><span class="header-section-number">3.3.5</span> Managing dependencies when developing resources</a></li>
+  <li><a href="#change-the-urls" id="toc-change-the-urls" class="nav-link" data-scroll-target="#change-the-urls"><span class="header-section-number">3.3.1</span> Change the URLs</a></li>
+  <li><a href="#manage-data-if-needed" id="toc-manage-data-if-needed" class="nav-link" data-scroll-target="#manage-data-if-needed"><span class="header-section-number">3.3.2</span> Manage data (if needed)</a></li>
+  <li><a href="#developing-educational-content-in-quarto-format" id="toc-developing-educational-content-in-quarto-format" class="nav-link" data-scroll-target="#developing-educational-content-in-quarto-format"><span class="header-section-number">3.3.3</span> Developing educational content in Quarto format</a></li>
+  <li><a href="#developing-and-previewing-a-website" id="toc-developing-and-previewing-a-website" class="nav-link" data-scroll-target="#developing-and-previewing-a-website"><span class="header-section-number">3.3.4</span> Developing and previewing a website</a></li>
+  <li><a href="#developing-interactive-scripts" id="toc-developing-interactive-scripts" class="nav-link" data-scroll-target="#developing-interactive-scripts"><span class="header-section-number">3.3.5</span> Developing interactive scripts</a></li>
+  <li><a href="#managing-dependencies-when-developing-resources" id="toc-managing-dependencies-when-developing-resources" class="nav-link" data-scroll-target="#managing-dependencies-when-developing-resources"><span class="header-section-number">3.3.6</span> Managing dependencies when developing resources</a></li>
   </ul></li>
   <li><a href="#step-4-set-up-a-github-pages-website" id="toc-step-4-set-up-a-github-pages-website" class="nav-link" data-scroll-target="#step-4-set-up-a-github-pages-website"><span class="header-section-number">3.4</span> Step 4: set up a Github pages website</a>
   <ul class="collapse">
@@ -590,11 +591,15 @@ Git, git, git, git, git
 </div>
 </div>
 </div>
-<section id="manage-data-if-needed" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="manage-data-if-needed"><span class="header-section-number">3.3.1</span> Manage data (if needed)</h3>
+<section id="change-the-urls" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="change-the-urls"><span class="header-section-number">3.3.1</span> Change the URLs</h3>
+<p>The first thing you must do is changing the URLs of the repository in the <code>_quarto.yml</code> file: - Open the <code>_quarto.yml</code>; - in the <code>site-url</code> and <code>repo-url</code> fields, replace the URL of the template by the URL of your repository. In step 1, you chose the <code>Owner</code> and the <code>Name</code> of your repository, so the URL should be <code>https://github.com/{Owner}/{Name}</code>; - Commit this change.</p>
+</section>
+<section id="manage-data-if-needed" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="manage-data-if-needed"><span class="header-section-number">3.3.2</span> Manage data (if needed)</h3>
 <p>Depending on your project, you might need to access some data, for instance to train a model. The simplest way to proceed is to upload your data on the S3 storage service of SSPCloud, and then download it from S3 into your service.</p>
-<section id="upload-data-to-s3" class="level4" data-number="3.3.1.1">
-<h4 data-number="3.3.1.1" class="anchored" data-anchor-id="upload-data-to-s3"><span class="header-section-number">3.3.1.1</span> Upload data to S3</h4>
+<section id="upload-data-to-s3" class="level4" data-number="3.3.2.1">
+<h4 data-number="3.3.2.1" class="anchored" data-anchor-id="upload-data-to-s3"><span class="header-section-number">3.3.2.1</span> Upload data to S3</h4>
 <p>The simplest way to upload data to S3 is to use the graphical interface available on SSPCloud. To to so, click on “File Explorer” on the left hand and then on “My data”.</p>
 <p><img src="pics/SSPCloud6.png" class="img-fluid" width="700"></p>
 <p>You can upload a file by navigating clicking on “Upload file” (blue rectangle). You can also create a subfolder by clicking on “Create directory” (red rectangle).</p>
@@ -614,37 +619,34 @@ Three remarks to keep in mind
 <ul>
 <li>Choose carefully in which subfolder you upload your files, because moving files from one subfolder to another one on S3 is not very convenient.</li>
 <li>Remember that only <strong>open data</strong> can be uploaded on S3.</li>
-<li>By default, only you can see the files upload in your bucket. If you want other people to access the data, <strong>do not forget to make publicly available</strong> by clicking on the eye on the right hand side (green rectangle). Once again: no sensitive data!!</li>
+<li>By default, only you can see the files upload in your bucket. If you want other people to access the data, <strong>do not forget to make publicly available</strong> by clicking on the eye on the right hand side (green rectangle).</li>
 </ul>
+<p>Once again: no sensitive data!!</p>
 </div>
 </div>
 </div>
 </section>
-<section id="download-data" class="level4" data-number="3.3.1.2">
-<h4 data-number="3.3.1.2" class="anchored" data-anchor-id="download-data"><span class="header-section-number">3.3.1.2</span> Download data</h4>
-<p>Your scripts may require some data to run (for instance: training data for an algorithm). Here is a way to download data automatically:</p>
-<ul>
-<li>Adapt the <code>download_data.sh</code> file so that the data is downloaded to your folder of choice;</li>
-<li>Add this script as an initialization script in your configuration (see step 2).</li>
-</ul>
+<section id="download-data" class="level4" data-number="3.3.2.2">
+<h4 data-number="3.3.2.2" class="anchored" data-anchor-id="download-data"><span class="header-section-number">3.3.2.2</span> Download data</h4>
+<p>Your scripts may require some data to run (for instance: training data for an algorithm). To download data automatically, you just have to adapt the <code>download_data.sh</code> file (in the <code>sspcloud</code> folder) so that your data is downloaded to your folder of choice.</p>
 <p>To obtain the S3 path to your data, use the File Explorer to navigate and find the file you want. The S3 path of your file is simply the path of the folder available in the top right corner of the explorer (red rectangle) and the name of the file (blue rectangle). In the screenshot below, the path of the first file is then: <code>s3/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet</code>.</p>
 <p><img src="pics/SSPCloud8.png" class="img-fluid" width="700"></p>
 </section>
 </section>
-<section id="developing-educational-content-in-quarto-format" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="developing-educational-content-in-quarto-format"><span class="header-section-number">3.3.2</span> Developing educational content in Quarto format</h3>
+<section id="developing-educational-content-in-quarto-format" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="developing-educational-content-in-quarto-format"><span class="header-section-number">3.3.3</span> Developing educational content in Quarto format</h3>
 <p>Most of the resources you will develop will take the form of Quarto documents, that you will either provide to final users or compile to final outputs (for instance, websites or Jupyter notebooks). As a consequence, you must learn how to use Quarto. Fortunately, Quarto is easy to use, has an amazing documentation and there are plenty of resources online to help you.</p>
 <p>To to get started with Quarto documents, there are three basic elements you should know about: the header, raw text with Markdown formatting, and code chunks. We strongly recommend that you refer to the <a href="https://quarto.org/docs/guide/">official Quarto documentation</a> and in particular to the <a href="https://quarto.org/docs/get-started/hello/rstudio.html">beginner Quarto tutorial</a>.</p>
-<section id="the-header" class="level4" data-number="3.3.2.1">
-<h4 data-number="3.3.2.1" class="anchored" data-anchor-id="the-header"><span class="header-section-number">3.3.2.1</span> The header</h4>
+<section id="the-header" class="level4" data-number="3.3.3.1">
+<h4 data-number="3.3.3.1" class="anchored" data-anchor-id="the-header"><span class="header-section-number">3.3.3.1</span> The header</h4>
 <p>Your Quarto document typically starts with a <strong>YAML header</strong> to define metadata such as author, title, and so on. Here is a simple example. You can also have a look at the headers of the Quarto files available in the templates.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My beautiful Quarto Report"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Mickey mouse"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="raw-text-with-markdown-formatting" class="level4" data-number="3.3.2.2">
-<h4 data-number="3.3.2.2" class="anchored" data-anchor-id="raw-text-with-markdown-formatting"><span class="header-section-number">3.3.2.2</span> Raw text with Markdown formatting</h4>
+<section id="raw-text-with-markdown-formatting" class="level4" data-number="3.3.3.2">
+<h4 data-number="3.3.3.2" class="anchored" data-anchor-id="raw-text-with-markdown-formatting"><span class="header-section-number">3.3.3.2</span> Raw text with Markdown formatting</h4>
 <p>A Quarto document contains blocks of text with Markdown formatting. See <a href="https://quarto.org/docs/authoring/markdown-basics.html">here</a> for a detailed presentation of Markdown. Here is a short example:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>This is text with *italics* and **bold**.</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -666,8 +668,8 @@ Three remarks to keep in mind
 </ul></li>
 </ul>
 </section>
-<section id="code-chunks" class="level4" data-number="3.3.2.3">
-<h4 data-number="3.3.2.3" class="anchored" data-anchor-id="code-chunks"><span class="header-section-number">3.3.2.3</span> Code chunks</h4>
+<section id="code-chunks" class="level4" data-number="3.3.3.3">
+<h4 data-number="3.3.3.3" class="anchored" data-anchor-id="code-chunks"><span class="header-section-number">3.3.3.3</span> Code chunks</h4>
 <p>A Quarto document can also contain blocks of code inside <strong>code chunks</strong>, denoted with triple backticks and the language you use. Adding a name to each chunk is a good practice (<code>nice_code</code> in the example below). You can use <a href="https://quarto.org/docs/computations/execution-options.html">chunk options</a> to change the behavior of the chunk (for instance if you want to show some code without executing it).</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true"><i class="fa-brands fa-r-project" aria-label="r-project"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false"><code>Python</code> <i class="fa-brands fa-python" aria-label="python"></i></a></li></ul>
@@ -705,8 +707,8 @@ Three remarks to keep in mind
 </div>
 </section>
 </section>
-<section id="developing-and-previewing-a-website" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="developing-and-previewing-a-website"><span class="header-section-number">3.3.3</span> Developing and previewing a website</h3>
+<section id="developing-and-previewing-a-website" class="level3" data-number="3.3.4">
+<h3 data-number="3.3.4" class="anchored" data-anchor-id="developing-and-previewing-a-website"><span class="header-section-number">3.3.4</span> Developing and previewing a website</h3>
 <p>The first kind of output you may want to produce is a static website, consisting in a series of html documents. Developing a website with the AIML4OS templates is very easy: you just have to write text and code chunks in the existing <code>qmd</code> files (<code>index.qmd</code> and <code>chapter1.qmd</code>). You can also extend the structure of the website by adding new Quarto documents (preferably in the <code>chapters</code> subdirectory). These new chapters must then be added to the structure of the website by modifying the <code>_quarto.yml</code> file in two places: in the <code>render</code> argument, and in the <code>contents</code> of the <code>sidebar</code> argument. Importantly, there is no difference between Python and <code>R</code> when developing a Quarto website.</p>
 <p>It is often convenient to have a look at what this website looks like while developing it. You can preview your website from command line by executing:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview <span class="at">--port</span> 5000 <span class="at">--host</span> 0.0.0.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -750,8 +752,8 @@ What to do if you can’t access the website preview?
 </div>
 </div>
 </section>
-<section id="developing-interactive-scripts" class="level3" data-number="3.3.4">
-<h3 data-number="3.3.4" class="anchored" data-anchor-id="developing-interactive-scripts"><span class="header-section-number">3.3.4</span> Developing interactive scripts</h3>
+<section id="developing-interactive-scripts" class="level3" data-number="3.3.5">
+<h3 data-number="3.3.5" class="anchored" data-anchor-id="developing-interactive-scripts"><span class="header-section-number">3.3.5</span> Developing interactive scripts</h3>
 <p>Depending on the resources you develop, it may make more sense to provide your learners with interactive environments rather than a static website, particularly if your resources contain exercises. Although the final outputs are quite different for <code>R</code> and Python (<code>Jupyter</code> notebooks for <code>Python</code>, Quarto documents with <code>R</code> chunks for <code>R</code>), these resources can nonetheless be developed using Quarto.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true"><i class="fa-brands fa-r-project" aria-label="r-project"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false"><code>Python</code> <i class="fa-brands fa-python" aria-label="python"></i></a></li></ul>
@@ -781,8 +783,8 @@ Warning
 </div>
 </div>
 </section>
-<section id="managing-dependencies-when-developing-resources" class="level3" data-number="3.3.5">
-<h3 data-number="3.3.5" class="anchored" data-anchor-id="managing-dependencies-when-developing-resources"><span class="header-section-number">3.3.5</span> Managing dependencies when developing resources</h3>
+<section id="managing-dependencies-when-developing-resources" class="level3" data-number="3.3.6">
+<h3 data-number="3.3.6" class="anchored" data-anchor-id="managing-dependencies-when-developing-resources"><span class="header-section-number">3.3.6</span> Managing dependencies when developing resources</h3>
 <p>A major challenge in any data science project is to make sure that its codes can be re-run without error by someone working in a different environment (this is called <strong>portability</strong>). Various technical requirements must be met to ensure portability; one of them is to keep track of all packages needed to run the code (and of the exact version of each package!), so that a new user can reinstall them easily. This section explains how to manage these dependencies using the right tools.</p>
 <p>The dependency management tool depends on the language you use:</p>
 <ul>
