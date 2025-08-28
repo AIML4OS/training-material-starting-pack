@@ -602,10 +602,10 @@ Git, git, git, git, git
 </section>
 <section id="manage-data-if-needed" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="manage-data-if-needed"><span class="header-section-number">3.3.2</span> Manage data (if needed)</h3>
-<p>Depending on your project, you might need to access some data, for instance to train a model. The simplest way to proceed is to upload your data on the S3 storage service of SSPCloud, and then download it from S3 into your service.</p>
+<p>Depending on your project, your scripts may require some data, for instance to train a model. However, when you start a service on SSP Cloud (VSCode or Rstudio), it does not contain any data. That implies that you have to download data into your service. Of course, you <em>could</em> do it by hand every time you start a service, but we strongly recommend that you automatize this step. The simplest way to proceed is to upload your data on the S3 storage service of SSPCloud, and then download it from S3 into your service every time you start a service.</p>
 <section id="upload-data-to-s3" class="level4" data-number="3.3.2.1">
 <h4 data-number="3.3.2.1" class="anchored" data-anchor-id="upload-data-to-s3"><span class="header-section-number">3.3.2.1</span> Upload data to S3</h4>
-<p>The simplest way to upload data to S3 is to use the graphical interface available on SSPCloud. To to so, click on “File Explorer” on the left hand and then on “My data”.</p>
+<p>The simplest way to upload data to S3 is to use the graphical interface available on SSPCloud. <strong>You have to do only once</strong> (except if you want to change or update the data, of course). To to so, click on “File Explorer” on the left hand and then on “My data”.</p>
 <p><img src="pics/SSPCloud6.png" class="img-fluid" width="700"></p>
 <p>You can upload a file by navigating clicking on “Upload file” (blue rectangle). You can also create a subfolder by clicking on “Create directory” (red rectangle).</p>
 <p><img src="pics/SSPCloud7.png" class="img-fluid" width="700"></p>
@@ -633,7 +633,11 @@ Three remarks to keep in mind
 </section>
 <section id="download-data" class="level4" data-number="3.3.2.2">
 <h4 data-number="3.3.2.2" class="anchored" data-anchor-id="download-data"><span class="header-section-number">3.3.2.2</span> Download data</h4>
-<p>Your scripts may require some data to run (for instance: training data for an algorithm). To download data automatically, you just have to adapt the <code>download_data.sh</code> file (in the <code>sspcloud</code> folder) so that your data is downloaded to your folder of choice.</p>
+<p>To download data automatically into your service, you just have to adapt the <code>download_data.sh</code> file (in the <code>sspcloud</code> folder). There are two things you can change:</p>
+<ul>
+<li><code>DEST_DIR</code> is the folder in your service where data will be downloaded (<code>/home/data/</code> by default);</li>
+<li><code>DATA_PATH</code> is the S3 path to your data (where it is downloaded from).</li>
+</ul>
 <p>To obtain the S3 path to your data, use the File Explorer to navigate and find the file you want. The S3 path of your file is simply the path of the folder available in the top right corner of the explorer (red rectangle) and the name of the file (blue rectangle). In the screenshot below, the path of the first file is then: <code>s3/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet</code>.</p>
 <p><img src="pics/SSPCloud8.png" class="img-fluid" width="700"></p>
 </section>
