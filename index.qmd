@@ -575,44 +575,30 @@ A few important remarks on automated deployment:
 __This step is optional__, depending on whether your resources include interactive environments (Jupyter notebooks for `Python`, interactive Quarto documents with `R` chunks for `R`). You can skip this step if your resources consist only in a Quarto website.
 
 
+
+
 ::: {.callout-warning}
-## Python users only: accessing the `Jupyter Notebooks`
+## Python only: accessing the `Jupyter Notebooks`
 
 Notebooks are automatically made available through the website deployed via Github Actions. Their location on the website depends on the location of of the qmd used to build them within the Git repository. For example, the notebook available in the Python template will be accessible via [this link](https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb) because the qmd file `notebook1.qmd` is located in the `AIML4OS-template-quarto-python/notebooks/` folder of the repository.
 :::
 
-### Create an initialization script to prepare your environment for trainees
+::: {.callout-warning}
+## `R` only: accessing the Quarto files
 
-Up to now, we have explained how to initialize and pre-configure the __trainers'__ development environment. It is important to understand that while this pre-configuration is convenient but not essential when building educational resources, defining such a pre-configured environment is __mandatory__ when making ready-to-use tutorials available to trainees. For this purpose, _templates_ offer an example to be edited, depending on the URL on which your resources are made available.
+A COMPLETER
+:::
+
+### The initialization script for trainees
+
+Up to now, we have explained how to initialize and pre-configure the __trainers'__ development environment (with the `init.sh` script). It is important to understand that while this pre-configuration is convenient but not essential when building educational resources, defining such a pre-configured environment is __mandatory__ when making ready-to-use tutorials available to trainees. For this purpose, the _templates_ offer an example to be edited, depending on the URL on which your resources are made available.
 
 ::: {.panel-tabset}
 ## `Python` {{< fa brands python >}}
 
-We assume that the notebook to be recovered is available at <https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb> (see above to understand how it was produced).
+The script `init-trainees.sh` provided in the `sspcloud` folder of the _template_ helps you to configure the environment for trainees on the SSPCloud. This script does two things:  1/ install the environment needed to run the notebook; this is greatly facilitated by the use of `uv`; 2/ download the notebook you want to provide trainees with. __You do not need to modify this script.__ This script takes only one argument: the path of the notebook within the website (see next section). If the notebook you want to make available is located at is available at <https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb>, then this argument should be `notebooks/notebook1.ipynb`.
 
-The script provided in the _template_, in the `sspcloud/init-trainees.sh` folder, proposes a model for retrieving and preconfiguring the environment for trainees on the sspcloud. Overall, the idea is to automatically perform the following steps for trainees:
-
-- Retrieve and install the environment needed to run _notebook_. This is greatly facilitated by the use of `uv`.
-- Download the notebooks to be opened by trainees.
-
-By customizing this script, you should have a ready-to-use environment. To test that the edits you've made to this script work, you can open a terminal on VSCode and run it from the command line. If this test is successful, the script has a good chance of running in a blank environment and creating a customized environment for your training. The aim of the next section is to show you how. Don't forget to commit the modifications you made to that script otherwise, in the next step, trainees won't end up with your notebook ready to use in their environment. 
 :::
-
-
-### Create an auto launch URL
-
-A convenient feature of SSPCloud is that you can make a whole training environment available through one URL link. For instance, you can provide trainees with an interactive environment that contains a Jupyter notebook, the data used by the notebook, all dependencies used by the notebook and sufficient resources to run the code, all in one click. To do so, just follow two steps:
-
-- Define all aspects of the training environment using the usual interface. Here are the elements you will probably want to configure:
-
-  - `Friendly Name`: do not forget to use a meaningful name ("Intro_To_Deep_Learning"), that will be more convenient for trainees;
-  - `Resources`: choose the requests and limits that are well-suited for your use case. Some trial-and-error might be necessary here. However, __in most cases, you don't need to change the resources there__ because sspcloud is giving you large maximal resources that fit most needs. 
-  - `Initialization scripts`: you can add here the URL to an initialization script (see below). 
-  - `GIT`: In the "Repository" field, paste the URL of the repository containing the resources.
-
-- Copy the link provided at the top of the interface by clicking on "Copy Auto Launch URL", and paste it wherever you want. Anyone with an SSPCloud account can access the content. Do not forget to test your link a few times to be sure it works!
-
-![](pics/SSPCloud5.png){width=600}
 
 ::: {.callout-important}
 ## How to use the initialization script
@@ -622,6 +608,27 @@ Previous sections demonstrated how to personnalize the initialization script. He
 ![](pics/SSPCloud9.png){width=600}
 :::
 
+
+### Create an auto launch URL
+
+A convenient feature of SSPCloud is that you can make a whole training environment available through one URL link: in one click, trainees open a VSCode service that contains a Jupyter notebook, the data used by the notebook, all dependencies needed to run the notebook, and sufficient resources to run the code.
+
+To do so, just follow two steps:
+
+- Define all aspects of the training environment using the usual interface. Here are the elements you will probably want to configure:
+
+  - `Friendly Name`: do not forget to use a meaningful name ("Intro_To_Deep_Learning"), that will be more convenient for trainees;
+  - `Resources`: choose the requests and limits that are well-suited for your use case. Some trial-and-error might be necessary here. However, __in most cases, you don't need to change the resources there__ because default SSPCloud settings fit most needs. 
+  - `Initialization scripts`: 
+
+    - `Use a custom script (URL)`: paste the URL to the initialization script for trainees (see previous section).
+    - `Arguments for the custom script`: write the name of the notebook (see previous section).
+
+  - `GIT`: In the "Repository" field, paste the URL of the Github repository containing the resources. __Do not forget to remove your Git credentials (name, email and token).__
+
+- Copy the link provided at the top of the interface by clicking on "Copy Auto Launch URL", and paste it wherever you want. Anyone with an SSPCloud account can access the content. Do not forget to test your link a few times to be sure it works!
+
+![](pics/SSPCloud5.png){width=600}
 
 ### Create a launch button for your website (bonus)
 
