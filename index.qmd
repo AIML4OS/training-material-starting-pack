@@ -626,20 +626,23 @@ To do so, just follow two steps:
 
   - `GIT`: In the "Repository" field, paste the URL of the Github repository containing the resources.
 
-- Copy the link provided at the top of the interface by clicking on "Copy Auto Launch URL", and paste it wherever you want. Anyone with an SSPCloud account can access the content. __Do not forget to test your link a few times to be sure it works__. Do not be afraid if it does not work on the first time, some trial-and-error is often necessary.
+- Copy the link provided at the top of the interface by clicking on "Copy Auto Launch URL", and paste it wherever you want. Anyone with an SSPCloud account can use it to open a pre-configured service. __Do not forget to test your link a few times to be sure it works__. Do not be afraid if it does not work on the first time, some trial-and-error is often necessary.
 
 ![](pics/SSPCloud5.png){width=600}
 
 ::: {.callout-note}
-- We recommend that you read carefully the auto-launch URL (don't be afraid!). You will see that it simply contains all the elements you defined in the configuration: the service you want to use (VSCode/RStudio), the friendly name, the URL of the init script and so on. This is not so complicated!
-- You should check that there is no sensitive information in the Autolaunch URL (such as your Github token).
+
+An auto-launch URL is typically very long, something like: <https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=Notebook1&version=2.3.18&s3=region-79669f20&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FAIML4OS-template-quarto-python%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&init.personalInitArgs=«notebooks%2Fnotebook1.ipynb»&git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FAIML4OS-template-quarto-python.git»&autoLaunch=true>
+
+We recommend two things:
+
+- __Read carefully the auto-launch URL__ a few times (don't be afraid!). You will see that it simply contains all the elements you defined in the configuration: the service you want to use (VSCode/RStudio), the friendly name, the URL of the init script and so on. This is not so complicated!
+- __Check that there is no sensitive information in the Autolaunch URL__ (such as your Github token). If something looks strange, take the time to understand what is the problem.
 :::
 
 ### Create a launch button for your website (bonus)
 
-Let's say you have done everything described before. Then you end up with a very long auto launch URL, let's say <https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=Notebook1&version=2.3.18&s3=region-79669f20&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FAIML4OS-template-quarto-python%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&init.personalInitArgs=«notebooks%2Fnotebook1.ipynb»&git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FAIML4OS-template-quarto-python.git»&autoLaunch=true>.
-
-You can of course ask trainees to copy and paste this URL in the search bar of their browser to access the site, but a ready-to-use button is much more user-friendly! Just take this code snippet as a basis and replace `AUTOLAUNCH_URL_THERE` with your own quick launch URL:
+Let's say you have done everything described before, and you have a working auto-launch URL. You could of course send it to trainees and ask them to copy and paste it in their browser to access the service, but a ready-to-use button is much more user-friendly! Just take this code snippet as a basis and replace `AUTOLAUNCH_URL_THERE` with your own quick launch URL:
 
 ::: {.panel-tabset}
 
