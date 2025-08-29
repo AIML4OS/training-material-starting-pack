@@ -403,9 +403,22 @@ plt.show()
 ````
 :::
 
+### Developing resources
+
+Developing resources with the AIML4OS templates is very easy: you just have to write text and code chunks in the existing `qmd` files (`index.qmd` and `chapter1.qmd`). You can also add new Quarto documents (preferably in the `chapters` subdirectory, or in another subdirectory). Two important remarks: 
+
+- The `index.qmd` file is the starting page of your project: __you should not delete or rename it.__ 
+- The resources you develop are either html pages published on the website or interactive environments (Jupyter notebooks for Python, qmd files for `R`). __You must specify the output format you want in the header of each qmd file__: 
+
+    - if you want a static html page, specify `format: html`;
+    - if you want a Jupyter notebook (Python only), specify `format: ipynb`;
+    - if you want both formats, specify `format: [html, ipynb]`.
+
+<!-- If you add a new document, you must add it to the list in the `render` argument of the `_quarto.yml` file, so that Quarto compiles it. An important point is that the `index.qmd` file will be the starting page of your website: __you should not delete or rename it.__ -->
 
 
-### Developing and previewing a website
+
+#### Developing and previewing a website
 
 The first kind of output you may want to produce is a static website, consisting in a series of html documents. Developing a website with the AIML4OS templates is very easy: you just have to write text and code chunks in the existing `qmd` files (`index.qmd` and `chapter1.qmd`). You can also extend the structure of the website by adding new Quarto documents (preferably in the `chapters` subdirectory). These new chapters must then be added to the structure of the website by modifying the `_quarto.yml` file in two places: in the `render` argument, and in the `contents` of the `sidebar` argument. Two important remarks:
 
@@ -440,7 +453,7 @@ If you can't access the website preview because there is no link in the README, 
 - Launch again your RStudio/VSCode service.
 ::::
 
-### Developing interactive scripts
+#### Developing interactive scripts
 
 Depending on the resources you develop, it may make more sense to provide your learners with interactive environments rather than a static website, particularly if your resources contain exercises. Although the final outputs are quite different for `R` and Python (`Jupyter` notebooks for `Python`, Quarto documents with `R` chunks for `R`), these resources can nonetheless be developed using Quarto.
 
