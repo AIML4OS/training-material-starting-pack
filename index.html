@@ -213,7 +213,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#step-5-make-your-interactive-environments-easily-available-on-the-ssp-cloud" id="toc-step-5-make-your-interactive-environments-easily-available-on-the-ssp-cloud" class="nav-link" data-scroll-target="#step-5-make-your-interactive-environments-easily-available-on-the-ssp-cloud"><span class="header-section-number">3.5</span> Step 5: make your interactive environments easily available on the SSP Cloud</a>
   <ul class="collapse">
-  <li><a href="#create-an-initialization-script-to-prepare-your-environment-for-trainees" id="toc-create-an-initialization-script-to-prepare-your-environment-for-trainees" class="nav-link" data-scroll-target="#create-an-initialization-script-to-prepare-your-environment-for-trainees"><span class="header-section-number">3.5.1</span> Create an initialization script to prepare your environment for trainees</a></li>
+  <li><a href="#the-initialization-script-for-trainees" id="toc-the-initialization-script-for-trainees" class="nav-link" data-scroll-target="#the-initialization-script-for-trainees"><span class="header-section-number">3.5.1</span> The initialization script for trainees</a></li>
   <li><a href="#create-an-auto-launch-url" id="toc-create-an-auto-launch-url" class="nav-link" data-scroll-target="#create-an-auto-launch-url"><span class="header-section-number">3.5.2</span> Create an auto launch URL</a></li>
   <li><a href="#create-a-launch-button-for-your-website-bonus" id="toc-create-a-launch-button-for-your-website-bonus" class="nav-link" data-scroll-target="#create-a-launch-button-for-your-website-bonus"><span class="header-section-number">3.5.3</span> Create a launch button for your website (bonus)</a></li>
   <li><a href="#add-your-resources-on-the-training-webpage-hosted-on-the-ssp-cloud" id="toc-add-your-resources-on-the-training-webpage-hosted-on-the-ssp-cloud" class="nav-link" data-scroll-target="#add-your-resources-on-the-training-webpage-hosted-on-the-ssp-cloud"><span class="header-section-number">3.5.4</span> Add your resources on the training webpage hosted on the SSP Cloud</a></li>
@@ -929,45 +929,37 @@ Warning
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Python users only: accessing the <code>Jupyter Notebooks</code>
+Python only: accessing the <code>Jupyter Notebooks</code>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Notebooks are automatically made available through the website deployed via Github Actions. Their location on the website depends on the location of of the qmd used to build them within the Git repository. For example, the notebook available in the Python template will be accessible via <a href="https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb">this link</a> because the qmd file <code>notebook1.qmd</code> is located in the <code>AIML4OS-template-quarto-python/notebooks/</code> folder of the repository.</p>
 </div>
 </div>
-<section id="create-an-initialization-script-to-prepare-your-environment-for-trainees" class="level3" data-number="3.5.1">
-<h3 data-number="3.5.1" class="anchored" data-anchor-id="create-an-initialization-script-to-prepare-your-environment-for-trainees"><span class="header-section-number">3.5.1</span> Create an initialization script to prepare your environment for trainees</h3>
-<p>Up to now, we have explained how to initialize and pre-configure the <strong>trainers’</strong> development environment. It is important to understand that while this pre-configuration is convenient but not essential when building educational resources, defining such a pre-configured environment is <strong>mandatory</strong> when making ready-to-use tutorials available to trainees. For this purpose, <em>templates</em> offer an example to be edited, depending on the URL on which your resources are made available.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>R</code> only: accessing the Quarto files
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A COMPLETER</p>
+</div>
+</div>
+<section id="the-initialization-script-for-trainees" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="the-initialization-script-for-trainees"><span class="header-section-number">3.5.1</span> The initialization script for trainees</h3>
+<p>Up to now, we have explained how to initialize and pre-configure the <strong>trainers’</strong> development environment (with the <code>init.sh</code> script). It is important to understand that while this pre-configuration is convenient but not essential when building educational resources, defining such a pre-configured environment is <strong>mandatory</strong> when making ready-to-use tutorials available to trainees. For this purpose, the <em>templates</em> offer an example to be edited, depending on the URL on which your resources are made available.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true"><code>Python</code> <i class="fa-brands fa-python" aria-label="python"></i></a></li></ul>
 <div class="tab-content">
 <div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
-<p>We assume that the notebook to be recovered is available at <a href="https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb" class="uri">https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb</a> (see above to understand how it was produced).</p>
-<p>The script provided in the <em>template</em>, in the <code>sspcloud/init-trainees.sh</code> folder, proposes a model for retrieving and preconfiguring the environment for trainees on the sspcloud. Overall, the idea is to automatically perform the following steps for trainees:</p>
-<ul>
-<li>Retrieve and install the environment needed to run <em>notebook</em>. This is greatly facilitated by the use of <code>uv</code>.</li>
-<li>Download the notebooks to be opened by trainees.</li>
-</ul>
-<p>By customizing this script, you should have a ready-to-use environment. To test that the edits you’ve made to this script work, you can open a terminal on VSCode and run it from the command line. If this test is successful, the script has a good chance of running in a blank environment and creating a customized environment for your training. The aim of the next section is to show you how. Don’t forget to commit the modifications you made to that script otherwise, in the next step, trainees won’t end up with your notebook ready to use in their environment.</p>
+<p>The script <code>init-trainees.sh</code> provided in the <code>sspcloud</code> folder of the <em>template</em> helps you to configure the environment for trainees on the SSPCloud. This script does two things: 1/ install the environment needed to run the notebook; this is greatly facilitated by the use of <code>uv</code>; 2/ download the notebook you want to provide trainees with. <strong>You do not need to modify this script.</strong> This script takes only one argument: the path of the notebook within the website (see next section). If the notebook you want to make available is located at is available at <a href="https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb" class="uri">https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb</a>, then this argument should be <code>notebooks/notebook1.ipynb</code>.</p>
 </div>
 </div>
 </div>
-</section>
-<section id="create-an-auto-launch-url" class="level3" data-number="3.5.2">
-<h3 data-number="3.5.2" class="anchored" data-anchor-id="create-an-auto-launch-url"><span class="header-section-number">3.5.2</span> Create an auto launch URL</h3>
-<p>A convenient feature of SSPCloud is that you can make a whole training environment available through one URL link. For instance, you can provide trainees with an interactive environment that contains a Jupyter notebook, the data used by the notebook, all dependencies used by the notebook and sufficient resources to run the code, all in one click. To do so, just follow two steps:</p>
-<ul>
-<li><p>Define all aspects of the training environment using the usual interface. Here are the elements you will probably want to configure:</p>
-<ul>
-<li><code>Friendly Name</code>: do not forget to use a meaningful name (“Intro_To_Deep_Learning”), that will be more convenient for trainees;</li>
-<li><code>Resources</code>: choose the requests and limits that are well-suited for your use case. Some trial-and-error might be necessary here. However, <strong>in most cases, you don’t need to change the resources there</strong> because sspcloud is giving you large maximal resources that fit most needs.</li>
-<li><code>Initialization scripts</code>: you can add here the URL to an initialization script (see below).</li>
-<li><code>GIT</code>: In the “Repository” field, paste the URL of the repository containing the resources.</li>
-</ul></li>
-<li><p>Copy the link provided at the top of the interface by clicking on “Copy Auto Launch URL”, and paste it wherever you want. Anyone with an SSPCloud account can access the content. Do not forget to test your link a few times to be sure it works!</p></li>
-</ul>
-<p><img src="pics/SSPCloud5.png" class="img-fluid" width="600"></p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -982,6 +974,26 @@ How to use the initialization script
 <p><img src="pics/SSPCloud9.png" class="img-fluid" width="600"></p>
 </div>
 </div>
+</section>
+<section id="create-an-auto-launch-url" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="create-an-auto-launch-url"><span class="header-section-number">3.5.2</span> Create an auto launch URL</h3>
+<p>A convenient feature of SSPCloud is that you can make a whole training environment available through one URL link: in one click, trainees open a VSCode service that contains a Jupyter notebook, the data used by the notebook, all dependencies needed to run the notebook, and sufficient resources to run the code.</p>
+<p>To do so, just follow two steps:</p>
+<ul>
+<li><p>Define all aspects of the training environment using the usual interface. Here are the elements you will probably want to configure:</p>
+<ul>
+<li><p><code>Friendly Name</code>: do not forget to use a meaningful name (“Intro_To_Deep_Learning”), that will be more convenient for trainees;</p></li>
+<li><p><code>Resources</code>: choose the requests and limits that are well-suited for your use case. Some trial-and-error might be necessary here. However, <strong>in most cases, you don’t need to change the resources there</strong> because default SSPCloud settings fit most needs.</p></li>
+<li><p><code>Initialization scripts</code>:</p>
+<ul>
+<li><code>Use a custom script (URL)</code>: paste the URL to the initialization script for trainees (see previous section).</li>
+<li><code>Arguments for the custom script</code>: write the name of the notebook (see previous section).</li>
+</ul></li>
+<li><p><code>GIT</code>: In the “Repository” field, paste the URL of the Github repository containing the resources. <strong>Do not forget to remove your Git credentials (name, email and token).</strong></p></li>
+</ul></li>
+<li><p>Copy the link provided at the top of the interface by clicking on “Copy Auto Launch URL”, and paste it wherever you want. Anyone with an SSPCloud account can access the content. Do not forget to test your link a few times to be sure it works!</p></li>
+</ul>
+<p><img src="pics/SSPCloud5.png" class="img-fluid" width="600"></p>
 </section>
 <section id="create-a-launch-button-for-your-website-bonus" class="level3" data-number="3.5.3">
 <h3 data-number="3.5.3" class="anchored" data-anchor-id="create-a-launch-button-for-your-website-bonus"><span class="header-section-number">3.5.3</span> Create a launch button for your website (bonus)</h3>
