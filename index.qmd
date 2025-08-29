@@ -318,7 +318,7 @@ To obtain the S3 path to your data, use the File Explorer to navigate and find t
 ![](pics/SSPCloud8.png){width=700}
 
 
-### How write Quarto documents?
+### How to write Quarto documents?
 
 Most of the resources you will develop will take the form of Quarto documents, that you will either provide to final users or compile to final outputs (for instance, websites or Jupyter notebooks). As a consequence, you must learn how to use Quarto. Fortunately, Quarto is easy to use, has an amazing documentation and there are plenty of resources online to help you.
 
@@ -412,7 +412,8 @@ Developing resources (html pages published on the website or interactive environ
 
     - if you want a static html page, specify `format: html`;
     - if you want a Jupyter notebook (Python only), specify `format: ipynb`;
-    - if you want both formats, specify `format: [html, ipynb]`.
+    - if you want a Quarto file with `R` chunks (`R` only), do not specify anything.
+    
 
 <!-- If you add a new document, you must add it to the list in the `render` argument of the `_quarto.yml` file, so that Quarto compiles it. An important point is that the `index.qmd` file will be the starting page of your website: __you should not delete or rename it.__ -->
 
@@ -475,9 +476,9 @@ Here is how you can produce a Jupyter notebook for Python:
 - Create a new Quarto file and store it in the `notebooks` subfolder; 
 - Do not forget to write `format: ipynb` in the header;
 - Develop the content;
-- Add the qmd file to the list in the `render` argument of the `_quarto.yml` file, so that Quarto compiles it.
+- Add the qmd file to the list in the `render` argument of the `_quarto.yml` file, so that Quarto compiles it into a Jupyter notebook.
 
-The `notebooks` subfolder of the `Python` template already contains an example.
+The `notebooks` subfolder of the `Python` template already contains an example (`notebook1.qmd`).
 
 :::: {.callout-warning collapse="false"}
 __You should use `pip install` _anywhere_ in your botebooks__ because it is not the proper way to manage package requirements (see below for recommendations on dependency management).
@@ -574,22 +575,10 @@ A few important remarks on automated deployment:
 __This step is optional__, depending on whether your resources include interactive environments (Jupyter notebooks for `Python`, interactive Quarto documents with `R` chunks for `R`). You can skip this step if your resources consist only in a Quarto website.
 
 
-
 ::: {.callout-warning}
-## Python users only: accessing the automatically built `Jupyter Notebook`
+## Python users only: accessing the `Jupyter Notebooks`
 
-Up to now, we mostly focused on the production and the deployment of static content. A small precision needs to be done for producing and giving access to Jupyter Notebooks. 
-
-Regarding the production side, it is automatically done by the Github Actions file provided on the Python template. This line in `.github/worfklows/prod.yml` 
-
-```yaml
-# Step 4b: Render Quarto in uv virtual environment (HTML)
-- name: Render in ipynb
-  run: uv run quarto render --to ipynb
-```
-
-Notebooks are automatically made available through the website deployed via Github Actions. Their location on the website depends on the location of of the qmd used to build them within the Git repository. For example, in the Python template, the notebook will be accessible via [this link](https://inseefrlab.github.io/AIML4OS-template-quarto-python/chapters/chapter1.ipynb) because the qmd file is located in the `AIML4OS-template-quarto-python/chapters/` folder of the repository.
-
+Notebooks are automatically made available through the website deployed via Github Actions. Their location on the website depends on the location of of the qmd used to build them within the Git repository. For example, the notebook available in the Python template will be accessible via [this link](https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb) because the qmd file `notebook1.qmd` is located in the `AIML4OS-template-quarto-python/notebooks/` folder of the repository.
 :::
 
 ### Create an initialization script to prepare your environment for trainees
@@ -599,14 +588,14 @@ Up to now, we have explained how to initialize and pre-configure the __trainers'
 ::: {.panel-tabset}
 ## `Python` {{< fa brands python >}}
 
-We assume that the notebook to be recovered is available at <https://inseefrlab.github.io/AIML4OS-template-quarto-python/chapters/chapter1.ipynb> (see above to understand how it was produced).
+We assume that the notebook to be recovered is available at <https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb> (see above to understand how it was produced).
 
 The script provided in the _template_, in the `sspcloud/init-trainees.sh` folder, proposes a model for retrieving and preconfiguring the environment for trainees on the sspcloud. Overall, the idea is to automatically perform the following steps for trainees:
 
 - Retrieve and install the environment needed to run _notebook_. This is greatly facilitated by the use of `uv`.
 - Download the notebooks to be opened by trainees.
 
-By customizing this script, you should have a ready-to-use environment. To test that the edits you've made to this one work, you can open a terminal on VSCode and run it from the command line. If this test is successful, the script has a good chance of running in a blank environment and creating a customized environment for your training. The aim of the next section is to show you how. Don't forget to commit the modifications you made to that script otherwise, in the next step, trainees won't endup with your notebook ready to use in their environment. 
+By customizing this script, you should have a ready-to-use environment. To test that the edits you've made to this script work, you can open a terminal on VSCode and run it from the command line. If this test is successful, the script has a good chance of running in a blank environment and creating a customized environment for your training. The aim of the next section is to show you how. Don't forget to commit the modifications you made to that script otherwise, in the next step, trainees won't end up with your notebook ready to use in their environment. 
 :::
 
 
