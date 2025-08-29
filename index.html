@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.7.34">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -73,7 +73,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-d68be38d83eca2bb035acf846ffba811.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -201,7 +201,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#change-the-urls" id="toc-change-the-urls" class="nav-link" data-scroll-target="#change-the-urls"><span class="header-section-number">3.3.1</span> Change the URLs</a></li>
   <li><a href="#manage-data-if-needed" id="toc-manage-data-if-needed" class="nav-link" data-scroll-target="#manage-data-if-needed"><span class="header-section-number">3.3.2</span> Manage data (if needed)</a></li>
-  <li><a href="#how-write-quarto-documents" id="toc-how-write-quarto-documents" class="nav-link" data-scroll-target="#how-write-quarto-documents"><span class="header-section-number">3.3.3</span> How write Quarto documents?</a></li>
+  <li><a href="#how-to-write-quarto-documents" id="toc-how-to-write-quarto-documents" class="nav-link" data-scroll-target="#how-to-write-quarto-documents"><span class="header-section-number">3.3.3</span> How to write Quarto documents?</a></li>
   <li><a href="#developing-resources" id="toc-developing-resources" class="nav-link" data-scroll-target="#developing-resources"><span class="header-section-number">3.3.4</span> Developing resources</a></li>
   <li><a href="#managing-dependencies-when-developing-resources" id="toc-managing-dependencies-when-developing-resources" class="nav-link" data-scroll-target="#managing-dependencies-when-developing-resources"><span class="header-section-number">3.3.5</span> Managing dependencies when developing resources</a></li>
   </ul></li>
@@ -641,8 +641,8 @@ Three remarks to keep in mind
 <p><img src="pics/SSPCloud8.png" class="img-fluid" width="700"></p>
 </section>
 </section>
-<section id="how-write-quarto-documents" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="how-write-quarto-documents"><span class="header-section-number">3.3.3</span> How write Quarto documents?</h3>
+<section id="how-to-write-quarto-documents" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="how-to-write-quarto-documents"><span class="header-section-number">3.3.3</span> How to write Quarto documents?</h3>
 <p>Most of the resources you will develop will take the form of Quarto documents, that you will either provide to final users or compile to final outputs (for instance, websites or Jupyter notebooks). As a consequence, you must learn how to use Quarto. Fortunately, Quarto is easy to use, has an amazing documentation and there are plenty of resources online to help you.</p>
 <p>To to get started with Quarto documents, there are three basic elements you should know about: the header, raw text with Markdown formatting, and code chunks. We strongly recommend that you refer to the <a href="https://quarto.org/docs/guide/">official Quarto documentation</a> and in particular to the <a href="https://quarto.org/docs/get-started/hello/rstudio.html">beginner Quarto tutorial</a>.</p>
 <section id="the-header" class="level4" data-number="3.3.3.1">
@@ -724,7 +724,7 @@ Three remarks to keep in mind
 <ul>
 <li>if you want a static html page, specify <code>format: html</code>;</li>
 <li>if you want a Jupyter notebook (Python only), specify <code>format: ipynb</code>;</li>
-<li>if you want both formats, specify <code>format: [html, ipynb]</code>.</li>
+<li>if you want a Quarto file with <code>R</code> chunks (<code>R</code> only), do not specify anything.</li>
 </ul></li>
 </ul>
 <!-- If you add a new document, you must add it to the list in the `render` argument of the `_quarto.yml` file, so that Quarto compiles it. An important point is that the `index.qmd` file will be the starting page of your website: __you should not delete or rename it.__ -->
@@ -810,9 +810,9 @@ Warning
 <li>Create a new Quarto file and store it in the <code>notebooks</code> subfolder;</li>
 <li>Do not forget to write <code>format: ipynb</code> in the header;</li>
 <li>Develop the content;</li>
-<li>Add the qmd file to the list in the <code>render</code> argument of the <code>_quarto.yml</code> file, so that Quarto compiles it.</li>
+<li>Add the qmd file to the list in the <code>render</code> argument of the <code>_quarto.yml</code> file, so that Quarto compiles it into a Jupyter notebook.</li>
 </ul>
-<p>The <code>notebooks</code> subfolder of the <code>Python</code> template already contains an example.</p>
+<p>The <code>notebooks</code> subfolder of the <code>Python</code> template already contains an example (<code>notebook1.qmd</code>).</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -929,16 +929,11 @@ Warning
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Python users only: accessing the automatically built <code>Jupyter Notebook</code>
+Python users only: accessing the <code>Jupyter Notebooks</code>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Up to now, we mostly focused on the production and the deployment of static content. A small precision needs to be done for producing and giving access to Jupyter Notebooks.</p>
-<p>Regarding the production side, it is automatically done by the Github Actions file provided on the Python template. This line in <code>.github/worfklows/prod.yml</code></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4b: Render Quarto in uv virtual environment (HTML)</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Render in ipynb</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run</span><span class="kw">:</span><span class="at"> uv run quarto render --to ipynb</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Notebooks are automatically made available through the website deployed via Github Actions. Their location on the website depends on the location of of the qmd used to build them within the Git repository. For example, in the Python template, the notebook will be accessible via <a href="https://inseefrlab.github.io/AIML4OS-template-quarto-python/chapters/chapter1.ipynb">this link</a> because the qmd file is located in the <code>AIML4OS-template-quarto-python/chapters/</code> folder of the repository.</p>
+<p>Notebooks are automatically made available through the website deployed via Github Actions. Their location on the website depends on the location of of the qmd used to build them within the Git repository. For example, the notebook available in the Python template will be accessible via <a href="https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb">this link</a> because the qmd file <code>notebook1.qmd</code> is located in the <code>AIML4OS-template-quarto-python/notebooks/</code> folder of the repository.</p>
 </div>
 </div>
 <section id="create-an-initialization-script-to-prepare-your-environment-for-trainees" class="level3" data-number="3.5.1">
@@ -948,13 +943,13 @@ Python users only: accessing the automatically built <code>Jupyter Notebook</cod
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true"><code>Python</code> <i class="fa-brands fa-python" aria-label="python"></i></a></li></ul>
 <div class="tab-content">
 <div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
-<p>We assume that the notebook to be recovered is available at <a href="https://inseefrlab.github.io/AIML4OS-template-quarto-python/chapters/chapter1.ipynb" class="uri">https://inseefrlab.github.io/AIML4OS-template-quarto-python/chapters/chapter1.ipynb</a> (see above to understand how it was produced).</p>
+<p>We assume that the notebook to be recovered is available at <a href="https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb" class="uri">https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb</a> (see above to understand how it was produced).</p>
 <p>The script provided in the <em>template</em>, in the <code>sspcloud/init-trainees.sh</code> folder, proposes a model for retrieving and preconfiguring the environment for trainees on the sspcloud. Overall, the idea is to automatically perform the following steps for trainees:</p>
 <ul>
 <li>Retrieve and install the environment needed to run <em>notebook</em>. This is greatly facilitated by the use of <code>uv</code>.</li>
 <li>Download the notebooks to be opened by trainees.</li>
 </ul>
-<p>By customizing this script, you should have a ready-to-use environment. To test that the edits you’ve made to this one work, you can open a terminal on VSCode and run it from the command line. If this test is successful, the script has a good chance of running in a blank environment and creating a customized environment for your training. The aim of the next section is to show you how. Don’t forget to commit the modifications you made to that script otherwise, in the next step, trainees won’t endup with your notebook ready to use in their environment.</p>
+<p>By customizing this script, you should have a ready-to-use environment. To test that the edits you’ve made to this script work, you can open a terminal on VSCode and run it from the command line. If this test is successful, the script has a good chance of running in a blank environment and creating a customized environment for your training. The aim of the next section is to show you how. Don’t forget to commit the modifications you made to that script otherwise, in the next step, trainees won’t end up with your notebook ready to use in their environment.</p>
 </div>
 </div>
 </div>
@@ -992,7 +987,7 @@ How to use the initialization script
 <h3 data-number="3.5.3" class="anchored" data-anchor-id="create-a-launch-button-for-your-website-bonus"><span class="header-section-number">3.5.3</span> Create a launch button for your website (bonus)</h3>
 <p>Let’s say you have done everything described before. Then you end up with a very long auto launch URL, let’s say <a href="https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=Python%20tutorial%20example&amp;version=2.3.15&amp;s3=region-79669f20&amp;init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FInseeFrLab%2FAIML4OS-template-quarto-python%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&amp;autoLaunch=true" class="uri">https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=Python%20tutorial%20example&amp;version=2.3.15&amp;s3=region-79669f20&amp;init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FInseeFrLab%2FAIML4OS-template-quarto-python%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&amp;autoLaunch=true</a>.</p>
 <p>You can of course ask trainees to copy and paste this URL in the search bar of their browser to access the site, but a ready-to-use button is much more user-friendly! Just take this code snippet for Python as a basis and replace it with your own quick launch URL:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>a <span class="va">href</span><span class="op">=</span><span class="st">"URL_THERE"</span> <span class="va">target</span><span class="op">=</span><span class="st">"_blank"</span> <span class="va">rel</span><span class="op">=</span><span class="st">"noopener"</span> <span class="ex">data-original-href=</span><span class="st">"URL_THERE"</span><span class="op">&gt;&lt;</span>img src=<span class="st">"https://custom-icon-badges.demolab.com/badge/SSP%20Cloud-Launch_with_VSCode-blue?logo=vsc&amp;amp;logoColor=white"</span> alt=<span class="st">"Onyxia"</span><span class="op">&gt;&lt;</span>/a<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>a <span class="va">href</span><span class="op">=</span><span class="st">"URL_THERE"</span> <span class="va">target</span><span class="op">=</span><span class="st">"_blank"</span> <span class="va">rel</span><span class="op">=</span><span class="st">"noopener"</span> <span class="ex">data-original-href=</span><span class="st">"URL_THERE"</span><span class="op">&gt;&lt;</span>img src=<span class="st">"https://custom-icon-badges.demolab.com/badge/SSP%20Cloud-Launch_with_VSCode-blue?logo=vsc&amp;amp;logoColor=white"</span> alt=<span class="st">"Onyxia"</span><span class="op">&gt;&lt;</span>/a<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>which, when formatted, will give a button like this</p>
 <a href="https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=Python%20tutorial%20example&amp;version=2.3.15&amp;s3=region-79669f20&amp;init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FInseeFrLab%2FAIML4OS-template-quarto-python%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&amp;autoLaunch=true" target="_blank" rel="noopener" data-original-href="https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=Python%20tutorial%20example&amp;version=2.3.15&amp;s3=region-79669f20&amp;init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FInseeFrLab%2FAIML4OS-template-quarto-python%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&amp;autoLaunch=true"><img src="https://custom-icon-badges.demolab.com/badge/SSP%20Cloud-Launch_with_VSCode-blue?logo=vsc&amp;logoColor=white" alt="Onyxia"></a>
 </section>
