@@ -202,9 +202,8 @@ window.Quarto = {
   <li><a href="#change-the-urls" id="toc-change-the-urls" class="nav-link" data-scroll-target="#change-the-urls"><span class="header-section-number">3.3.1</span> Change the URLs</a></li>
   <li><a href="#manage-data-if-needed" id="toc-manage-data-if-needed" class="nav-link" data-scroll-target="#manage-data-if-needed"><span class="header-section-number">3.3.2</span> Manage data (if needed)</a></li>
   <li><a href="#how-write-quarto-documents" id="toc-how-write-quarto-documents" class="nav-link" data-scroll-target="#how-write-quarto-documents"><span class="header-section-number">3.3.3</span> How write Quarto documents?</a></li>
-  <li><a href="#developing-and-previewing-a-website" id="toc-developing-and-previewing-a-website" class="nav-link" data-scroll-target="#developing-and-previewing-a-website"><span class="header-section-number">3.3.4</span> Developing and previewing a website</a></li>
-  <li><a href="#developing-interactive-scripts" id="toc-developing-interactive-scripts" class="nav-link" data-scroll-target="#developing-interactive-scripts"><span class="header-section-number">3.3.5</span> Developing interactive scripts</a></li>
-  <li><a href="#managing-dependencies-when-developing-resources" id="toc-managing-dependencies-when-developing-resources" class="nav-link" data-scroll-target="#managing-dependencies-when-developing-resources"><span class="header-section-number">3.3.6</span> Managing dependencies when developing resources</a></li>
+  <li><a href="#developing-resources" id="toc-developing-resources" class="nav-link" data-scroll-target="#developing-resources"><span class="header-section-number">3.3.4</span> Developing resources</a></li>
+  <li><a href="#managing-dependencies-when-developing-resources" id="toc-managing-dependencies-when-developing-resources" class="nav-link" data-scroll-target="#managing-dependencies-when-developing-resources"><span class="header-section-number">3.3.5</span> Managing dependencies when developing resources</a></li>
   </ul></li>
   <li><a href="#step-4-set-up-a-github-pages-website" id="toc-step-4-set-up-a-github-pages-website" class="nav-link" data-scroll-target="#step-4-set-up-a-github-pages-website"><span class="header-section-number">3.4</span> Step 4: set up a Github pages website</a>
   <ul class="collapse">
@@ -716,8 +715,21 @@ Three remarks to keep in mind
 </div>
 </section>
 </section>
-<section id="developing-and-previewing-a-website" class="level3" data-number="3.3.4">
-<h3 data-number="3.3.4" class="anchored" data-anchor-id="developing-and-previewing-a-website"><span class="header-section-number">3.3.4</span> Developing and previewing a website</h3>
+<section id="developing-resources" class="level3" data-number="3.3.4">
+<h3 data-number="3.3.4" class="anchored" data-anchor-id="developing-resources"><span class="header-section-number">3.3.4</span> Developing resources</h3>
+<p>Developing resources with the AIML4OS templates is very easy: you just have to write text and code chunks in the existing <code>qmd</code> files (<code>index.qmd</code> and <code>chapter1.qmd</code>). You can also add new Quarto documents (preferably in the <code>chapters</code> subdirectory, or in another subdirectory). Two important remarks:</p>
+<ul>
+<li><p>The <code>index.qmd</code> file is the starting page of your project: <strong>you should not delete or rename it.</strong></p></li>
+<li><p>The resources you develop are either html pages published on the website or interactive environments (Jupyter notebooks for Python, qmd files for <code>R</code>). <strong>You must specify the output format you want in the header of each qmd file</strong>:</p>
+<ul>
+<li>if you want a static html page, specify <code>format: html</code>;</li>
+<li>if you want a Jupyter notebook (Python only), specify <code>format: ipynb</code>;</li>
+<li>if you want both formats, specify <code>format: [html, ipynb]</code>.</li>
+</ul></li>
+</ul>
+<!-- If you add a new document, you must add it to the list in the `render` argument of the `_quarto.yml` file, so that Quarto compiles it. An important point is that the `index.qmd` file will be the starting page of your website: __you should not delete or rename it.__ -->
+<section id="developing-and-previewing-a-website" class="level4" data-number="3.3.4.1">
+<h4 data-number="3.3.4.1" class="anchored" data-anchor-id="developing-and-previewing-a-website"><span class="header-section-number">3.3.4.1</span> Developing and previewing a website</h4>
 <p>The first kind of output you may want to produce is a static website, consisting in a series of html documents. Developing a website with the AIML4OS templates is very easy: you just have to write text and code chunks in the existing <code>qmd</code> files (<code>index.qmd</code> and <code>chapter1.qmd</code>). You can also extend the structure of the website by adding new Quarto documents (preferably in the <code>chapters</code> subdirectory). These new chapters must then be added to the structure of the website by modifying the <code>_quarto.yml</code> file in two places: in the <code>render</code> argument, and in the <code>contents</code> of the <code>sidebar</code> argument. Two important remarks:</p>
 <ul>
 <li>There is no difference between Python and <code>R</code> when developing a Quarto website;</li>
@@ -765,8 +777,8 @@ What to do if you can’t access the website preview?
 </div>
 </div>
 </section>
-<section id="developing-interactive-scripts" class="level3" data-number="3.3.5">
-<h3 data-number="3.3.5" class="anchored" data-anchor-id="developing-interactive-scripts"><span class="header-section-number">3.3.5</span> Developing interactive scripts</h3>
+<section id="developing-interactive-scripts" class="level4" data-number="3.3.4.2">
+<h4 data-number="3.3.4.2" class="anchored" data-anchor-id="developing-interactive-scripts"><span class="header-section-number">3.3.4.2</span> Developing interactive scripts</h4>
 <p>Depending on the resources you develop, it may make more sense to provide your learners with interactive environments rather than a static website, particularly if your resources contain exercises. Although the final outputs are quite different for <code>R</code> and Python (<code>Jupyter</code> notebooks for <code>Python</code>, Quarto documents with <code>R</code> chunks for <code>R</code>), these resources can nonetheless be developed using Quarto.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true"><i class="fa-brands fa-r-project" aria-label="r-project"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false"><code>Python</code> <i class="fa-brands fa-python" aria-label="python"></i></a></li></ul>
@@ -796,8 +808,9 @@ Warning
 </div>
 </div>
 </section>
-<section id="managing-dependencies-when-developing-resources" class="level3" data-number="3.3.6">
-<h3 data-number="3.3.6" class="anchored" data-anchor-id="managing-dependencies-when-developing-resources"><span class="header-section-number">3.3.6</span> Managing dependencies when developing resources</h3>
+</section>
+<section id="managing-dependencies-when-developing-resources" class="level3" data-number="3.3.5">
+<h3 data-number="3.3.5" class="anchored" data-anchor-id="managing-dependencies-when-developing-resources"><span class="header-section-number">3.3.5</span> Managing dependencies when developing resources</h3>
 <p>A major challenge in any data science project is to <strong>make sure that its codes can be re-run without error by someone working in a different environment</strong> (this is called <strong>portability</strong>). Various technical requirements must be met to ensure portability; one of them is to keep track of all packages needed to run the code (and of the exact version of each package!), so that a new user can reinstall them easily. This section explains how to manage these dependencies using the right tools.</p>
 <p>The dependency management tool depends on the language you use:</p>
 <ul>
