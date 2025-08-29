@@ -717,10 +717,10 @@ Three remarks to keep in mind
 </section>
 <section id="developing-resources" class="level3" data-number="3.3.4">
 <h3 data-number="3.3.4" class="anchored" data-anchor-id="developing-resources"><span class="header-section-number">3.3.4</span> Developing resources</h3>
-<p>Developing resources with the AIML4OS templates is very easy: you just have to write text and code chunks in the existing <code>qmd</code> files (<code>index.qmd</code> and <code>chapter1.qmd</code>). You can also add new Quarto documents (preferably in the <code>chapters</code> subdirectory, or in another subdirectory). Two important remarks:</p>
+<p>Developing resources (html pages published on the website or interactive environments) with the AIML4OS templates is very easy: you just have to write text and code chunks in the existing <code>qmd</code> files (<code>index.qmd</code> and <code>chapter1.qmd</code>) or to add new Quarto documents. Two important remarks:</p>
 <ul>
 <li><p>The <code>index.qmd</code> file is the starting page of your project: <strong>you should not delete or rename it.</strong></p></li>
-<li><p>The resources you develop are either html pages published on the website or interactive environments (Jupyter notebooks for Python, qmd files for <code>R</code>). <strong>You must specify the output format you want in the header of each qmd file</strong>:</p>
+<li><p><strong>You must specify the output format you want in the header of each qmd file</strong>:</p>
 <ul>
 <li>if you want a static html page, specify <code>format: html</code>;</li>
 <li>if you want a Jupyter notebook (Python only), specify <code>format: ipynb</code>;</li>
@@ -730,11 +730,7 @@ Three remarks to keep in mind
 <!-- If you add a new document, you must add it to the list in the `render` argument of the `_quarto.yml` file, so that Quarto compiles it. An important point is that the `index.qmd` file will be the starting page of your website: __you should not delete or rename it.__ -->
 <section id="developing-and-previewing-a-website" class="level4" data-number="3.3.4.1">
 <h4 data-number="3.3.4.1" class="anchored" data-anchor-id="developing-and-previewing-a-website"><span class="header-section-number">3.3.4.1</span> Developing and previewing a website</h4>
-<p>The first kind of output you may want to produce is a static website, consisting in a series of html documents. Developing a website with the AIML4OS templates is very easy: you just have to write text and code chunks in the existing <code>qmd</code> files (<code>index.qmd</code> and <code>chapter1.qmd</code>). You can also extend the structure of the website by adding new Quarto documents (preferably in the <code>chapters</code> subdirectory). These new chapters must then be added to the structure of the website by modifying the <code>_quarto.yml</code> file in two places: in the <code>render</code> argument, and in the <code>contents</code> of the <code>sidebar</code> argument. Two important remarks:</p>
-<ul>
-<li>There is no difference between Python and <code>R</code> when developing a Quarto website;</li>
-<li>The <code>index.qmd</code> file is the starting page of your website. <strong>You should not delete or rename it.</strong></li>
-</ul>
+<p>The first kind of output you may want to produce is a static website, consisting in a series of html documents. If you add new pages to the website (preferably in the <code>chapters</code> subdirectory), <strong>do not forget to add them to the structure of the website</strong> by modifying the <code>_quarto.yml</code> file in two places: in the <code>render</code> argument (so that Quarto compiles them), and in the <code>contents</code> of the <code>sidebar</code> argument (so that all chapters are in the sidebar of the website).</p>
 <p>It is often convenient to have a look at what this website looks like while developing it. You can preview your website from command line by executing:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview <span class="at">--port</span> 5000 <span class="at">--host</span> 0.0.0.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then go to <a href="https://datalab.sspcloud.fr/my-services">https://datalab.sspcloud.fr/my-services</a>, open the README of the service you are using and click on the link to the external port.</p>
@@ -779,11 +775,18 @@ What to do if you can’t access the website preview?
 </section>
 <section id="developing-interactive-scripts" class="level4" data-number="3.3.4.2">
 <h4 data-number="3.3.4.2" class="anchored" data-anchor-id="developing-interactive-scripts"><span class="header-section-number">3.3.4.2</span> Developing interactive scripts</h4>
-<p>Depending on the resources you develop, it may make more sense to provide your learners with interactive environments rather than a static website, particularly if your resources contain exercises. Although the final outputs are quite different for <code>R</code> and Python (<code>Jupyter</code> notebooks for <code>Python</code>, Quarto documents with <code>R</code> chunks for <code>R</code>), these resources can nonetheless be developed using Quarto.</p>
+<p>The second kind of output you may want to produce are interactive environments. These are particularly useful if your resources contain exercises. The final outputs will be quite different for <code>R</code> and Python (<code>Jupyter</code> notebooks for <code>Python</code>, Quarto documents with <code>R</code> chunks for <code>R</code>), but these resources can nonetheless be developed using Quarto.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true"><i class="fa-brands fa-r-project" aria-label="r-project"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false"><code>Python</code> <i class="fa-brands fa-python" aria-label="python"></i></a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<p>Here is how you can produce a Quarto file with <code>R</code> chunks:</p>
+<ul>
+<li>Create a new Quarto file and store it in the <code>notebooks</code> subfolder;</li>
+<li>Develop the content;</li>
+<li>Do <strong>NOT</strong> Add the qmd file to the list in the <code>render</code> argument of the <code>_quarto.yml</code> file. This file does not need compilation.</li>
+</ul>
+<p>The <code>notebooks</code> subfolder of the <code>R</code> template already contains an example.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -796,14 +799,36 @@ Warning
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p><strong>The function <code>install.packages()</code> must not be used anywhere in your resources</strong> because it is not the proper way to manage package requirements (see below for recommendations on dependency management).</p>
+<p><strong>You should not use <code>install.packages()</code> <em>anywhere</em> in your <code>R</code> resources</strong> because it is not the proper way to manage package requirements (see below for recommendations on dependency management).</p>
 </div>
 </div>
 </div>
 </div>
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
-<p>Depending on the resources you develop, it may make more sense to provide your learners with a Jupyter notebook rather than a static website, particularly if your resources contain exercises. The good news is that you can easily generate Jupyter notebooks from your Quarto source files: you just need to execute the following command in the command line, and the notebooks will be written in the <code>_site</code> folder.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render <span class="at">--to</span> ipynb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here is how you can produce a Jupyter notebook for Python:</p>
+<ul>
+<li>Create a new Quarto file and store it in the <code>notebooks</code> subfolder;</li>
+<li>Do not forget to write <code>format: ipynb</code> in the header;</li>
+<li>Develop the content;</li>
+<li>Add the qmd file to the list in the <code>render</code> argument of the <code>_quarto.yml</code> file, so that Quarto compiles it.</li>
+</ul>
+<p>The <code>notebooks</code> subfolder of the <code>Python</code> template already contains an example.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><strong>You should use <code>pip install</code> <em>anywhere</em> in your botebooks</strong> because it is not the proper way to manage package requirements (see below for recommendations on dependency management).</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -833,7 +858,7 @@ Warning
 <li>When you start working on your project with a new service, you should run <code>renv::restore()</code>. This command will reinstall all the packages listed in the <code>renv.lock</code> file.</li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -842,7 +867,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>If you forget to update the <code>renv.lock</code> file, your Github Actions workflow are likely to fail, and you probably won’t be able to execute your <code>R</code> script in a new RStudio service. Keep calm, here is the solution: just run <code>renv::snapshot()</code>, commit and push the changes to the <code>renv.lock</code> file. This should solve the problem.</p>
 </div>
@@ -878,12 +903,12 @@ Warning
 <section id="create-the-gh-pages-branch" class="level3" data-number="3.4.2">
 <h3 data-number="3.4.2" class="anchored" data-anchor-id="create-the-gh-pages-branch"><span class="header-section-number">3.4.2</span> Create the <code>gh-pages</code> branch</h3>
 <p>When developing resources, you will most likely use the <code>main</code> branch. However, for <code>Github Actions</code> to work, you need an additional branch <code>gh-pages</code> used by Github to deploy websites. This one will be rewritten automatically by <code>Github</code> after every Github Actions workflow. However, you need to create it first. <strong>This should be done only once.</strong> Quarto documentation gives this command to create that branch. <strong>Be careful with that command, do not use before having done a first push on Github.</strong></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">--orphan</span> gh-pages <span class="co"># Create an empty branch called gh-pages </span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> <span class="co"># make sure all changes are committed before running this!</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--allow-empty</span> <span class="at">-m</span> <span class="st">"Initialising gh-pages branch"</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin gh-pages <span class="co"># Pushing so that the gh-pages branch exists on the remote repo</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">--orphan</span> gh-pages <span class="co"># Create an empty branch called gh-pages </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> <span class="co"># make sure all changes are committed before running this!</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--allow-empty</span> <span class="at">-m</span> <span class="st">"Initialising gh-pages branch"</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin gh-pages <span class="co"># Pushing so that the gh-pages branch exists on the remote repo</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="define-a-github-actions-workflow" class="level3" data-number="3.4.3">
 <h3 data-number="3.4.3" class="anchored" data-anchor-id="define-a-github-actions-workflow"><span class="header-section-number">3.4.3</span> Define a Github Actions workflow</h3>
@@ -910,9 +935,9 @@ Python users only: accessing the automatically built <code>Jupyter Notebook</cod
 <div class="callout-body-container callout-body">
 <p>Up to now, we mostly focused on the production and the deployment of static content. A small precision needs to be done for producing and giving access to Jupyter Notebooks.</p>
 <p>Regarding the production side, it is automatically done by the Github Actions file provided on the Python template. This line in <code>.github/worfklows/prod.yml</code></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4b: Render Quarto in uv virtual environment (HTML)</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Render in ipynb</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run</span><span class="kw">:</span><span class="at"> uv run quarto render --to ipynb</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4b: Render Quarto in uv virtual environment (HTML)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Render in ipynb</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run</span><span class="kw">:</span><span class="at"> uv run quarto render --to ipynb</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Notebooks are automatically made available through the website deployed via Github Actions. Their location on the website depends on the location of of the qmd used to build them within the Git repository. For example, in the Python template, the notebook will be accessible via <a href="https://inseefrlab.github.io/AIML4OS-template-quarto-python/chapters/chapter1.ipynb">this link</a> because the qmd file is located in the <code>AIML4OS-template-quarto-python/chapters/</code> folder of the repository.</p>
 </div>
 </div>
@@ -967,7 +992,7 @@ How to use the initialization script
 <h3 data-number="3.5.3" class="anchored" data-anchor-id="create-a-launch-button-for-your-website-bonus"><span class="header-section-number">3.5.3</span> Create a launch button for your website (bonus)</h3>
 <p>Let’s say you have done everything described before. Then you end up with a very long auto launch URL, let’s say <a href="https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=Python%20tutorial%20example&amp;version=2.3.15&amp;s3=region-79669f20&amp;init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FInseeFrLab%2FAIML4OS-template-quarto-python%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&amp;autoLaunch=true" class="uri">https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=Python%20tutorial%20example&amp;version=2.3.15&amp;s3=region-79669f20&amp;init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FInseeFrLab%2FAIML4OS-template-quarto-python%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&amp;autoLaunch=true</a>.</p>
 <p>You can of course ask trainees to copy and paste this URL in the search bar of their browser to access the site, but a ready-to-use button is much more user-friendly! Just take this code snippet for Python as a basis and replace it with your own quick launch URL:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>a <span class="va">href</span><span class="op">=</span><span class="st">"URL_THERE"</span> <span class="va">target</span><span class="op">=</span><span class="st">"_blank"</span> <span class="va">rel</span><span class="op">=</span><span class="st">"noopener"</span> <span class="ex">data-original-href=</span><span class="st">"URL_THERE"</span><span class="op">&gt;&lt;</span>img src=<span class="st">"https://custom-icon-badges.demolab.com/badge/SSP%20Cloud-Launch_with_VSCode-blue?logo=vsc&amp;amp;logoColor=white"</span> alt=<span class="st">"Onyxia"</span><span class="op">&gt;&lt;</span>/a<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>a <span class="va">href</span><span class="op">=</span><span class="st">"URL_THERE"</span> <span class="va">target</span><span class="op">=</span><span class="st">"_blank"</span> <span class="va">rel</span><span class="op">=</span><span class="st">"noopener"</span> <span class="ex">data-original-href=</span><span class="st">"URL_THERE"</span><span class="op">&gt;&lt;</span>img src=<span class="st">"https://custom-icon-badges.demolab.com/badge/SSP%20Cloud-Launch_with_VSCode-blue?logo=vsc&amp;amp;logoColor=white"</span> alt=<span class="st">"Onyxia"</span><span class="op">&gt;&lt;</span>/a<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>which, when formatted, will give a button like this</p>
 <a href="https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=Python%20tutorial%20example&amp;version=2.3.15&amp;s3=region-79669f20&amp;init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FInseeFrLab%2FAIML4OS-template-quarto-python%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&amp;autoLaunch=true" target="_blank" rel="noopener" data-original-href="https://datalab.sspcloud.fr/launcher/ide/vscode-python?name=Python%20tutorial%20example&amp;version=2.3.15&amp;s3=region-79669f20&amp;init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FInseeFrLab%2FAIML4OS-template-quarto-python%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&amp;autoLaunch=true"><img src="https://custom-icon-badges.demolab.com/badge/SSP%20Cloud-Launch_with_VSCode-blue?logo=vsc&amp;logoColor=white" alt="Onyxia"></a>
 </section>
