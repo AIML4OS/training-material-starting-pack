@@ -496,7 +496,7 @@ Note
 </li>
 <li>In the “Repository” field of the “Git” tab, paste the URL of the repository you created in step 1 (for instance: <code>https://www.github.com/AIML4OS/Intro_To_Linear_Regression</code>);</li>
 <li>In the “Network Access” tab, enable access to your service through port 5000;</li>
-<li>(optional) In the “Initialization scripts” tab, paste this URL <code>https://raw.githubusercontent.com/{OWNER}/{REPO}/refs/heads/main/init.sh</code>, after replacing <code>OWNER</code> and <code>REPO</code> by the owner and repository name you chose in step 1;</li>
+<li>In the “Initialization scripts” tab, paste this URL <code>https://raw.githubusercontent.com/{OWNER}/{REPO}/refs/heads/main/init.sh</code>, after replacing <code>OWNER</code> and <code>REPO</code> by the owner and repository name you chose in step 1;</li>
 </ul></li>
 <li>Click on Save configuration;</li>
 <li>Click on Launch;</li>
@@ -786,7 +786,7 @@ What to do if you can’t access the website preview?
 <ul>
 <li>Create a new Quarto file and store it in the <code>notebooks</code> subfolder;</li>
 <li>Develop the content;</li>
-<li>Do <strong>NOT</strong> Add the qmd file to the list in the <code>render</code> argument of the <code>_quarto.yml</code> file. This file does not need compilation.</li>
+<li>Do <strong>NOT</strong> add the qmd file to the list in the <code>render</code> argument of the <code>_quarto.yml</code> file. This file does not need compilation.</li>
 </ul>
 <p>The <code>notebooks</code> subfolder of the <code>R</code> template already contains an example.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -827,7 +827,7 @@ Warning
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p><strong>You should use <code>pip install</code> <em>anywhere</em> in your botebooks</strong> because it is not the proper way to manage package requirements (see below for recommendations on dependency management).</p>
+<p><strong>You should use <code>pip install</code> <em>anywhere</em> in your notebooks</strong> because it is not the proper way to manage package requirements (see below for recommendations on dependency management).</p>
 </div>
 </div>
 </div>
@@ -855,9 +855,9 @@ Warning
 </ul>
 <p>Here is how to use <code>renv</code>:</p>
 <ul>
-<li>The first step in using <code>renv</code> is to initiate the tracking of dependencies using <code>renv::init()</code>. <strong>You do not need to do it if you use the <code>R</code> template</strong> because this was already done.</li>
-<li>When developing resources, you should regularly run <code>renv::snapshot()</code>. This command will analyze your <code>R</code> scripts, detects what packages are used, and updates the <code>renv.lock</code> file. Do not forget to commit and push the changes to the <code>renv.lock</code> file!</li>
-<li>When you start working on your project with a new service, you should run <code>renv::restore()</code>. This command will reinstall all the packages listed in the <code>renv.lock</code> file.</li>
+<li>The first step in using <code>renv</code> is to initiate the tracking of dependencies using <code>renv::init()</code>. <strong>You do not need to do it if you use the <code>R</code> template</strong> because this was already done in the template.</li>
+<li>When developing resources, you should regularly run <code>renv::snapshot()</code>. This command will analyze your <code>R</code> and Quarto scripts, detects what packages are used, and updates the <code>renv.lock</code> file. Do not forget to commit and push the changes to the <code>renv.lock</code> file!</li>
+<li>When you start working on your project with a new service, you should run <code>renv::restore()</code>. This command will reinstall all the packages listed in the <code>renv.lock</code> file. <strong>You do not need to do it if you use the <code>R</code> template</strong> because the initialization script does it for you.</li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
