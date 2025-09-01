@@ -569,6 +569,12 @@ A few important remarks on automated deployment:
 - The website is deployed at an URL that depends on the owner and the name of the repository: `https://{REPO_OWNER}.github.io/{REPO_NAME}/`.
 - You can monitor Github Actions jobs in the "Actions" tab of the Github repository of your project. Do not be afraid if your jobs fail at first; getting Github Actions to work often requires some debugging.
 
+### Add the website URL to your Github repository
+
+You can add the website URL to your Github repository so that it is easier to find. To do so, go to your repository using your browser, click on the little wheel on the far right (see the screenshot below), paste your website URL in the `Website` field, and save changes.
+
+![](pics/SSPCloud10.png){width=600}
+
 
 ## Step 5: make your interactive environments easily available on the SSP Cloud
 
