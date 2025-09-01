@@ -204,7 +204,7 @@ Here is how to define a ready to use development configuration using the SSPClou
   + In the "Friendly Name" field, choose a meaningful name (for instance `dev_Intro_To_Linear_Regression`);   
   + In the "Repository" field of the "Git" tab, paste the URL of the repository you created in step 1 (for instance: `https://www.github.com/AIML4OS/Intro_To_Linear_Regression`);
   + In the "Network Access" tab, enable access to your service through port 5000;
-  + (optional) In the "Initialization scripts" tab, paste this URL `https://raw.githubusercontent.com/{OWNER}/{REPO}/refs/heads/main/init.sh`, after replacing `OWNER` and `REPO` by the owner and repository name you chose in step 1;
+  + In the "Initialization scripts" tab, paste this URL `https://raw.githubusercontent.com/{OWNER}/{REPO}/refs/heads/main/init.sh`, after replacing `OWNER` and `REPO` by the owner and repository name you chose in step 1;
 - Click on Save configuration;
 - Click on Launch;
 - Open the Rstudio service;
@@ -463,7 +463,7 @@ Here is how you can produce a Quarto file with `R` chunks:
 
 - Create a new Quarto file and store it in the `notebooks` subfolder; 
 - Develop the content;
-- Do __NOT__ Add the qmd file to the list in the `render` argument of the `_quarto.yml` file. This file does not need compilation.
+- Do __NOT__ add the qmd file to the list in the `render` argument of the `_quarto.yml` file. This file does not need compilation.
 
 The `notebooks` subfolder of the `R` template already contains an example.
 
@@ -483,7 +483,7 @@ Here is how you can produce a Jupyter notebook for Python:
 The `notebooks` subfolder of the `Python` template already contains an example (`notebook1.qmd`).
 
 :::: {.callout-warning collapse="false"}
-__You should use `pip install` _anywhere_ in your botebooks__ because it is not the proper way to manage package requirements (see below for recommendations on dependency management).
+__You should use `pip install` _anywhere_ in your notebooks__ because it is not the proper way to manage package requirements (see below for recommendations on dependency management).
 ::::
 
 :::
@@ -510,9 +510,9 @@ The dependency management tool depends on the language you use:
 
 Here is how to use `renv`:
 
-- The first step in using `renv` is to initiate the tracking of dependencies using `renv::init()`. __You do not need to do it if you use the `R` template__ because this was already done.
-- When developing resources, you should regularly run `renv::snapshot()`. This command will analyze your `R` scripts, detects what packages are used, and updates the `renv.lock` file. Do not forget to commit and push the changes to the `renv.lock` file!
-- When you start working on your project with a new service, you should run `renv::restore()`. This command will reinstall all the packages listed in the `renv.lock` file.
+- The first step in using `renv` is to initiate the tracking of dependencies using `renv::init()`. __You do not need to do it if you use the `R` template__ because this was already done in the template.
+- When developing resources, you should regularly run `renv::snapshot()`. This command will analyze your `R` and Quarto scripts, detects what packages are used, and updates the `renv.lock` file. Do not forget to commit and push the changes to the `renv.lock` file!
+- When you start working on your project with a new service, you should run `renv::restore()`. This command will reinstall all the packages listed in the `renv.lock` file. __You do not need to do it if you use the `R` template__ because the initialization script does it for you.
 
 ::: {.callout-warning collapse="false"}
 If you forget to update the `renv.lock` file, your Github Actions workflow are likely to fail, and you probably won't be able to execute your `R` script in a new RStudio service. Keep calm, here is the solution: just run `renv::snapshot()`, commit and push the changes to the `renv.lock` file. This should solve the problem.
