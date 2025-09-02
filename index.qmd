@@ -531,6 +531,8 @@ Here is the very short introduction on how to use `uv`:
 
 - When you start using a new package in your project, you must explicitly add it to the dependencies by running the command `uv add [package_name]`. This command will add this package to the `pyproject.toml` file.
 
+- Commit and push the changes in the `pyproject.toml` file.
+
 - When you want to recreate your environment from scratch on a new machine (or in a new service), you must run the command `uv sync`. This command will install all packages specified in the `pyproject.toml` file (and their own dependencies). __You do not need to use this command if you use use the Python template__ because the initialization script already runs `uv sync`.
 
 :::
