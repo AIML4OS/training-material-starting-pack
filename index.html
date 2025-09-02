@@ -857,7 +857,7 @@ Warning
 <ul>
 <li>The first step in using <code>renv</code> is to initiate the tracking of dependencies using <code>renv::init()</code>. <strong>You do not need to do it if you use the <code>R</code> template</strong> because this was already done in the template.</li>
 <li>When developing resources, you should regularly run <code>renv::snapshot()</code>. This command will analyze your <code>R</code> and Quarto scripts, detects what packages are used, and updates the <code>renv.lock</code> file. Do not forget to commit and push the changes to the <code>renv.lock</code> file!</li>
-<li>When you start working on your project with a new service, you should run <code>renv::restore()</code>. This command will reinstall all the packages listed in the <code>renv.lock</code> file. <strong>You do not need to do it if you use the <code>R</code> template</strong> because the initialization script does it for you.</li>
+<li>When you start working on your project with a new service, you should run <code>renv::restore()</code>. This command will reinstall all the packages listed in the <code>renv.lock</code> file.</li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
@@ -871,7 +871,7 @@ Warning
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>If you forget to update the <code>renv.lock</code> file, your Github Actions workflow are likely to fail, and you probably won’t be able to execute your <code>R</code> script in a new RStudio service. Keep calm, here is the solution: just run <code>renv::snapshot()</code>, commit and push the changes to the <code>renv.lock</code> file. This should solve the problem.</p>
+<p>If you forget to update the <code>renv.lock</code> file, your Github Actions workflow is likely to fail, and you probably won’t be able to execute your <code>R</code> script in a new RStudio service. Keep calm, here is the solution: just run <code>renv::snapshot()</code>, commit and push the changes to the <code>renv.lock</code> file. This should solve the problem.</p>
 </div>
 </div>
 </div>
@@ -886,6 +886,22 @@ Warning
 <li><p>Commit and push the changes in the <code>pyproject.toml</code> file.</p></li>
 <li><p>When you want to recreate your environment from scratch on a new machine (or in a new service), you must run the command <code>uv sync</code>. This command will install all packages specified in the <code>pyproject.toml</code> file (and their own dependencies). <strong>You do not need to use this command if you use use the Python template</strong> because the initialization script already runs <code>uv sync</code>.</p></li>
 </ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>If you forget to use <code>uv add [package_name]</code> to add to your <code>pyproject.toml</code> file, your Github Actions workflow is likely to fail, and you probably won’t be able to execute your Python script in a new VSCode service. Keep calm, here is the solution: just identify what are the missing packages, use <code>git add</code>, commit and push the changes to the <code>pyproject.toml</code> file. This should solve the problem.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
