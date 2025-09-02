@@ -512,10 +512,10 @@ Here is how to use `renv`:
 
 - The first step in using `renv` is to initiate the tracking of dependencies using `renv::init()`. __You do not need to do it if you use the `R` template__ because this was already done in the template.
 - When developing resources, you should regularly run `renv::snapshot()`. This command will analyze your `R` and Quarto scripts, detects what packages are used, and updates the `renv.lock` file. Do not forget to commit and push the changes to the `renv.lock` file!
-- When you start working on your project with a new service, you should run `renv::restore()`. This command will reinstall all the packages listed in the `renv.lock` file. __You do not need to do it if you use the `R` template__ because the initialization script does it for you.
+- When you start working on your project with a new service, you should run `renv::restore()`. This command will reinstall all the packages listed in the `renv.lock` file.
 
 ::: {.callout-warning collapse="false"}
-If you forget to update the `renv.lock` file, your Github Actions workflow are likely to fail, and you probably won't be able to execute your `R` script in a new RStudio service. Keep calm, here is the solution: just run `renv::snapshot()`, commit and push the changes to the `renv.lock` file. This should solve the problem.
+If you forget to update the `renv.lock` file, your Github Actions workflow is likely to fail, and you probably won't be able to execute your `R` script in a new RStudio service. Keep calm, here is the solution: just run `renv::snapshot()`, commit and push the changes to the `renv.lock` file. This should solve the problem.
 :::
 
 For more information, see the [official documentation](https://rstudio.github.io/renv/articles/renv.html) of `renv`.
@@ -534,6 +534,10 @@ Here is the very short introduction on how to use `uv`:
 - Commit and push the changes in the `pyproject.toml` file.
 
 - When you want to recreate your environment from scratch on a new machine (or in a new service), you must run the command `uv sync`. This command will install all packages specified in the `pyproject.toml` file (and their own dependencies). __You do not need to use this command if you use use the Python template__ because the initialization script already runs `uv sync`.
+
+:::: {.callout-warning collapse="false"}
+If you forget to use `uv add [package_name]` to add to your `pyproject.toml` file, your Github Actions workflow is likely to fail, and you probably won't be able to execute your Python script in a new VSCode service. Keep calm, here is the solution: just identify what are the missing packages, use `git add`, commit and push the changes to the `pyproject.toml` file. This should solve the problem.
+::::
 
 :::
 
