@@ -883,6 +883,7 @@ Warning
 <ul>
 <li><p>The basic command to start using <code>uv</code> is <code>uv init</code>. This command adds to your project the <code>pyproject.toml</code> file that defines the project dependencies and metadata. This file is the central piece of the dependency management. <strong>You do not need to use this command if you use the Python template</strong> because this has already been done (the template already contains a <code>pyproject.toml</code> file).</p></li>
 <li><p>When you start using a new package in your project, you must explicitly add it to the dependencies by running the command <code>uv add [package_name]</code>. This command will add this package to the <code>pyproject.toml</code> file.</p></li>
+<li><p>Commit and push the changes in the <code>pyproject.toml</code> file.</p></li>
 <li><p>When you want to recreate your environment from scratch on a new machine (or in a new service), you must run the command <code>uv sync</code>. This command will install all packages specified in the <code>pyproject.toml</code> file (and their own dependencies). <strong>You do not need to use this command if you use use the Python template</strong> because the initialization script already runs <code>uv sync</code>.</p></li>
 </ul>
 </div>
