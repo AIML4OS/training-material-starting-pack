@@ -600,7 +600,7 @@ Notebooks are automatically made available through the website deployed via Gith
 ::: {.callout-warning}
 ## `R` only: accessing the Quarto files
 
-A COMPLETER
+Quarto exercise files with `R` chunks can be used directly, no compilation is necessary. As a consequence, they are located on the Github repository, not on the website. To use these files, you must use the __raw Github URL__. This URL is available by clicking on the `raw` button when opening the file on Github. For example, the exercise available in the `R` template will be accessible via [this link](https://aiml4os.github.io/AIML4OS-template-quarto-r/exercises/exercise1.qmd) because the qmd file `exercise1.qmd` is located in the `AIML4OS-template-quarto-r/exercises` folder of the repository.
 :::
 
 ### The initialization script for trainees
