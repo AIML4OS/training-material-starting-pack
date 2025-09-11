@@ -622,7 +622,7 @@ __You do not need to modify this script.__ This script takes only one argument: 
 
 ## {{< fa brands r-project >}}
 
-The script `init-trainees.sh` provided in the `sspcloud` folder of the _template_ helps you to configure the environment for trainees on the SSPCloud. This script does two things: install the environment needed to run the notebook (using `renv`) and download the Quarto file you want to provide trainees with. 
+The script `init-trainees.sh` provided in the `sspcloud` folder of the _template_ helps you to configure the environment for trainees on the SSPCloud. This script does two things: install the environment needed to run the notebook (using `renv`) and open the Quarto file you want to provide trainees with. 
 
 __You do not need to modify this script.__ This script takes only one argument: the path of the Quarto file within the Github repository (see next section). If the Quarto file you want to make available is located at is available at <https://github.com/AIML4OS/AIML4OS-template-quarto-python/blob/main/chapters/chapter1.qmd>, then this argument should be `chapters/chapter1.qmd`.
 
