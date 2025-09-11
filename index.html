@@ -502,7 +502,7 @@ Note
 <li>Click on Launch;</li>
 <li>Open the Rstudio service;</li>
 <li>Rename the Rproj file with a meaningful name (for instance <code>Intro_To_Linear_Regression.Rproj</code>);</li>
-<li>Click on the Rproj file to open the RStudio project;</li>
+<li>Click on the Rproj file to open the RStudio project (this may take a while);</li>
 <li>Run <code>renv::restore()</code> (this may take a while);</li>
 <li>You’re all set!</li>
 </ul>
@@ -556,7 +556,7 @@ Video version
 <li>Go the “My Services” Tab;</li>
 <li>On the right side of the screen, find the configuration of your project and click on Launch;</li>
 <li>Open the Rstudio service;</li>
-<li>Click on the Rproj file to open the RStudio project;</li>
+<li>Click on the Rproj file to open the RStudio project (this may take a while);</li>
 <li>Run <code>renv::restore()</code> (this may take a while);</li>
 <li>You’re all set!</li>
 </ul>
@@ -977,10 +977,15 @@ Python only: accessing the <code>Jupyter Notebooks</code>
 <h3 data-number="3.5.1" class="anchored" data-anchor-id="the-initialization-script-for-trainees"><span class="header-section-number">3.5.1</span> The initialization script for trainees</h3>
 <p>Up to now, we have explained how to initialize and pre-configure the <strong>trainers’</strong> development environment (with the <code>init.sh</code> script). It is important to understand that while this pre-configuration is convenient but not essential when building educational resources, defining such a pre-configured environment is <strong>mandatory</strong> when making ready-to-use tutorials available to trainees. For this purpose, the <em>templates</em> offer an example to be edited, depending on the URL on which your resources are made available.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true"><code>Python</code> <i class="fa-brands fa-python" aria-label="python"></i></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true"><code>Python</code> <i class="fa-brands fa-python" aria-label="python"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false"><i class="fa-brands fa-r-project" aria-label="r-project"></i></a></li></ul>
 <div class="tab-content">
 <div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
-<p>The script <code>init-trainees.sh</code> provided in the <code>sspcloud</code> folder of the <em>template</em> helps you to configure the environment for trainees on the SSPCloud. This script does two things: 1/ install the environment needed to run the notebook; this is greatly facilitated by the use of <code>uv</code>; 2/ download the notebook you want to provide trainees with. <strong>You do not need to modify this script.</strong> This script takes only one argument: the path of the notebook within the website (see next section). If the notebook you want to make available is located at is available at <a href="https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb" class="uri">https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb</a>, then this argument should be <code>notebooks/notebook1.ipynb</code>.</p>
+<p>The script <code>init-trainees.sh</code> provided in the <code>sspcloud</code> folder of the <em>template</em> helps you to configure the environment for trainees on the SSPCloud. This script does two things: install the environment needed to run the notebook (this is greatly facilitated by the use of <code>uv</code>) and download the notebook you want to provide trainees with.</p>
+<p><strong>You do not need to modify this script.</strong> This script takes only one argument: the path of the notebook within the website (see next section). If the notebook you want to make available is located at is available at <a href="https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb" class="uri">https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb</a>, then this argument should be <code>notebooks/notebook1.ipynb</code>.</p>
+</div>
+<div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
+<p>The script <code>init-trainees.sh</code> provided in the <code>sspcloud</code> folder of the <em>template</em> helps you to configure the environment for trainees on the SSPCloud. This script does two things: install the environment needed to run the notebook (using <code>renv</code>) and download the notebook you want to provide trainees with.</p>
+<p><strong>You do not need to modify this script.</strong> This script takes only one argument: the path of the Quarto file within the Github repository (see next section). If the Quarto file you want to make available is located at is available at <a href="https://github.com/AIML4OS/AIML4OS-template-quarto-python/blob/main/chapters/chapter1.qmd" class="uri">https://github.com/AIML4OS/AIML4OS-template-quarto-python/blob/main/chapters/chapter1.qmd</a>, then this argument should be <code>chapters/chapter1.qmd</code>.</p>
 </div>
 </div>
 </div>
