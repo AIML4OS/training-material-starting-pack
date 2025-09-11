@@ -257,6 +257,11 @@ Once a configuration is defined, using it is very easy and very fast:
 - Click on the Rproj file to open the RStudio project (this may take a while because `renv` is slow at installing packages);
 - You're all set!
 
+:::: {.callout-important collapse="false"}
+## Rstudio services start slowly!
+__Rstudio services may take a lot of time to start__ (up to 10 minutes!), because installing dependencies with `renv` is quite slow. If you get a time-out error, close and re-open the service (but do not delete it!), it will open eventually.
+::::
+
 ## `Python` {{< fa brands python >}}
 
 - Go the "My Services" Tab;
