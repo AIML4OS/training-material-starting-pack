@@ -684,7 +684,7 @@ Let's say you have done everything described before, and you have a working auto
 which, when formatted, will give a button like this
 
 ```{=html}
-<a href="AUTOLAUNCH_URL_THERE" target="_blank" rel="noopener" data-original-href="AUTOLAUNCH_URL_THERE"><img src="https://custom-icon-badges.demolab.com/badge/SSP%20Cloud-Launch_with_RStudio-blue?logo=vsc&amp;logoColor=white" alt="Onyxia"></a>
+<a href="https://datalab.sspcloud.fr/launcher/ide/rstudio?name=R_exercise&version=2.3.13&s3=region-79669f20&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FAIML4OS-template-quarto-r%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&init.personalInitArgs=«exercises%2Fexercise1.qmd»&git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FAIML4OS-template-quarto-r.git»&autoLaunch=true" target="_blank" rel="noopener" data-original-href="https://datalab.sspcloud.fr/launcher/ide/rstudio?name=R_exercise&version=2.3.13&s3=region-79669f20&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2FAIML4OS%2FAIML4OS-template-quarto-r%2Frefs%2Fheads%2Fmain%2Fsspcloud%2Finit-trainees.sh»&init.personalInitArgs=«exercises%2Fexercise1.qmd»&git.repository=«https%3A%2F%2Fgithub.com%2FAIML4OS%2FAIML4OS-template-quarto-r.git»&autoLaunch=true"><img src="https://custom-icon-badges.demolab.com/badge/SSP%20Cloud-Launch_with_RStudio-blue?logo=vsc&amp;logoColor=white" alt="Onyxia"></a>
 ```
 
 ## `Python` {{< fa brands python >}}
