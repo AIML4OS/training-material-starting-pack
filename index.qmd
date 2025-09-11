@@ -332,7 +332,7 @@ Most of the resources you will develop will take the form of Quarto documents, t
 
 To to get started with Quarto documents, there are three basic elements you should know about: the header, raw text with Markdown formatting, and code chunks. We strongly recommend that you refer to the [official Quarto documentation](https://quarto.org/docs/guide/) and in particular to the [beginner Quarto tutorial](https://quarto.org/docs/get-started/hello/rstudio.html).
 
-#### The header
+<!-- #### The header
 
 Your Quarto document typically starts with a **YAML header** to define metadata such as author, title, and so on. Here is a simple example. You can also have a look at the headers of the Quarto files available in the templates. One particular important setting is the `format` setting: it tells what output should be produced (html, notebook...) when compiling Quarto compiles the document.
 
@@ -409,7 +409,7 @@ ax.grid(True)
 plt.show()
 ```
 ````
-:::
+::: -->
 
 ### Developing resources
 
