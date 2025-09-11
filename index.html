@@ -499,13 +499,26 @@ Note
 <li>In the “Initialization scripts” tab, paste this URL <code>https://raw.githubusercontent.com/{OWNER}/{REPO}/refs/heads/main/init.sh</code>, after replacing <code>OWNER</code> and <code>REPO</code> by the owner and repository name you chose in step 1;</li>
 </ul></li>
 <li>Click on Save configuration;</li>
-<li>Click on Launch;</li>
-<li>Open the Rstudio service;</li>
-<li>Rename the Rproj file with a meaningful name (for instance <code>Intro_To_Linear_Regression.Rproj</code>);</li>
-<li>Click on the Rproj file to open the RStudio project (this may take a while);</li>
-<li>Run <code>renv::restore()</code> (this may take a while);</li>
+<li>Click on Launch and open the Rstudio service (this may take a few minutes, see box below);</li>
+<li>Rename the Rproj file with a meaningful name (for instance <code>Intro_To_Linear_Regression.Rproj</code>), commit this change and push it;</li>
 <li>You’re all set!</li>
 </ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Rstudio services start slowly!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><strong>Rstudio services may take a lot of time to start</strong> (up to 10 minutes!), because installing dependencies with <code>renv</code> is quite slow. If you get a time-out error, close and re-open the service (but do not delete it!), it will open eventually.</p>
+</div>
+</div>
+</div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <ul>
@@ -528,7 +541,7 @@ Note
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -537,7 +550,7 @@ Video version
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Here’s a video summarizing these manual gestures for configuring the Python environment. Setting up the R environment is very similar. The values entered in the fields, in particular the initialization script, are those given in the example above: adapt these values to your needs.</p>
 <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;"><iframe src="https://zoom.us/clips/embed/wGjagl_4RIemXEN98xvARg" frameborder="0" allowfullscreen="allowfullscreen" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></iframe></div>
@@ -556,8 +569,7 @@ Video version
 <li>Go the “My Services” Tab;</li>
 <li>On the right side of the screen, find the configuration of your project and click on Launch;</li>
 <li>Open the Rstudio service;</li>
-<li>Click on the Rproj file to open the RStudio project (this may take a while);</li>
-<li>Run <code>renv::restore()</code> (this may take a while);</li>
+<li>Click on the Rproj file to open the RStudio project (this may take a while because <code>renv</code> is slow at installing packages);</li>
 <li>You’re all set!</li>
 </ul>
 </div>
@@ -577,7 +589,7 @@ Video version
 <h2 data-number="3.3" class="anchored" data-anchor-id="step-3-develop-resources-with-quarto"><span class="header-section-number">3.3</span> Step 3: develop resources with Quarto</h2>
 <p>If you have created a repository from a template and defined a development configuration, developing resources basically means modifying and extending the minimal examples available in your repository.</p>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -586,7 +598,7 @@ Git, git, git, git, git
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p><strong>It is absolutely essential that you commit and push your changes on a regular basis</strong> (every 30 minutes or so), because your service (Rstudio or VScode) is not persistent, meaning that any changes that were pushed before closing the service are permanently lost.</p>
 </div>
@@ -611,7 +623,7 @@ Git, git, git, git, git
 <p>You can upload a file by navigating clicking on “Upload file” (blue rectangle). You can also create a subfolder by clicking on “Create directory” (red rectangle).</p>
 <p><img src="pics/SSPCloud7.png" class="img-fluid" width="700"></p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -620,7 +632,7 @@ Three remarks to keep in mind
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
 <li>Choose carefully in which subfolder you upload your files, because moving files from one subfolder to another one on S3 is not very convenient.</li>
@@ -754,7 +766,7 @@ Figure&nbsp;2: Accessing website preview
 </figure>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -763,7 +775,7 @@ What to do if you can’t access the website preview?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>If you can’t access the website preview because there is no link in the README, it is likely that you forgot to open port 5000 in your configuration. This is easily solved:</p>
 <ul>
@@ -790,7 +802,7 @@ What to do if you can’t access the website preview?
 </ul>
 <p>The <code>notebooks</code> subfolder of the <code>R</code> template already contains an example.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -799,7 +811,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p><strong>You should not use <code>install.packages()</code> <em>anywhere</em> in your <code>R</code> resources</strong> because it is not the proper way to manage package requirements (see below for recommendations on dependency management).</p>
 </div>
@@ -816,7 +828,7 @@ Warning
 </ul>
 <p>The <code>notebooks</code> subfolder of the <code>Python</code> template already contains an example (<code>notebook1.qmd</code>).</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -825,7 +837,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p><strong>You should use <code>pip install</code> <em>anywhere</em> in your notebooks</strong> because it is not the proper way to manage package requirements (see below for recommendations on dependency management).</p>
 </div>
@@ -860,7 +872,7 @@ Warning
 <li>When you start working on your project with a new service, you should run <code>renv::restore()</code>. This command will reinstall all the packages listed in the <code>renv.lock</code> file.</li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -869,7 +881,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>If you forget to update the <code>renv.lock</code> file, your Github Actions workflow is likely to fail, and you probably won’t be able to execute your <code>R</code> script in a new RStudio service. Keep calm, here is the solution: just run <code>renv::snapshot()</code>, commit and push the changes to the <code>renv.lock</code> file. This should solve the problem.</p>
 </div>
@@ -887,7 +899,7 @@ Warning
 <li><p>When you want to recreate your environment from scratch on a new machine (or in a new service), you must run the command <code>uv sync</code>. This command will install all packages specified in the <code>pyproject.toml</code> file (and their own dependencies). <strong>You do not need to use this command if you use use the Python template</strong> because the initialization script already runs <code>uv sync</code>.</p></li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -896,7 +908,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>If you forget to use <code>uv add [package_name]</code> to add to your <code>pyproject.toml</code> file, your Github Actions workflow is likely to fail, and you probably won’t be able to execute your Python script in a new VSCode service. Keep calm, here is the solution: just identify what are the missing packages, use <code>git add</code>, commit and push the changes to the <code>pyproject.toml</code> file. This should solve the problem.</p>
 </div>
@@ -984,7 +996,7 @@ Python only: accessing the <code>Jupyter Notebooks</code>
 <p><strong>You do not need to modify this script.</strong> This script takes only one argument: the path of the notebook within the website (see next section). If the notebook you want to make available is located at is available at <a href="https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb" class="uri">https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb</a>, then this argument should be <code>notebooks/notebook1.ipynb</code>.</p>
 </div>
 <div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
-<p>The script <code>init-trainees.sh</code> provided in the <code>sspcloud</code> folder of the <em>template</em> helps you to configure the environment for trainees on the SSPCloud. This script does two things: install the environment needed to run the notebook (using <code>renv</code>) and download the notebook you want to provide trainees with.</p>
+<p>The script <code>init-trainees.sh</code> provided in the <code>sspcloud</code> folder of the <em>template</em> helps you to configure the environment for trainees on the SSPCloud. This script does two things: install the environment needed to run the notebook (using <code>renv</code>) and download the Quarto file you want to provide trainees with.</p>
 <p><strong>You do not need to modify this script.</strong> This script takes only one argument: the path of the Quarto file within the Github repository (see next section). If the Quarto file you want to make available is located at is available at <a href="https://github.com/AIML4OS/AIML4OS-template-quarto-python/blob/main/chapters/chapter1.qmd" class="uri">https://github.com/AIML4OS/AIML4OS-template-quarto-python/blob/main/chapters/chapter1.qmd</a>, then this argument should be <code>chapters/chapter1.qmd</code>.</p>
 </div>
 </div>
