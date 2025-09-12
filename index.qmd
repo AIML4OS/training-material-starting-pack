@@ -399,9 +399,52 @@ __You should not use `pip install` _anywhere_ in your notebooks__ because it is 
 A major challenge in any data science project is to __make sure that its codes can be re-run without error by someone working in a different environment__ (this is called __portability__). Various technical requirements must be met to ensure portability; one of them is to keep track of all packages needed to run the code (and of the exact version of each package!), so that a new user can reinstall them easily. 
 The dependency management tool depends on the language you use:
 
-- If you use `R`, we recommend that you use `renv`, __cf.__ its [official documentation](https://rstudio.github.io/renv/articles/renv.html);
-- If you use `Python`, we recommend that you use `uv`, __cf.__ its [official documentation](https://docs.astral.sh/uv/)
 
+- If you use `R`, we recommend that you use `renv`;
+- If you use `Python`, we recommend that you use `uv`.
+
+
+::: {.panel-tabset}
+
+## {{< fa brands r-project >}}
+
+`renv` is an R package that helps you manage the dependencies of each of your projects. It means that `renv` lets you keep track of what packages are needed to run your code, and in what exact version. More precisely, using `renv` adds two specific files to your project:
+
+- The lockfile `renv.lock` records information about every package used in the project, so that these packages can be re-installed on a new machine;
+- the `.Rprofile` project file. This file is run automatically every time you start `R` so that `renv` is used properly.
+
+Here is how to use `renv`:
+
+- The first step in using `renv` is to initiate the tracking of dependencies using `renv::init()`. __You do not need to do it if you use the `R` template__ because this was already done in the template.
+- When developing resources, you should regularly run `renv::snapshot()`. This command will analyze your `R` and Quarto scripts, detects what packages are used, and updates the `renv.lock` file. Do not forget to commit and push the changes to the `renv.lock` file!
+- When you start working on your project with a new service, you should run `renv::restore()`. This command will reinstall all the packages listed in the `renv.lock` file.
+
+::: {.callout-warning collapse="false"}
+If you forget to update the `renv.lock` file, your Github Actions workflow is likely to fail, and you probably won't be able to execute your `R` script in a new RStudio service. Keep calm, here is the solution: just run `renv::snapshot()`, commit and push the changes to the `renv.lock` file. This should solve the problem.
+:::
+
+For more information, see the [official documentation](https://rstudio.github.io/renv/articles/renv.html) of `renv`.
+
+## `Python` {{< fa brands python >}}
+
+`uv` is a fast Python package manager that helps you **track and manage dependencies per project**, similarly to `renv` for R. More precisely, `uv` can be used to create a __virtual environment__ for your Python project. A virtual environment contains your project's Python and its packages, and is isolated from other projects and the system's Python. This means that different projects can use different versions of packages (and even different versions of Python!) without conflicts. `uv` helps create and manage these virtual environments easily, making sure all needed packages for your project are installed and kept organized. Using `uv`, you can ensure your project is reproducible, fast to install, and easy to deploy.
+
+
+Here is the very short introduction on how to use `uv`:
+
+- The basic command to start using `uv` is `uv init`. This command adds to your project the `pyproject.toml` file that defines the project dependencies and metadata. This file is the central piece of the dependency management.  __You do not need to use this command if you use the Python template__ because this has already been done (the template already contains a `pyproject.toml` file).
+
+- When you start using a new package in your project, you must explicitly add it to the dependencies by running the command `uv add [package_name]`. This command will add this package to the `pyproject.toml` file.
+
+- Commit and push the changes in the `pyproject.toml` file.
+
+- When you want to recreate your environment from scratch on a new machine (or in a new service), you must run the command `uv sync`. This command will install all packages specified in the `pyproject.toml` file (and their own dependencies). __You do not need to use this command if you use use the Python template__ because the initialization script already runs `uv sync`.
+
+:::: {.callout-warning collapse="false"}
+If you forget to use `uv add [package_name]` to add to your `pyproject.toml` file, your Github Actions workflow is likely to fail, and you probably won't be able to execute your Python script in a new VSCode service. Keep calm, here is the solution: just identify what are the missing packages, use `git add`, commit and push the changes to the `pyproject.toml` file. This should solve the problem.
+::::
+
+:::
 
 ## Step 4: set up a Github pages website
 
