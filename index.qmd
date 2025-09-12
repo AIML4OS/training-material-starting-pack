@@ -7,17 +7,13 @@ author:
 ---
 
 
-This tutorial aims to be a practical guide for people developing educational resources in {{< fa brands r-project >}} or `Python` {{< fa brands python >}} and wishing to disseminate them easily through the `SSPCloud`.
-
-To make this possible, a few technical prerequisites are needed - these are outlined in @imp-req.
-
-The aim of this tutorial is to get you started quickly on building educational resources with a __state-of-the-art level of reproducibility__. The next sections explain how to develop educational resources, and how to disseminate them on the SPPCloud. Keep in mind that this tutorial is intended for people developing resources, not for the users of these resources.
+This tutorial provides a practical guide for developing educational resources in {{< fa brands r-project >}} or `Python` {{< fa brands python >}} and sharing them easily. It also aims to quickly equip you with the skills to build educational resources with __state-of-the-art level of reproducibility__. The next sections explain how to develop educational resources, and how to disseminate them on the SPPCloud. Keep in mind that this tutorial is intended for people developing resources, not for the users of these resources. Required technical prerequisites are detailed in @imp-req.
 
 
 ::: {#imp-req .callout-important collapse="false"}
 ## Technical requirements to deploy educational resources
 
-- A minimum level of proficiency in `Git` {{< fa brands git-alt >}} is required to develop and make available online training resources. However, accessing to these resources on the SSPCloud does not require any familiarity with Git.
+- A minimum level of proficiency in `Git` {{< fa brands git-alt >}} is required to develop and make available online training resources. However, accessing these resources on `SSPCloud` does not require any familiarity with Git.
 - [`Quarto`](https://quarto.org/) {{< iconify simple-icons:quarto style="color:#74aadb;" >}}
 the automated report and website builder inherited from `R Markdown`.
 - An understanding of the fundamental difference between making resources available for execution on a local computer or on a server like `SSPCloud`. See [`SSPCloud` documentation](https://docs.sspcloud.fr/en/). 
@@ -26,35 +22,35 @@ the automated report and website builder inherited from `R Markdown`.
 :::
 
 
-# Why share educational resources on SSPCloud?
+# Benefits of sharing educational resources on `SSPCloud`
 
-Sharing educational resources on SSPCloud offers several advantages, particularly for educators and learners working with computational tools like R or Python. Here are the key benefits:
+Sharing educational resources on `SSPCloud` offers several advantages, particularly for educators and learners working with computational tools like R or Python. The key benefits include :
 
 1. **Instant access via a simple link**
-SSPCloud allows users to launch pre-configured workspaces through a simple HTTPS link. Doing so, there is no need for any local installation or complex setup: learners can start working immediately, directly in their browser.
+`SSPCloud` allows users to launch pre-configured workspaces through a simple HTTPS link. This eliminates the need for local installation or complex setup: learners can start working immediately, directly in their browser.
 
 2. **Standardized and reproducible environments**
 Everyone accesses the same cloud-based environment, including all necessary packages, tools, and datasets. This ensures full consistency across learners, removing issues related to differing operating systems, versions, or missing dependencies.
 
 3. **Scalable computing power**
-SSPCloud offers access to robust computational resources that can scale with your needs. From beginner tutorials in Python or R to advanced workflows involving large datasets or machine learning models, the platform can support a wide range of educational use cases.
+`SSPCloud` offers access to robust computational resources that can scale with your needs. From beginner tutorials in Python or R to advanced workflows involving large datasets or machine learning models, the platform can support a wide range of educational use cases.
 
 
-As outlined in the SSPCloud documentation, it's important to understand that the platform separates code (Git), data (S3), and environment configuration. These components are dynamically combined when launching a compute session.
+As outlined in the `SSPCloud` documentation, it's important to understand that the platform separates code (Git), data (S3), and environment configuration. These components are dynamically combined when launching a compute session.
 
 For training designers, this architecture ensures high reproducibility and fine-grained control over the environment. For users, it eliminates the need to install software, manage system permissions, or configure their local machine—making it easy to jump straight into the tutorial.
 
 
-![An illustration of the SSPCloud functioning](/pics/starting_pack_objective.png)
+![An illustration of how `SSPCloud` works](/pics/starting_pack_objective.png)
 
-# Which materials should be used for trainings?
+# Selecting appropriate training materials
 
 When designing effective training materials, it's essential to choose formats that actively engage learners and support comprehension. While PDFs, slide decks, and videos are all valuable for delivering content, this guide focuses on static websites and interactive environments, which are particularly well-suited for hands-on learning. These environments enable learners to apply concepts immediately, test code in real time, and actively engage with the material—leading to deeper understanding and better long-term retention.
 
 In the sections that follow, we'll begin by comparing various interactive environments based on the programming language they support. Then, we'll walk through how to build and structure them using Quarto.
 
 
-## Which interactive environment should you use ? 
+## Selecting the right interactive environment 
 
 :::: {.panel-tabset}
 ## `Python` {{< fa brands python >}}
@@ -93,36 +89,26 @@ When designing {{< fa brands r-project >}}-based training materials, two main op
 
 Since the first option can become cumbersome - especially when learners need to copy and paste large blocks of code - it is generally recommended to use the second option in most cases. Providing direct access to a Quarto Markdown file helps minimize the risk of hard-to-reproduce errors that often arise when learners switch between an HTML tutorial and their R session.
 
-![Exemple with RStudio](/pics/rstudio.png)
+![Example with RStudio](/pics/rstudio.png)
 
-::: {.callout-caution}
-## Why `learnr` Is Not Recommended
-
-While `learnr` allows for the creation of interactive and advanced elements such as quizzes—making it well-suited for beginner tutorials—it has some important limitations.
-
-First, it requires deployment on a Shiny server, which can be costly and complex to maintain. Additionally, in `learnr`, code cells do not share a global environment. This means variables and objects created in one chunk are not accessible in others, making it difficult to manage state or build on previous steps.
-
-These restrictions limit the usefulness of `learnr` for more complex tutorials, where maintaining continuity and evolving context across the tutorial is essential.
-
-:::
 
 :::: 
 
 
-## Introducing `Quarto`  {{< iconify simple-icons:quarto style="color:#74aadb;" >}} to create training resources
+## Using `Quarto`  {{< iconify simple-icons:quarto style="color:#74aadb;" >}} to develop training resources
 
 `Quarto` is an open source program for creating `Python` {{< fa brands python >}} and {{< fa brands r-project >}} reproducible tutorials. 
 It makes it possible to mix seamlessly code and text in the same document and can handle many output formats, including html, pdf or notebook (.ipynb extension). `Quarto` is strongly recommended for the development of educational resources.
 
 ![](pics/quarto.png)
 
-This tutorial assumes that educational resources and training material will be made available in two forms:
+This tutorial assumes educational resources will be available in two formats :
 
 - `Quarto` websites, mixing text and code chunks;
 - Interactive environment (see ☝️).
 
 
-# A step-by-step tutorial
+# Step-by-Step Guide
 
 ## Step 1: create a `Github` {{< fa brands github >}} repository from a template
 
@@ -133,7 +119,7 @@ The very first step towards developing educational resources consists in creatin
 * {{< fa brands r-project >}}: [template](https://github.com/AIML4OS/AIML4OS-template-quarto-r)
 * `Python` {{< fa brands python >}}: [template](https://github.com/AIML4OS/AIML4OS-template-quarto-python).
 
-These templates contain all what you need to produce resources that can be easily made available as websites or as interactive environments on the SSP Cloud. More precisely, these templates contain:
+These templates contain all what you need to produce resources that can be easily made available as websites or as interactive environments on  SSPCloud. More precisely, these templates contain:
 
 - a minimal `Quarto` website with visual elements reflecting AIML4OS aesthetic;
 - a minimal example of a `Quarto` document producing a Jupyter Notebook ({{< fa brands python >}} only);
@@ -144,7 +130,7 @@ These templates contain all what you need to produce resources that can be easil
 ::: {.callout-note collapse="false"}
 ## If you are not AIML4OS member and follow this guide anyway
 
-You can still use the templates - just remove the style components using AIML4OS aesthetic. 
+You can still use the templates - just remove the AIML4OS-styled components. 
 
 :::
 
@@ -164,17 +150,17 @@ Here is what to do to re-use a template:
 - Set `Choose visibility` to `Public`.
 
 
-## Step 2: define your development configuration on the SSPCloud
+## Step 2: define your development configuration on `SSPCloud`
 
 <!-- get started with `Quarto`  {{< iconify simple-icons:quarto style="color:#74aadb;" >}} -->
 
-SSPCloud is not only useful to disseminate educational resources; it is also the right place to develop them. Doing so will facilitate resource dissemination as the environment used for training will be equivalent to the one used for development. In other words, __we strongly recommend that you develop on SSPCloud because this will help a lot to make your educational resources reproducible__.
+`SSPCloud` is not only useful to disseminate educational resources; it is also the right place to develop them. Doing so will facilitate resource dissemination as the environment used for training will be equivalent to the one used for development. In other words, __we strongly recommend developing on [SSPCloud](https://datalab.sspcloud.fr) as it will greatly improve the reproducibility of your educational resources__.
 
 Some elements of this development environment will be re-used to provide a ready-to-use configuration for learners. However, learners don't need to be familiar with the technical concepts of configuration: pre-configured environments do exist so that learners can concentrate on acquiring skills!
 
 ### What is a configuration and why is it useful?
 
-The best way to develop resources on the SSPCloud is to define your own development configuration. In technical terms, __a configuration is just a service available on the SSPCloud (eg: `RStudio` or `VSCode`) with additional user-defined settings__ such as: the Github repository you want to work on, your Github credentials, the size of memory and number of CPU you want to use, the initialization script you want to run...
+The best way to develop resources on `SSPCloud` is to define your own development configuration. In technical terms, __a configuration is just a service available on `SSPCloud` (eg: `RStudio` or `VSCode`) with additional user-defined settings__ such as: the Github repository you want to work on, your Github credentials, the size of memory and number of CPU you want to use, the initialization script you want to run...
 
 Defining a configuration has two advantages:
 
@@ -187,28 +173,28 @@ Your ready-to-use configurations are listed on the right-hand-side of the "My se
 
 
 ::: {.callout-note collapse="false"}
-Defining a configuration may seem complicated the first time you do it, but you will get used to it in no time.
+Defining a configuration may seem complicated at first, but you’ll quickly get the hang of it.
 :::
 
 ### How to define a configuration
 
-Here is how to define a ready to use development configuration using the SSPCloud. A video version is proposed below the text.
+Here is how to define a ready to use development configuration using `SSPCloud`. A video version is proposed below the text.
 
 ::: {.panel-tabset}
 
 ## {{< fa brands r-project >}}
 
-- Go the "My Services" Tab and click on "New Service";
+- In the [SSPCloud](https://datalab.sspcloud.fr), go to the "My Services" Tab and click on "New Service";
 - Choose Rstudio and click Launch;
 - Customize the configuration by changing four settings:
+  + In the "Initialization scripts" tab, paste this URL `https://raw.githubusercontent.com/{OWNER}/{REPO}/refs/heads/main/init.sh`, after replacing `OWNER` and `REPO` by the owner and repository name you chose in step 1;
   + In the "Friendly Name" field, choose a meaningful name (for instance `dev_Intro_To_Linear_Regression`);   
   + In the "Repository" field of the "Git" tab, paste the URL of the repository you created in step 1 (for instance: `https://www.github.com/AIML4OS/Intro_To_Linear_Regression`);
   + In the "Network Access" tab, enable access to your service through port 5000;
-  + In the "Initialization scripts" tab, paste this URL `https://raw.githubusercontent.com/{OWNER}/{REPO}/refs/heads/main/init.sh`, after replacing `OWNER` and `REPO` by the owner and repository name you chose in step 1;
 - Click on Save configuration;
 - Click on Launch and open the Rstudio service (this may take a few minutes, see box below);
 - Rename the Rproj file with a meaningful name (for instance `Intro_To_Linear_Regression.Rproj`), commit this change and push it;
-- You're all set!
+- You’re ready to go!
 
 :::: {.callout-important collapse="false"}
 ## Rstudio services start slowly!
@@ -217,17 +203,17 @@ __Rstudio services may take a lot of time to start__ (up to 10 minutes!), becaus
 
 ## `Python` {{< fa brands python >}}
 
-- Go the "My Services" Tab and click on "New Service";
+- In the [SSPCloud](https://datalab.sspcloud.fr), go to the "My Services" Tab and click on "New Service";
 - Choose `Vscode-python` and click `Launch`[^options-ide];
 - Customize the configuration by changing four settings:
+  + In the "Initialization scripts" tab, paste this URL `https://raw.githubusercontent.com/{OWNER}/{REPO}/refs/heads/main/init.sh`, after replacing `OWNER` and `REPO` by the owner and repository name you chose in step 1;
   + In the "Friendly Name" field, choose a meaningful name (for instance `dev_Intro_To_Linear_Regression`);   
   + In the "Repository" field of the "Git" tab, paste the URL of the repository you created in step 1 (for instance: `https://www.github.com/AIML4OS/Intro_To_Linear_Regression`);
   + In the "Network Access" tab, enable access to your service through port 5000;
-  + In the "Initialization scripts" tab, paste this URL `https://raw.githubusercontent.com/{OWNER}/{REPO}/refs/heads/main/init.sh`, after replacing `OWNER` and `REPO` by the owner and repository name you chose in step 1;
 - Click on Save configuration;
 - Click on Launch;
 - Open the Vscode service;
-- You're all set!
+- You’re ready to go!
 
 [^options-ide]: By default, this service includes a `Python` installation, but does not offer additional software such as `R`. For multi-language training, you can use the `Vscode-r-python-julia` service.
 :::
@@ -255,7 +241,7 @@ Once a configuration is defined, using it is very easy and very fast:
 - On the right side of the screen, find the configuration of your project and click on Launch;
 - Open the Rstudio service;
 - Click on the Rproj file to open the RStudio project (this may take a while because `renv` is slow at installing packages);
-- You're all set!
+- You’re ready to go!
 
 :::: {.callout-important collapse="false"}
 ## Rstudio services start slowly!
@@ -267,7 +253,7 @@ __Rstudio services may take a lot of time to start__ (up to 10 minutes!), becaus
 - Go the "My Services" Tab;
 - On the right side of the screen, find the configuration of your project and click on Launch;
 - Open the VSCode service;
-- You're all set!
+- You’re ready to go!
 
 :::
 
@@ -275,15 +261,9 @@ __Rstudio services may take a lot of time to start__ (up to 10 minutes!), becaus
 
 If you have created a repository from a template and defined a development configuration, developing resources basically means modifying and extending the minimal examples available in your repository.
 
-::: {.callout-important collapse="false"}
-## Git, git, git, git, git
-
-__It is absolutely essential that you commit and push your changes on a regular basis__ (every 30 minutes or so), because your service (Rstudio or VScode) is not persistent, meaning that any changes that were pushed before closing the service are permanently lost.
-:::
-
 ### Change the URLs
 
-The first thing you must do is changing the URLs of the repository in the `_quarto.yml` file:
+The first thing you must do is change the URLs of the repository in the `_quarto.yml` file:
 
 - Open the `_quarto.yml`;
 - in the `site-url` and  `repo-url` fields, replace the URL of the template by the URL of your repository. In step 1, you chose the `Owner` and the `Name` of your repository, so the URL should be `https://github.com/{Owner}/{Name}`;
@@ -291,11 +271,11 @@ The first thing you must do is changing the URLs of the repository in the `_quar
 
 ### Manage data (if needed)
 
-Depending on your project, your scripts may require some data, for instance to train a model. However, when you start a service on SSP Cloud (VSCode or Rstudio), it does not contain any data. That implies that you have to download data into your service. Of course, you _could_ do it by hand every time you start a service, but we strongly recommend that you automatize this step. The simplest way to proceed is to upload your data on the S3 storage service of SSPCloud, and then download it from S3 into your service every time you start a service.
+Depending on your project, your scripts may require some data, for instance to train a model. However, when you start a service on the SSP Cloud (VSCode or Rstudio), it does not contain any data. That implies that you have to download data into your service. Of course, you _could_ do it by hand every time you start a service, but we strongly recommend that you automatize this step. The simplest way to proceed is to upload your data on the S3 storage service of SSPCloud, and then download it from S3 into your service every time you start a service.
 
 #### Upload data to S3
 
-The simplest way to upload data to S3 is to use the graphical interface available on SSPCloud. __You have to do only once__ (except if you want to change or update the data, of course). To to so, click on "File Explorer" on the left hand and then on "My data".
+The simplest way to upload data to S3 is to use the graphical interface available on SSPCloud. __You have to do only once__ (except if you want to change or update the data, of course). To do so, click on "File Explorer" on the left hand and then on "My data".
 
 ![](pics/SSPCloud6.png){width=700}
 
@@ -316,7 +296,7 @@ Once again: no sensitive data!!
 
 #### Download data
 
-To download data automatically into your service, you just have to adapt the `download_data.sh` file (in the `sspcloud` folder). There are two things you can change:
+To download data automatically into your service, you just have to adapt the `download_data.sh` file (in the `sspcloud` folder of your template). There are two things you can change:
 
 - `DEST_DIR` is the folder in your service where data will be downloaded (`/home/data/` by default);
 - `DATA_PATH` is the S3 path to your data (where it is downloaded from).
@@ -328,88 +308,7 @@ To obtain the S3 path to your data, use the File Explorer to navigate and find t
 
 ### How to write Quarto documents?
 
-Most of the resources you will develop will take the form of Quarto documents, that you will either provide to final users or compile to final outputs (for instance, websites or Jupyter notebooks). As a consequence, you must learn how to use Quarto. Fortunately, Quarto is easy to use, has an amazing documentation and there are plenty of resources online to help you.
-
-To to get started with Quarto documents, there are three basic elements you should know about: the header, raw text with Markdown formatting, and code chunks. We strongly recommend that you refer to the [official Quarto documentation](https://quarto.org/docs/guide/) and in particular to the [beginner Quarto tutorial](https://quarto.org/docs/get-started/hello/rstudio.html).
-
-<!-- #### The header
-
-Your Quarto document typically starts with a **YAML header** to define metadata such as author, title, and so on. Here is a simple example. You can also have a look at the headers of the Quarto files available in the templates. One particular important setting is the `format` setting: it tells what output should be produced (html, notebook...) when compiling Quarto compiles the document.
-
-~~~yaml
----
-title: "My beautiful Quarto Report"
-author: "Mickey mouse"
----
-~~~
-
-#### Raw text with Markdown formatting
-
-A Quarto document contains blocks of text with Markdown formatting. See [here](https://quarto.org/docs/authoring/markdown-basics.html) for a detailed presentation of Markdown. Here is a short example:  
-
-~~~markdown
-This is text with *italics* and **bold**.
-
-We can define lists and sublists :
-
-- first element;
-- second element;
-    - first sub-element;
-    - second sub-element.
-~~~
-
-This code will result in the following formatted text:
-
-This is text with *italics* and **bold**.
-
-We can define lists and sublists:
-
-- first element;
-- second element;
-    - first sub-element;
-    - second sub-element.
-
-#### Code chunks
-
-A Quarto document can also contain blocks of code inside **code chunks**, denoted with triple backticks and the language you use. Adding a name to each chunk is a good practice (`nice_code` in the example below). You can use [chunk options](https://quarto.org/docs/computations/execution-options.html) to change the behavior of the chunk (for instance if you want to show some code without executing it). 
-
-::: {.panel-tabset}
-
-## {{< fa brands r-project >}}
-
-````markdown
-```{{r}}
-#| label: nice_code
-# Load packages
-library(ggplot2)
-
-# Plot mpg vs hp
-ggplot(mtcars, aes(x = hp, y = mpg)) +
-  geom_point() +
-  theme_minimal()
-```
-````
-
-## `Python` {{< fa brands python >}}
-
-````markdown
-```{{python}}
-#| label: nice_code
-import numpy as np
-import matplotlib.pyplot as plt
-
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(
-  subplot_kw = {'projection': 'polar'} 
-)
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
-```
-````
-::: -->
+Most of the resources you will develop will take the form of Quarto documents, that you will either provide to final users or compile to final outputs (for instance, websites or Jupyter notebooks). Therefore, you must learn how to use Quarto. Fortunately, Quarto is easy to use, has an amazing [documentation](https://quarto.org/) and there are plenty of resources online to help you.
 
 ### Developing resources
 
@@ -425,11 +324,11 @@ Developing resources (html pages published on the website or interactive environ
 
 <!-- If you add a new document, you must add it to the list in the `render` argument of the `_quarto.yml` file, so that Quarto compiles it. An important point is that the `index.qmd` file will be the starting page of your website: __you should not delete or rename it.__ -->
 
-#### Developing and previewing a website
+#### Building and previewing your website
 
 The first kind of output you may want to produce is a static website, consisting in a series of html documents. If you add new pages to the website (preferably in the `chapters` subdirectory), __do not forget to add them to the structure of the website__ by modifying the `_quarto.yml` file in two places: in the `render` argument (so that Quarto compiles them), and in the `contents` of the `sidebar` argument (so that all chapters are in the sidebar of the website). 
 
-It is often convenient to have a look at what this website looks like while developing it. You can preview your website from command line by executing:
+It is often convenient to have a look at what this website looks like while developing it. You can preview your website from the command line by running:
 
 ```{.bash}
 quarto preview --port 5000 --host 0.0.0.0
@@ -450,14 +349,14 @@ Accessing website preview
 :::: {.callout-warning collapse="false"}
 ## What to do if you can't access the website preview?
 
-If you can't access the website preview because there is no link in the README, it is likely that you forgot to open port 5000 in your configuration. This is easily solved: 
+If the website preview is inaccessible due to a missing link in the README, you may have forgotten to open port 5000 in your configuration. This is easily solved: 
 
 - Close your RStudio/VSCode service (after committing and pushing all changes!);
 - Modify your configuration: in the "Network Access" tab, enable access to your service through port 5000 and save this new configuration;
 - Launch again your RStudio/VSCode service.
 ::::
 
-#### Developing interactive scripts
+#### Creating interactive scripts
 
 The second kind of output you may want to produce are interactive environments. These are particularly useful if your resources contain exercises. The final outputs will be quite different for `R` and Python (`Jupyter` notebooks for `Python`, Quarto documents with `R` chunks for `R`), but these resources can nonetheless be developed using Quarto.
 
@@ -489,17 +388,17 @@ Here is how you can produce a Jupyter notebook for Python:
 The `notebooks` subfolder of the `Python` template already contains an example (`notebook1.qmd`).
 
 :::: {.callout-warning collapse="false"}
-__You should use `pip install` _anywhere_ in your notebooks__ because it is not the proper way to manage package requirements (see below for recommendations on dependency management).
+__You should not use `pip install` _anywhere_ in your notebooks__ because it is not the proper way to manage package requirements (see below for recommendations on dependency management).
 ::::
 
 :::
 
 
-### Managing dependencies when developing resources
+### Handling dependencies when developing resources
 
-A major challenge in any data science project is to __make sure that its codes can be re-run without error by someone working in a different environment__ (this is called __portability__). Various technical requirements must be met to ensure portability; one of them is to keep track of all packages needed to run the code (and of the exact version of each package!), so that a new user can reinstall them easily. This section explains how to manage these dependencies using the right tools.
-
+A major challenge in any data science project is to __make sure that its codes can be re-run without error by someone working in a different environment__ (this is called __portability__). Various technical requirements must be met to ensure portability; one of them is to keep track of all packages needed to run the code (and of the exact version of each package!), so that a new user can reinstall them easily. 
 The dependency management tool depends on the language you use:
+
 
 - If you use `R`, we recommend that you use `renv`;
 - If you use `Python`, we recommend that you use `uv`.
@@ -547,7 +446,6 @@ If you forget to use `uv add [package_name]` to add to your `pyproject.toml` fil
 
 :::
 
-
 ## Step 4: set up a Github pages website
 
 __This step is optional__, depending on whether your resources include a website. You can skip this step if your resources consist only in interactive environments (Jupyter notebooks for `Python`, interactive Quarto documents with `R` chunks for `R`).
@@ -574,13 +472,13 @@ git push origin gh-pages # Pushing so that the gh-pages branch exists on the rem
 git checkout main
 ```
 
-### Define a Github Actions workflow
+### Setting up a Github Actions workflow
 
 You need to define a Github Actions workflow to automate output construction and deployment. A GHA workflow is a list of instructions (for instance: install `R`, install packages...) that are executed automatically every time a certain event happens (for instance every time you push on the main branch). A GHA workflow is defined using specific `yaml` scripts, located in the `.github/workflows` directory of your repository. __The templates already contain standard workflows that you can use as a starting point.__ We recommend that you have a careful look at these workflows; comments were added so that they are easy to follow.
 
 A few important remarks on automated deployment:
 
-- The website is deployed at an URL that depends on the owner and the name of the repository: `https://{REPO_OWNER}.github.io/{REPO_NAME}/`.
+- The website is deployed at an URL that depends on the owner and the name of the repository: `https://{REPO_OWNER}.github.io/{REPO_NAME}/`. Don't forget to change the `site-url` in the `_quarto.yml` file of your template to `https://{REPO_OWNER}.github.io/{REPO_NAME}/`.
 - You can monitor Github Actions jobs in the "Actions" tab of the Github repository of your project. Do not be afraid if your jobs fail at first; getting Github Actions to work often requires some debugging.
 
 ### Add the website URL to your Github repository
@@ -616,13 +514,13 @@ Up to now, we have explained how to initialize and pre-configure the __trainers'
 ::: {.panel-tabset}
 ## `Python` {{< fa brands python >}}
 
-The script `init-trainees.sh` provided in the `sspcloud` folder of the _template_ helps you to configure the environment for trainees on the SSPCloud. This script does two things: install the environment needed to run the notebook (this is greatly facilitated by the use of `uv`) and download the notebook you want to provide trainees with. 
+The script `init-trainees.sh` provided in the `sspcloud` folder of the _template_ helps you to configure the environment for trainees on `SSPCloud`. This script does two things: install the environment needed to run the notebook and download the notebook you want to provide trainees with. 
 
 __You do not need to modify this script.__ This script takes only one argument: the path of the notebook within the website (see next section). If the notebook you want to make available is located at is available at <https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb>, then this argument should be `notebooks/notebook1.ipynb`.
 
 ## {{< fa brands r-project >}}
 
-The script `init-trainees.sh` provided in the `sspcloud` folder of the _template_ helps you to configure the environment for trainees on the SSPCloud. This script does two things: install the environment needed to run the notebook (using `renv`) and open the Quarto file you want to provide trainees with. 
+The script `init-trainees.sh` provided in the `sspcloud` folder of the _template_ helps you to configure the environment for trainees on `SSPCloud`. This script does two things: install the environment needed to run the notebook and open the Quarto file you want to provide trainees with. 
 
 __You do not need to modify this script.__ This script takes only one argument: the path of the Quarto file within the Github repository (see next section). If the Quarto file you want to make available is located at is available at <https://github.com/AIML4OS/AIML4OS-template-quarto-python/blob/main/chapters/chapter1.qmd>, then this argument should be `chapters/chapter1.qmd`.
 
@@ -632,30 +530,30 @@ __You do not need to modify this script.__ This script takes only one argument: 
 ::: {.callout-important}
 ## How to use the initialization script
 
-Previous sections demonstrated how to personnalize the initialization script. Here is an important remark on how to use it: you must put the __raw github URL__ of the script in the `Initialization scripts` field of the configuration. This URL is available by clicking on the `raw` button when opening the file on Github (see screenshot below). The URL should have a pattern similar to this one: <https://raw.githubusercontent.com/InseeFrLab/AIML4OS-template-quarto-python/refs/heads/main/sspcloud/init-trainees.sh>.
+When using initialization script, you **must put** the __raw github URL__ of the script in the `Initialization scripts` field of the  configuration of your `SSPCloud` service. This URL is available by clicking on the `raw` button when opening the file on Github (see screenshot below). The URL should have a pattern similar to this one: <https://raw.githubusercontent.com/InseeFrLab/AIML4OS-template-quarto-python/refs/heads/main/sspcloud/init-trainees.sh>.
 
 ![](pics/SSPCloud9.png){width=600}
 :::
 
 
-### Create an auto launch URL
+### Setting up an auto launch URL
 
-A convenient feature of SSPCloud is that you can make a whole training environment available through one URL link: in one click, trainees open a VSCode service that contains a Jupyter notebook, the data used by the notebook, all dependencies needed to run the notebook, and sufficient resources to run the code.
+A convenient feature of `SSPCloud` is that you can make a whole training environment available through one URL link: in one click, trainees open a VSCode service that contains a Jupyter notebook, the data used by the notebook, all dependencies needed to run the notebook, and sufficient resources to run the code.
 
 To do so, just follow two steps:
 
 - Define all aspects of the training environment using the usual interface. Here are the elements you will probably want to configure:
 
   - `Friendly Name`: do not forget to use a meaningful name ("Intro_To_Deep_Learning"), that will be more convenient for trainees;
-  - `Resources`: choose the requests and limits that are well-suited for your use case. Some trial-and-error might be necessary here. However, __in most cases, you don't need to change the resources there__ because default SSPCloud settings fit most needs. 
+  - `Resources`: choose the requests and limits that are well-suited for your use case. Some trial-and-error might be necessary here. However, __in most cases, you don't need to change the resources there__ because default settings of `SSPCloud` fit most needs. 
   - `Initialization scripts`: 
 
     - `Use a custom script (URL)`: paste the URL to the initialization script for trainees (see previous section).
     - `Arguments for the custom script`: write the name of the notebook (see previous section).
 
-  - `GIT`: In the "Repository" field, paste the URL of the Github repository containing the resources.
+  - `GIT`: In the "Repository" field, paste the URL of the Github repository containing the training resources.
 
-- Copy the link provided at the top of the interface by clicking on "Copy Auto Launch URL", and paste it wherever you want. Anyone with an SSPCloud account can use it to open a pre-configured service. __Do not forget to test your link a few times to be sure it works__. Do not be afraid if it does not work on the first time, some trial-and-error is often necessary.
+- Copy the link provided at the top of the interface by clicking on "Copy Auto Launch URL", and paste it wherever you want. Anyone with an `SSPCloud` account can use it to open a pre-configured service. __Do not forget to test your link a few times to be sure it works__. Do not be afraid if it does not work on the first time, some trial-and-error is often necessary.
 
 ![](pics/SSPCloud5.png){width=600}
 
@@ -669,7 +567,7 @@ We recommend two things:
 - __Check that there is no sensitive information in the Autolaunch URL__ (such as your Github token). If something looks strange, take the time to understand what is the problem.
 :::
 
-### Create a launch button for your website (bonus)
+### Adding a launch button to your website (bonus)
 
 Let's say you have done everything described before, and you have a working auto-launch URL. You could of course send it to trainees and ask them to copy and paste it in their browser to access the service, but a ready-to-use button is much more user-friendly! Just take this code snippet as a basis and replace `AUTOLAUNCH_URL_THERE` with your own quick launch URL:
 
@@ -709,7 +607,7 @@ to be completed
 
 <!-- ## Make a ready to use link to your resources
 
-Let's assume now you want learners to avoid copy-pasting code from your program to their sandbox environment. SSPCloud proposes a feature that enables to launch a ready to use sandbox with one click. This enables to start an environment that can be overloaded by some parameters that would make learners ready to start their learning experience. 
+Let's assume now you want learners to avoid copy-pasting code from your program to their sandbox environment. `SSPCloud` proposes a feature that enables to launch a ready to use sandbox with one click. This enables to start an environment that can be overloaded by some parameters that would make learners ready to start their learning experience. 
 
 ::: {.panel-tabset}
 ## R
