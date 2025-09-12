@@ -7,11 +7,7 @@ author:
 ---
 
 
-This tutorial provides a practical guide for developing educational resources in {{< fa brands r-project >}} or `Python` {{< fa brands python >}} and sharing them easily.
-
-To achieve this, certain technical prerequisites are required, detailed in @imp-req.
-
-This tutorial aims to quickly equip you with the skills to build educational resources with __state-of-the-art level of reproducibility__. The next sections explain how to develop educational resources, and how to disseminate them on the SPPCloud. Keep in mind that this tutorial is intended for people developing resources, not for the users of these resources.
+This tutorial provides a practical guide for developing educational resources in {{< fa brands r-project >}} or `Python` {{< fa brands python >}} and sharing them easily. It also aims to quickly equip you with the skills to build educational resources with __state-of-the-art level of reproducibility__. The next sections explain how to develop educational resources, and how to disseminate them on the SPPCloud. Keep in mind that this tutorial is intended for people developing resources, not for the users of these resources. Required technical prerequisites are detailed in @imp-req.
 
 
 ::: {#imp-req .callout-important collapse="false"}
@@ -403,8 +399,8 @@ __You should not use `pip install` _anywhere_ in your notebooks__ because it is 
 A major challenge in any data science project is to __make sure that its codes can be re-run without error by someone working in a different environment__ (this is called __portability__). Various technical requirements must be met to ensure portability; one of them is to keep track of all packages needed to run the code (and of the exact version of each package!), so that a new user can reinstall them easily. 
 The dependency management tool depends on the language you use:
 
-- If you use `R`, we recommend that you use `renv`, cf its [official documentation](https://rstudio.github.io/renv/articles/renv.html);
-- If you use `Python`, we recommend that you use `uv`, cf its [official documentation](https://docs.astral.sh/uv/)
+- If you use `R`, we recommend that you use `renv`, __cf.__ its [official documentation](https://rstudio.github.io/renv/articles/renv.html);
+- If you use `Python`, we recommend that you use `uv`, __cf.__ its [official documentation](https://docs.astral.sh/uv/)
 
 
 ## Step 4: set up a Github pages website
