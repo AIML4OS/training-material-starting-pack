@@ -181,7 +181,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#benefits-of-sharing-educational-resources-on-the-sspcloud" id="toc-benefits-of-sharing-educational-resources-on-the-sspcloud" class="nav-link active" data-scroll-target="#benefits-of-sharing-educational-resources-on-the-sspcloud"><span class="header-section-number">1</span> Benefits of sharing educational resources on the SSPCloud</a></li>
+  <li><a href="#benefits-of-sharing-educational-resources-on-sspcloud" id="toc-benefits-of-sharing-educational-resources-on-sspcloud" class="nav-link active" data-scroll-target="#benefits-of-sharing-educational-resources-on-sspcloud"><span class="header-section-number">1</span> Benefits of sharing educational resources on <code>SSPCloud</code></a></li>
   <li><a href="#selecting-appropriate-training-materials" id="toc-selecting-appropriate-training-materials" class="nav-link" data-scroll-target="#selecting-appropriate-training-materials"><span class="header-section-number">2</span> Selecting appropriate training materials</a>
   <ul class="collapse">
   <li><a href="#selecting-the-right-interactive-environment" id="toc-selecting-the-right-interactive-environment" class="nav-link" data-scroll-target="#selecting-the-right-interactive-environment"><span class="header-section-number">2.1</span> Selecting the right interactive environment</a></li>
@@ -194,7 +194,7 @@ window.Quarto = {
   <li><a href="#what-are-templates-and-why-use-them" id="toc-what-are-templates-and-why-use-them" class="nav-link" data-scroll-target="#what-are-templates-and-why-use-them"><span class="header-section-number">3.1.1</span> What are templates and why use them?</a></li>
   <li><a href="#how-to-use-a-template" id="toc-how-to-use-a-template" class="nav-link" data-scroll-target="#how-to-use-a-template"><span class="header-section-number">3.1.2</span> How to use a template?</a></li>
   </ul></li>
-  <li><a href="#step-2-define-your-development-configuration-on-the-sspcloud" id="toc-step-2-define-your-development-configuration-on-the-sspcloud" class="nav-link" data-scroll-target="#step-2-define-your-development-configuration-on-the-sspcloud"><span class="header-section-number">3.2</span> Step 2: define your development configuration on the SSPCloud</a>
+  <li><a href="#step-2-define-your-development-configuration-on-sspcloud" id="toc-step-2-define-your-development-configuration-on-sspcloud" class="nav-link" data-scroll-target="#step-2-define-your-development-configuration-on-sspcloud"><span class="header-section-number">3.2</span> Step 2: define your development configuration on <code>SSPCloud</code></a>
   <ul class="collapse">
   <li><a href="#what-is-a-configuration-and-why-is-it-useful" id="toc-what-is-a-configuration-and-why-is-it-useful" class="nav-link" data-scroll-target="#what-is-a-configuration-and-why-is-it-useful"><span class="header-section-number">3.2.1</span> What is a configuration and why is it useful?</a></li>
   <li><a href="#how-to-define-a-configuration" id="toc-how-to-define-a-configuration" class="nav-link" data-scroll-target="#how-to-define-a-configuration"><span class="header-section-number">3.2.2</span> How to define a configuration</a></li>
@@ -270,7 +270,7 @@ Important&nbsp;1: Technical requirements to deploy educational resources
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
-<li>A minimum level of proficiency in <code>Git</code> <i class="fa-brands fa-git-alt" aria-label="git-alt"></i> is required to develop and make available online training resources. However, accessing these resources on the SSPCloud does not require any familiarity with Git.</li>
+<li>A minimum level of proficiency in <code>Git</code> <i class="fa-brands fa-git-alt" aria-label="git-alt"></i> is required to develop and make available online training resources. However, accessing these resources on <code>SSPCloud</code> does not require any familiarity with Git.</li>
 <li><a href="https://quarto.org/"><code>Quarto</code></a> <iconify-icon role="img" inline="" icon="simple-icons:quarto" style="color:#74aadb;" aria-label="Icon quarto from simple-icons Iconify.design set." title="Icon quarto from simple-icons Iconify.design set."></iconify-icon> the automated report and website builder inherited from <code>R Markdown</code>.</li>
 <li>An understanding of the fundamental difference between making resources available for execution on a local computer or on a server like <code>SSPCloud</code>. See <a href="https://docs.sspcloud.fr/en/"><code>SSPCloud</code> documentation</a>.</li>
 <li>Some knowledge regarding deployment of resources using <code>Github Actions</code> <i class="fa-brands fa-github" aria-label="github"></i> is useful. This tutorial gives a few templates but understanding what is happening behind the stage is not in the scope of that tutorial.</li>
@@ -278,20 +278,20 @@ Important&nbsp;1: Technical requirements to deploy educational resources
 </div>
 </div>
 </div>
-<section id="benefits-of-sharing-educational-resources-on-the-sspcloud" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Benefits of sharing educational resources on the SSPCloud</h1>
-<p>Sharing educational resources on the SSPCloud offers several advantages, particularly for educators and learners working with computational tools like R or Python. The key benefits include :</p>
+<section id="benefits-of-sharing-educational-resources-on-sspcloud" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Benefits of sharing educational resources on <code>SSPCloud</code></h1>
+<p>Sharing educational resources on <code>SSPCloud</code> offers several advantages, particularly for educators and learners working with computational tools like R or Python. The key benefits include :</p>
 <ol type="1">
-<li><p><strong>Instant access via a simple link</strong> SSPCloud allows users to launch pre-configured workspaces through a simple HTTPS link. This eliminates the need for local installation or complex setup: learners can start working immediately, directly in their browser.</p></li>
+<li><p><strong>Instant access via a simple link</strong> <code>SSPCloud</code> allows users to launch pre-configured workspaces through a simple HTTPS link. This eliminates the need for local installation or complex setup: learners can start working immediately, directly in their browser.</p></li>
 <li><p><strong>Standardized and reproducible environments</strong> Everyone accesses the same cloud-based environment, including all necessary packages, tools, and datasets. This ensures full consistency across learners, removing issues related to differing operating systems, versions, or missing dependencies.</p></li>
-<li><p><strong>Scalable computing power</strong> SSPCloud offers access to robust computational resources that can scale with your needs. From beginner tutorials in Python or R to advanced workflows involving large datasets or machine learning models, the platform can support a wide range of educational use cases.</p></li>
+<li><p><strong>Scalable computing power</strong> <code>SSPCloud</code> offers access to robust computational resources that can scale with your needs. From beginner tutorials in Python or R to advanced workflows involving large datasets or machine learning models, the platform can support a wide range of educational use cases.</p></li>
 </ol>
-<p>As outlined in the SSPCloud documentation, it’s important to understand that the platform separates code (Git), data (S3), and environment configuration. These components are dynamically combined when launching a compute session.</p>
+<p>As outlined in the <code>SSPCloud</code> documentation, it’s important to understand that the platform separates code (Git), data (S3), and environment configuration. These components are dynamically combined when launching a compute session.</p>
 <p>For training designers, this architecture ensures high reproducibility and fine-grained control over the environment. For users, it eliminates the need to install software, manage system permissions, or configure their local machine—making it easy to jump straight into the tutorial.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./pics/starting_pack_objective.png" class="img-fluid figure-img"></p>
-<figcaption>An illustration of how SSPCloud works</figcaption>
+<figcaption>An illustration of how <code>SSPCloud</code> works</figcaption>
 </figure>
 </div>
 </section>
@@ -434,14 +434,14 @@ Figure&nbsp;1: Use this template button on <code>Github</code>
 </ul>
 </section>
 </section>
-<section id="step-2-define-your-development-configuration-on-the-sspcloud" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="step-2-define-your-development-configuration-on-the-sspcloud"><span class="header-section-number">3.2</span> Step 2: define your development configuration on the SSPCloud</h2>
+<section id="step-2-define-your-development-configuration-on-sspcloud" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="step-2-define-your-development-configuration-on-sspcloud"><span class="header-section-number">3.2</span> Step 2: define your development configuration on <code>SSPCloud</code></h2>
 <!-- get started with `Quarto`   -->
-<p>SSPCloud is not only useful to disseminate educational resources; it is also the right place to develop them. Doing so will facilitate resource dissemination as the environment used for training will be equivalent to the one used for development. In other words, <strong>we strongly recommend developing on <a href="https://datalab.sspcloud.fr">SSPCloud</a> as it will greatly improve the reproducibility of your educational resources</strong>.</p>
+<p><code>SSPCloud</code> is not only useful to disseminate educational resources; it is also the right place to develop them. Doing so will facilitate resource dissemination as the environment used for training will be equivalent to the one used for development. In other words, <strong>we strongly recommend developing on <a href="https://datalab.sspcloud.fr">SSPCloud</a> as it will greatly improve the reproducibility of your educational resources</strong>.</p>
 <p>Some elements of this development environment will be re-used to provide a ready-to-use configuration for learners. However, learners don’t need to be familiar with the technical concepts of configuration: pre-configured environments do exist so that learners can concentrate on acquiring skills!</p>
 <section id="what-is-a-configuration-and-why-is-it-useful" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="what-is-a-configuration-and-why-is-it-useful"><span class="header-section-number">3.2.1</span> What is a configuration and why is it useful?</h3>
-<p>The best way to develop resources on the SSPCloud is to define your own development configuration. In technical terms, <strong>a configuration is just a service available on the SSPCloud (eg: <code>RStudio</code> or <code>VSCode</code>) with additional user-defined settings</strong> such as: the Github repository you want to work on, your Github credentials, the size of memory and number of CPU you want to use, the initialization script you want to run…</p>
+<p>The best way to develop resources on <code>SSPCloud</code> is to define your own development configuration. In technical terms, <strong>a configuration is just a service available on <code>SSPCloud</code> (eg: <code>RStudio</code> or <code>VSCode</code>) with additional user-defined settings</strong> such as: the Github repository you want to work on, your Github credentials, the size of memory and number of CPU you want to use, the initialization script you want to run…</p>
 <p>Defining a configuration has two advantages:</p>
 <ul>
 <li>it lets you define explicitly the technical environment you want to use for a specific project;</li>
@@ -468,7 +468,7 @@ Note
 </section>
 <section id="how-to-define-a-configuration" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="how-to-define-a-configuration"><span class="header-section-number">3.2.2</span> How to define a configuration</h3>
-<p>Here is how to define a ready to use development configuration using the SSPCloud. A video version is proposed below the text.</p>
+<p>Here is how to define a ready to use development configuration using <code>SSPCloud</code>. A video version is proposed below the text.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href=""><code>Python</code> <i class="fa-brands fa-python" aria-label="python"></i></a></li></ul>
 <div class="tab-content">
@@ -907,11 +907,11 @@ Warning
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true" href=""><code>Python</code> <i class="fa-brands fa-python" aria-label="python"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i></a></li></ul>
 <div class="tab-content">
 <div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
-<p>The script <code>init-trainees.sh</code> provided in the <code>sspcloud</code> folder of the <em>template</em> helps you to configure the environment for trainees on the SSPCloud. This script does two things: install the environment needed to run the notebook and download the notebook you want to provide trainees with.</p>
+<p>The script <code>init-trainees.sh</code> provided in the <code>sspcloud</code> folder of the <em>template</em> helps you to configure the environment for trainees on <code>SSPCloud</code>. This script does two things: install the environment needed to run the notebook and download the notebook you want to provide trainees with.</p>
 <p><strong>You do not need to modify this script.</strong> This script takes only one argument: the path of the notebook within the website (see next section). If the notebook you want to make available is located at is available at <a href="https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb" class="uri">https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb</a>, then this argument should be <code>notebooks/notebook1.ipynb</code>.</p>
 </div>
 <div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
-<p>The script <code>init-trainees.sh</code> provided in the <code>sspcloud</code> folder of the <em>template</em> helps you to configure the environment for trainees on the SSPCloud. This script does two things: install the environment needed to run the notebook and open the Quarto file you want to provide trainees with.</p>
+<p>The script <code>init-trainees.sh</code> provided in the <code>sspcloud</code> folder of the <em>template</em> helps you to configure the environment for trainees on <code>SSPCloud</code>. This script does two things: install the environment needed to run the notebook and open the Quarto file you want to provide trainees with.</p>
 <p><strong>You do not need to modify this script.</strong> This script takes only one argument: the path of the Quarto file within the Github repository (see next section). If the Quarto file you want to make available is located at is available at <a href="https://github.com/AIML4OS/AIML4OS-template-quarto-python/blob/main/chapters/chapter1.qmd" class="uri">https://github.com/AIML4OS/AIML4OS-template-quarto-python/blob/main/chapters/chapter1.qmd</a>, then this argument should be <code>chapters/chapter1.qmd</code>.</p>
 </div>
 </div>
@@ -926,20 +926,20 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When using initialization script, you <strong>must put</strong> the <strong>raw github URL</strong> of the script in the <code>Initialization scripts</code> field of the SSPCloud configuration of your service. This URL is available by clicking on the <code>raw</code> button when opening the file on Github (see screenshot below). The URL should have a pattern similar to this one: <a href="https://raw.githubusercontent.com/InseeFrLab/AIML4OS-template-quarto-python/refs/heads/main/sspcloud/init-trainees.sh" class="uri">https://raw.githubusercontent.com/InseeFrLab/AIML4OS-template-quarto-python/refs/heads/main/sspcloud/init-trainees.sh</a>.</p>
+<p>When using initialization script, you <strong>must put</strong> the <strong>raw github URL</strong> of the script in the <code>Initialization scripts</code> field of the configuration of your <code>SSPCloud</code> service. This URL is available by clicking on the <code>raw</code> button when opening the file on Github (see screenshot below). The URL should have a pattern similar to this one: <a href="https://raw.githubusercontent.com/InseeFrLab/AIML4OS-template-quarto-python/refs/heads/main/sspcloud/init-trainees.sh" class="uri">https://raw.githubusercontent.com/InseeFrLab/AIML4OS-template-quarto-python/refs/heads/main/sspcloud/init-trainees.sh</a>.</p>
 <p><img src="pics/SSPCloud9.png" class="img-fluid" width="600"></p>
 </div>
 </div>
 </section>
 <section id="setting-up-an-auto-launch-url" class="level3" data-number="3.5.2">
 <h3 data-number="3.5.2" class="anchored" data-anchor-id="setting-up-an-auto-launch-url"><span class="header-section-number">3.5.2</span> Setting up an auto launch URL</h3>
-<p>A convenient feature of SSPCloud is that you can make a whole training environment available through one URL link: in one click, trainees open a VSCode service that contains a Jupyter notebook, the data used by the notebook, all dependencies needed to run the notebook, and sufficient resources to run the code.</p>
+<p>A convenient feature of <code>SSPCloud</code> is that you can make a whole training environment available through one URL link: in one click, trainees open a VSCode service that contains a Jupyter notebook, the data used by the notebook, all dependencies needed to run the notebook, and sufficient resources to run the code.</p>
 <p>To do so, just follow two steps:</p>
 <ul>
 <li><p>Define all aspects of the training environment using the usual interface. Here are the elements you will probably want to configure:</p>
 <ul>
 <li><p><code>Friendly Name</code>: do not forget to use a meaningful name (“Intro_To_Deep_Learning”), that will be more convenient for trainees;</p></li>
-<li><p><code>Resources</code>: choose the requests and limits that are well-suited for your use case. Some trial-and-error might be necessary here. However, <strong>in most cases, you don’t need to change the resources there</strong> because default SSPCloud settings fit most needs.</p></li>
+<li><p><code>Resources</code>: choose the requests and limits that are well-suited for your use case. Some trial-and-error might be necessary here. However, <strong>in most cases, you don’t need to change the resources there</strong> because default settings of <code>SSPCloud</code> fit most needs.</p></li>
 <li><p><code>Initialization scripts</code>:</p>
 <ul>
 <li><code>Use a custom script (URL)</code>: paste the URL to the initialization script for trainees (see previous section).</li>
@@ -947,7 +947,7 @@ Warning
 </ul></li>
 <li><p><code>GIT</code>: In the “Repository” field, paste the URL of the Github repository containing the training resources.</p></li>
 </ul></li>
-<li><p>Copy the link provided at the top of the interface by clicking on “Copy Auto Launch URL”, and paste it wherever you want. Anyone with an SSPCloud account can use it to open a pre-configured service. <strong>Do not forget to test your link a few times to be sure it works</strong>. Do not be afraid if it does not work on the first time, some trial-and-error is often necessary.</p></li>
+<li><p>Copy the link provided at the top of the interface by clicking on “Copy Auto Launch URL”, and paste it wherever you want. Anyone with an <code>SSPCloud</code> account can use it to open a pre-configured service. <strong>Do not forget to test your link a few times to be sure it works</strong>. Do not be afraid if it does not work on the first time, some trial-and-error is often necessary.</p></li>
 </ul>
 <p><img src="pics/SSPCloud5.png" class="img-fluid" width="600"></p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -993,7 +993,7 @@ Note
 <p>to be completed</p>
 <!-- ## Make a ready to use link to your resources
 
-Let's assume now you want learners to avoid copy-pasting code from your program to their sandbox environment. SSPCloud proposes a feature that enables to launch a ready to use sandbox with one click. This enables to start an environment that can be overloaded by some parameters that would make learners ready to start their learning experience. 
+Let's assume now you want learners to avoid copy-pasting code from your program to their sandbox environment. `SSPCloud` proposes a feature that enables to launch a ready to use sandbox with one click. This enables to start an environment that can be overloaded by some parameters that would make learners ready to start their learning experience. 
 
 ::: {.panel-tabset}
 ## R
