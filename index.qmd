@@ -103,6 +103,7 @@ It makes it possible to mix seamlessly code and text in the same document and ca
 ![](pics/quarto.png)
 
 This tutorial assumes educational resources will be available in two formats :
+
 - `Quarto` websites, mixing text and code chunks;
 - Interactive environment (see ☝️).
 
