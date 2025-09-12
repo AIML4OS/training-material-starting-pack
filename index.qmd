@@ -95,16 +95,6 @@ Since the first option can become cumbersome - especially when learners need to 
 
 ![Example with RStudio](/pics/rstudio.png)
 
-::: {.callout-caution}
-## Why `learnr` Is Not Recommended
-
-While `learnr` allows for the creation of interactive and advanced elements such as quizzes—making it well-suited for beginner tutorials—it has some important limitations.
-
-First, it requires deployment on a Shiny server, which can be costly and complex to maintain. Additionally, in `learnr`, code cells do not share a global environment. This means variables and objects created in one chunk are not accessible in others, making it difficult to manage state or build on previous steps.
-
-These restrictions limit the usefulness of `learnr` for more complex tutorials, where maintaining continuity and evolving context across the tutorial is essential.
-
-:::
 
 :::: 
 
@@ -274,12 +264,6 @@ __Rstudio services may take a lot of time to start__ (up to 10 minutes!), becaus
 
 If you have created a repository from a template and defined a development configuration, developing resources basically means modifying and extending the minimal examples available in your repository.
 
-::: {.callout-important collapse="false"}
-## Git, git, git, git, git
-
-__Be sure to regularly commit and push your changes__ (every 30 minutes or so), because your service (Rstudio or VScode) is not persistent, meaning that any changes that were pushed before closing the service are permanently lost.
-:::
-
 ### Change the URLs
 
 The first thing you must do is change the URLs of the repository in the `_quarto.yml` file:
@@ -327,88 +311,8 @@ To obtain the S3 path to your data, use the File Explorer to navigate and find t
 
 ### How to write Quarto documents?
 
-Most of the resources you will develop will take the form of Quarto documents, that you will either provide to final users or compile to final outputs (for instance, websites or Jupyter notebooks). Therefore, you must learn how to use Quarto. Fortunately, Quarto is easy to use, has an amazing documentation and there are plenty of resources online to help you.
+Most of the resources you will develop will take the form of Quarto documents, that you will either provide to final users or compile to final outputs (for instance, websites or Jupyter notebooks). Therefore, you must learn how to use Quarto. Fortunately, Quarto is easy to use, has an amazing [documentation](https://quarto.org/) and there are plenty of resources online to help you.
 
-To to get started with Quarto documents, there are three basic elements you should know about: the header, raw text with Markdown formatting, and code chunks. We strongly recommend that you refer to the [official Quarto documentation](https://quarto.org/docs/guide/) and in particular to the [beginner Quarto tutorial](https://quarto.org/docs/get-started/hello/rstudio.html).
-
-#### The header
-
-Your Quarto document typically starts with a **YAML header** to define metadata such as author, title, and so on. Here is a simple example. You can also have a look at the headers of the Quarto files available in the templates. One particular important setting is the `format` setting: it tells what output should be produced (html, notebook...) when compiling Quarto compiles the document.
-
-~~~yaml
----
-title: "My beautiful Quarto Report"
-author: "Mickey mouse"
----
-~~~
-
-#### Raw text with Markdown formatting
-
-A Quarto document contains blocks of text with Markdown formatting. See [here](https://quarto.org/docs/authoring/markdown-basics.html) for a detailed presentation of Markdown. Here is a short example:  
-
-~~~markdown
-This is text with *italics* and **bold**.
-
-You can create lists and nested sublists :
-
-- first element;
-- second element;
-    - first sub-element;
-    - second sub-element.
-~~~
-
-This code will result in the following formatted text:
-
-This is text with *italics* and **bold**.
-
-You can create lists and nested sublists:
-
-- first element;
-- second element;
-    - first sub-element;
-    - second sub-element.
-
-#### Code chunks
-
-A Quarto document can also contain blocks of code inside **code chunks**, denoted with triple backticks and the language you use. Adding a name to each chunk is a good practice (`nice_code` in the example below). You can use [chunk options](https://quarto.org/docs/computations/execution-options.html) to change the behavior of the chunk (for instance if you want to show some code without executing it). 
-
-::: {.panel-tabset}
-
-## {{< fa brands r-project >}}
-
-````markdown
-```{{r}}
-#| label: nice_code
-# Load packages
-library(ggplot2)
-
-# Plot mpg vs hp
-ggplot(mtcars, aes(x = hp, y = mpg)) +
-  geom_point() +
-  theme_minimal()
-```
-````
-
-## `Python` {{< fa brands python >}}
-
-````markdown
-```{{python}}
-#| label: nice_code
-import numpy as np
-import matplotlib.pyplot as plt
-
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(
-  subplot_kw = {'projection': 'polar'} 
-)
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
-```
-````
-:::
 
 ### Developing resources
 
