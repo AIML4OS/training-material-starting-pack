@@ -573,13 +573,13 @@ git push origin gh-pages # Pushing so that the gh-pages branch exists on the rem
 git checkout main
 ```
 
-### Define a Github Actions workflow
+### Setting up a Github Actions workflow
 
 You need to define a Github Actions workflow to automate output construction and deployment. A GHA workflow is a list of instructions (for instance: install `R`, install packages...) that are executed automatically every time a certain event happens (for instance every time you push on the main branch). A GHA workflow is defined using specific `yaml` scripts, located in the `.github/workflows` directory of your repository. __The templates already contain standard workflows that you can use as a starting point.__ We recommend that you have a careful look at these workflows; comments were added so that they are easy to follow.
 
 A few important remarks on automated deployment:
 
-- The website is deployed at an URL that depends on the owner and the name of the repository: `https://{REPO_OWNER}.github.io/{REPO_NAME}/`.
+- The website is deployed at an URL that depends on the owner and the name of the repository: `https://{REPO_OWNER}.github.io/{REPO_NAME}/`. Don't forget to change the `site-url` in the `_quarto.yml` file of your template to `https://{REPO_OWNER}.github.io/{REPO_NAME}/`.
 - You can monitor Github Actions jobs in the "Actions" tab of the Github repository of your project. Do not be afraid if your jobs fail at first; getting Github Actions to work often requires some debugging.
 
 ### Add the website URL to your Github repository
