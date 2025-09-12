@@ -26,9 +26,9 @@ the automated report and website builder inherited from `R Markdown`.
 :::
 
 
-# Benefits of Sharing Educational Resources on SSPCloud
+# Benefits of sharing educational resources on the SSPCloud
 
-Sharing educational resources on SSPCloud offers several advantages, particularly for educators and learners working with computational tools like R or Python. The key benefits include :
+Sharing educational resources on the SSPCloud offers several advantages, particularly for educators and learners working with computational tools like R or Python. The key benefits include :
 
 1. **Instant access via a simple link**
 SSPCloud allows users to launch pre-configured workspaces through a simple HTTPS link. This eliminates the need for local installation or complex setup: learners can start working immediately, directly in their browser.
@@ -47,7 +47,7 @@ For training designers, this architecture ensures high reproducibility and fine-
 
 ![An illustration of how SSPCloud works](/pics/starting_pack_objective.png)
 
-# Selecting Appropriate Training Materials
+# Selecting appropriate training materials
 
 When designing effective training materials, it's essential to choose formats that actively engage learners and support comprehension. While PDFs, slide decks, and videos are all valuable for delivering content, this guide focuses on static websites and interactive environments, which are particularly well-suited for hands-on learning. These environments enable learners to apply concepts immediately, test code in real time, and actively engage with the material—leading to deeper understanding and better long-term retention.
 
@@ -132,7 +132,7 @@ The very first step towards developing educational resources consists in creatin
 * {{< fa brands r-project >}}: [template](https://github.com/AIML4OS/AIML4OS-template-quarto-r)
 * `Python` {{< fa brands python >}}: [template](https://github.com/AIML4OS/AIML4OS-template-quarto-python).
 
-These templates contain all what you need to produce resources that can be easily made available as websites or as interactive environments on the SSP Cloud. More precisely, these templates contain:
+These templates contain all what you need to produce resources that can be easily made available as websites or as interactive environments on  SSPCloud. More precisely, these templates contain:
 
 - a minimal `Quarto` website with visual elements reflecting AIML4OS aesthetic;
 - a minimal example of a `Quarto` document producing a Jupyter Notebook ({{< fa brands python >}} only);
@@ -290,7 +290,7 @@ The first thing you must do is change the URLs of the repository in the `_quarto
 
 ### Manage data (if needed)
 
-Depending on your project, your scripts may require some data, for instance to train a model. However, when you start a service on SSP Cloud (VSCode or Rstudio), it does not contain any data. That implies that you have to download data into your service. Of course, you _could_ do it by hand every time you start a service, but we strongly recommend that you automatize this step. The simplest way to proceed is to upload your data on the S3 storage service of SSPCloud, and then download it from S3 into your service every time you start a service.
+Depending on your project, your scripts may require some data, for instance to train a model. However, when you start a service on the SSP Cloud (VSCode or Rstudio), it does not contain any data. That implies that you have to download data into your service. Of course, you _could_ do it by hand every time you start a service, but we strongly recommend that you automatize this step. The simplest way to proceed is to upload your data on the S3 storage service of SSPCloud, and then download it from S3 into your service every time you start a service.
 
 #### Upload data to S3
 
