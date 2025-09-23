@@ -271,7 +271,7 @@ The first thing you must do is change the URLs of the repository in the `_quarto
 
 ### Manage data (if needed)
 
-Depending on your project, your scripts may require some data, for instance to train a model. However, when you start a service on the SSP Cloud (VSCode or Rstudio), it does not contain any data. That implies that you have to download data into your service. Of course, you _could_ do it by hand every time you start a service, but we strongly recommend that you automatize this step. The simplest way to proceed is to upload your data on the S3 storage service of SSPCloud, and then download it from S3 into your service every time you start a service.
+Depending on your project, your scripts may require some data, for instance to train a model. However, when you start a service on `SSPCloud` (VSCode or Rstudio), it does not contain any data. That implies that you have to download data into your service. Of course, you _could_ do it by hand every time you start a service, but we strongly recommend that you automatize this step. The simplest way to proceed is to upload your data on the S3 storage service of SSPCloud, and then download it from S3 into your service every time you start a service.
 
 #### Upload data to S3
 
@@ -488,7 +488,7 @@ You can add the website URL to your Github repository so that it is easier to fi
 ![](pics/SSPCloud10.png){width=600}
 
 
-## Step 5: make your interactive environments easily available on the SSP Cloud
+## Step 5: make your interactive environments easily available on `SSPCloud`
 
 __This step is optional__, depending on whether your resources include interactive environments (Jupyter notebooks for `Python`, interactive Quarto documents with `R` chunks for `R`). You can skip this step if your resources consist only in a Quarto website.
 
@@ -601,9 +601,9 @@ which, when formatted, will give a button like this
 
 
 
-### Add your resources on the training webpage hosted on the SSP Cloud
+### Add your resources on the training webpage hosted on `SSPCloud`
 
-to be completed
+If you are ready to make your resources available to trainees, just send an email to innovation@insee.fr, and the IT Innovation Team of Insee will help you through the process of publishing your resources on `SSPCloud`.
 
 <!-- ## Make a ready to use link to your resources
 
