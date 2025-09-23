@@ -215,12 +215,12 @@ window.Quarto = {
   <li><a href="#setting-up-a-github-actions-workflow" id="toc-setting-up-a-github-actions-workflow" class="nav-link" data-scroll-target="#setting-up-a-github-actions-workflow"><span class="header-section-number">3.4.3</span> Setting up a Github Actions workflow</a></li>
   <li><a href="#add-the-website-url-to-your-github-repository" id="toc-add-the-website-url-to-your-github-repository" class="nav-link" data-scroll-target="#add-the-website-url-to-your-github-repository"><span class="header-section-number">3.4.4</span> Add the website URL to your Github repository</a></li>
   </ul></li>
-  <li><a href="#step-5-make-your-interactive-environments-easily-available-on-the-ssp-cloud" id="toc-step-5-make-your-interactive-environments-easily-available-on-the-ssp-cloud" class="nav-link" data-scroll-target="#step-5-make-your-interactive-environments-easily-available-on-the-ssp-cloud"><span class="header-section-number">3.5</span> Step 5: make your interactive environments easily available on the SSP Cloud</a>
+  <li><a href="#step-5-make-your-interactive-environments-easily-available-on-sspcloud" id="toc-step-5-make-your-interactive-environments-easily-available-on-sspcloud" class="nav-link" data-scroll-target="#step-5-make-your-interactive-environments-easily-available-on-sspcloud"><span class="header-section-number">3.5</span> Step 5: make your interactive environments easily available on <code>SSPCloud</code></a>
   <ul class="collapse">
   <li><a href="#the-initialization-script-for-trainees" id="toc-the-initialization-script-for-trainees" class="nav-link" data-scroll-target="#the-initialization-script-for-trainees"><span class="header-section-number">3.5.1</span> The initialization script for trainees</a></li>
   <li><a href="#setting-up-an-auto-launch-url" id="toc-setting-up-an-auto-launch-url" class="nav-link" data-scroll-target="#setting-up-an-auto-launch-url"><span class="header-section-number">3.5.2</span> Setting up an auto launch URL</a></li>
   <li><a href="#adding-a-launch-button-to-your-website-bonus" id="toc-adding-a-launch-button-to-your-website-bonus" class="nav-link" data-scroll-target="#adding-a-launch-button-to-your-website-bonus"><span class="header-section-number">3.5.3</span> Adding a launch button to your website (bonus)</a></li>
-  <li><a href="#add-your-resources-on-the-training-webpage-hosted-on-the-ssp-cloud" id="toc-add-your-resources-on-the-training-webpage-hosted-on-the-ssp-cloud" class="nav-link" data-scroll-target="#add-your-resources-on-the-training-webpage-hosted-on-the-ssp-cloud"><span class="header-section-number">3.5.4</span> Add your resources on the training webpage hosted on the SSP Cloud</a></li>
+  <li><a href="#add-your-resources-on-the-training-webpage-hosted-on-sspcloud" id="toc-add-your-resources-on-the-training-webpage-hosted-on-sspcloud" class="nav-link" data-scroll-target="#add-your-resources-on-the-training-webpage-hosted-on-sspcloud"><span class="header-section-number">3.5.4</span> Add your resources on the training webpage hosted on <code>SSPCloud</code></a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -601,7 +601,7 @@ Note
 </section>
 <section id="manage-data-if-needed" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="manage-data-if-needed"><span class="header-section-number">3.3.2</span> Manage data (if needed)</h3>
-<p>Depending on your project, your scripts may require some data, for instance to train a model. However, when you start a service on the SSP Cloud (VSCode or Rstudio), it does not contain any data. That implies that you have to download data into your service. Of course, you <em>could</em> do it by hand every time you start a service, but we strongly recommend that you automatize this step. The simplest way to proceed is to upload your data on the S3 storage service of SSPCloud, and then download it from S3 into your service every time you start a service.</p>
+<p>Depending on your project, your scripts may require some data, for instance to train a model. However, when you start a service on <code>SSPCloud</code> (VSCode or Rstudio), it does not contain any data. That implies that you have to download data into your service. Of course, you <em>could</em> do it by hand every time you start a service, but we strongly recommend that you automatize this step. The simplest way to proceed is to upload your data on the S3 storage service of SSPCloud, and then download it from S3 into your service every time you start a service.</p>
 <section id="upload-data-to-s3" class="level4" data-number="3.3.2.1">
 <h4 data-number="3.3.2.1" class="anchored" data-anchor-id="upload-data-to-s3"><span class="header-section-number">3.3.2.1</span> Upload data to S3</h4>
 <p>The simplest way to upload data to S3 is to use the graphical interface available on SSPCloud. <strong>You have to do only once</strong> (except if you want to change or update the data, of course). To do so, click on “File Explorer” on the left hand and then on “My data”.</p>
@@ -871,8 +871,8 @@ Warning
 <p><img src="pics/SSPCloud10.png" class="img-fluid" width="600"></p>
 </section>
 </section>
-<section id="step-5-make-your-interactive-environments-easily-available-on-the-ssp-cloud" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="step-5-make-your-interactive-environments-easily-available-on-the-ssp-cloud"><span class="header-section-number">3.5</span> Step 5: make your interactive environments easily available on the SSP Cloud</h2>
+<section id="step-5-make-your-interactive-environments-easily-available-on-sspcloud" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="step-5-make-your-interactive-environments-easily-available-on-sspcloud"><span class="header-section-number">3.5</span> Step 5: make your interactive environments easily available on <code>SSPCloud</code></h2>
 <p><strong>This step is optional</strong>, depending on whether your resources include interactive environments (Jupyter notebooks for <code>Python</code>, interactive Quarto documents with <code>R</code> chunks for <code>R</code>). You can skip this step if your resources consist only in a Quarto website.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -988,9 +988,9 @@ Note
 </div>
 </div>
 </section>
-<section id="add-your-resources-on-the-training-webpage-hosted-on-the-ssp-cloud" class="level3" data-number="3.5.4">
-<h3 data-number="3.5.4" class="anchored" data-anchor-id="add-your-resources-on-the-training-webpage-hosted-on-the-ssp-cloud"><span class="header-section-number">3.5.4</span> Add your resources on the training webpage hosted on the SSP Cloud</h3>
-<p>to be completed</p>
+<section id="add-your-resources-on-the-training-webpage-hosted-on-sspcloud" class="level3" data-number="3.5.4">
+<h3 data-number="3.5.4" class="anchored" data-anchor-id="add-your-resources-on-the-training-webpage-hosted-on-sspcloud"><span class="header-section-number">3.5.4</span> Add your resources on the training webpage hosted on <code>SSPCloud</code></h3>
+<p>If you are ready to make your resources available to trainees, just send an email to innovation@insee.fr, and the IT Innovation Team of Insee will help you through the process of publishing your resources on <code>SSPCloud</code>.</p>
 <!-- ## Make a ready to use link to your resources
 
 Let's assume now you want learners to avoid copy-pasting code from your program to their sandbox environment. `SSPCloud` proposes a feature that enables to launch a ready to use sandbox with one click. This enables to start an environment that can be overloaded by some parameters that would make learners ready to start their learning experience. 
