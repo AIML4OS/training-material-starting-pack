@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -74,10 +74,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1713c1db1ad41a796903378fc9ac7b2b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
@@ -282,7 +282,7 @@ Important&nbsp;1: Technical requirements to deploy educational resources
 <h1 data-number="1"><span class="header-section-number">1</span> Benefits of sharing educational resources on <code>SSPCloud</code></h1>
 <p>Sharing educational resources on <code>SSPCloud</code> offers several advantages, particularly for educators and learners working with computational tools like R or Python. The key benefits include :</p>
 <ol type="1">
-<li><p><strong>Instant access via a simple link</strong> <code>SSPCloud</code> allows users to launch pre-configured workspaces through a simple HTTPS link. This eliminates the need for local installation or complex setup: learners can start working immediately, directly in their browser.</p></li>
+<li><p><strong>Instant access via a simple link</strong> <code>SSPCloud</code> allows users to launch pre-configured workspaces through a simple HTTPS link. This eliminates the need for local installation or complex setup: learners can start working immediately, directly in their browser. You can find some <a href="https://www.sspcloud.fr/catalog">tutorials</a> examples.</p></li>
 <li><p><strong>Standardized and reproducible environments</strong> Everyone accesses the same cloud-based environment, including all necessary packages, tools, and datasets. This ensures full consistency across learners, removing issues related to differing operating systems, versions, or missing dependencies.</p></li>
 <li><p><strong>Scalable computing power</strong> <code>SSPCloud</code> offers access to robust computational resources that can scale with your needs. From beginner tutorials in Python or R to advanced workflows involving large datasets or machine learning models, the platform can support a wide range of educational use cases.</p></li>
 </ol>
@@ -305,9 +305,18 @@ Important&nbsp;1: Technical requirements to deploy educational resources
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href=""><code>Python</code> <i class="fa-brands fa-python" aria-label="python"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i></a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<section id="the-final-product-the-interactive-notebook" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="the-final-product-the-interactive-notebook"><span class="header-section-number">2.1.1</span> 📓 The final product: the <strong>interactive notebook</strong></h3>
 <p><code>Jupyter</code> notebooks<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> offer an interactive interface that allows you to write <code>Python</code> code, test it, and see the result below the instruction rather than in a separate console. <code>Jupyter</code> notebooks are essential in the fields of data science and education and research because they greatly simplify exploration and experimentation.</p>
 <p>They allow you to combine text in <code>Markdown</code> format (a lighter markup text format than <code>HTML</code> or <span class="math inline">\(\LaTeX\)</span>), <code>Python</code> code, and <code>HTML</code> code for visualizations and animations in a single document.</p>
-<p>Initially, <code>Jupyter</code> <iconify-icon role="img" inline="" icon="vscode-icons:file-type-jupyter" aria-label="Icon file-type-jupyter from vscode-icons Iconify.design set." title="Icon file-type-jupyter from vscode-icons Iconify.design set."></iconify-icon> was the only software offering these interactive features. Now, there are other ways to benefit from notebook advantages while having an IDE with more comprehensive features than <code>Jupyter</code>. For this reason, as of 2025, we recommend developing resources with <code>VSCode</code> <iconify-icon role="img" inline="" icon="vscode-icons:file-type-vscode" aria-label="Icon file-type-vscode from vscode-icons Iconify.design set." title="Icon file-type-vscode from vscode-icons Iconify.design set."></iconify-icon>, a general-purpose code editor but offering excellent features in <code>Python</code>, rather than with <code>Jupyter</code>. For more information on using notebooks in VSCode, refer to the <a href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks">official documentation</a>.</p>
+</section>
+<section id="the-development-environment-where-you-create-notebooks" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="the-development-environment-where-you-create-notebooks"><span class="header-section-number">2.1.2</span> 🛠️ The development environment: <strong>where you create notebooks</strong></h3>
+<p>Initially, <code>Jupyter</code> <iconify-icon role="img" inline="" icon="vscode-icons:file-type-jupyter" aria-label="Icon file-type-jupyter from vscode-icons Iconify.design set." title="Icon file-type-jupyter from vscode-icons Iconify.design set."></iconify-icon> was the only software offering these interactive features. Now, there are other ways to benefit from notebook advantages while having an IDE with more comprehensive features than <code>Jupyter</code>.</p>
+<blockquote class="blockquote">
+<p>💡 For this reason, as of 2025, we recommend developing resources with <code>VSCode</code> <iconify-icon role="img" inline="" icon="vscode-icons:file-type-vscode" aria-label="Icon file-type-vscode from vscode-icons Iconify.design set." title="Icon file-type-vscode from vscode-icons Iconify.design set."></iconify-icon>, a general-purpose code editor but offering excellent features in <code>Python</code>, rather than with <code>Jupyter</code>.</p>
+</blockquote>
+<p>For more information on using notebooks in VSCode, refer to the <a href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks">official documentation</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -333,8 +342,11 @@ Note
 <figcaption>Example with <code>VSCode</code> <iconify-icon role="img" inline="" icon="vscode-icons:file-type-vscode" aria-label="Icon file-type-vscode from vscode-icons Iconify.design set." title="Icon file-type-vscode from vscode-icons Iconify.design set."></iconify-icon></figcaption>
 </figure>
 </div>
+</section>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<section id="the-final-product-the-quarto-markdown-file-or-html-website" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="the-final-product-the-quarto-markdown-file-or-html-website"><span class="header-section-number">2.1.3</span> 📓 The final product: the <strong>Quarto Markdown file</strong> or <strong>HTML website</strong></h3>
 <p>In <i class="fa-brands fa-r-project" aria-label="r-project"></i>, notebooks are not commonly used - even though they offer several features that are particularly valuable for educational purposes.</p>
 <p>When designing <i class="fa-brands fa-r-project" aria-label="r-project"></i>-based training materials, two main options are available, each with its own pros and cons:</p>
 <ol type="1">
@@ -350,23 +362,33 @@ Note
 </ul></li>
 </ol>
 <p>Since the first option can become cumbersome - especially when learners need to copy and paste large blocks of code - it is generally recommended to use the second option in most cases. Providing direct access to a Quarto Markdown file helps minimize the risk of hard-to-reproduce errors that often arise when learners switch between an HTML tutorial and their R session.</p>
+</section>
+<section id="the-development-environment-where-you-create-your-resources" class="level3" data-number="2.1.4">
+<h3 data-number="2.1.4" class="anchored" data-anchor-id="the-development-environment-where-you-create-your-resources"><span class="header-section-number">2.1.4</span> 🛠️ The development environment: <strong>where you create your resources</strong></h3>
+<p>You can develop your educational resources with RStudio IDE or with VSCode, a general-purpose code editor that can also be used with Python.</p>
+</section>
+<section id="the-development-environment-where-you-create-your-resources-1" class="level3" data-number="2.1.5">
+<h3 data-number="2.1.5" class="anchored" data-anchor-id="the-development-environment-where-you-create-your-resources-1"><span class="header-section-number">2.1.5</span> 🛠️ The development environment: <strong>where you create your resources</strong></h3>
+<p>You can develop your educational resources with RStudio IDE or with VSCode, a general-purpose code editor that can also be used with Python.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./pics/rstudio.png" class="img-fluid figure-img"></p>
 <figcaption>Example with RStudio</figcaption>
 </figure>
 </div>
+</section>
 </div>
 </div>
 </div>
 </section>
 <section id="using-quarto-to-develop-training-resources" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="using-quarto-to-develop-training-resources"><span class="header-section-number">2.2</span> Using <code>Quarto</code> <iconify-icon role="img" inline="" icon="simple-icons:quarto" style="color:#74aadb;" aria-label="Icon quarto from simple-icons Iconify.design set." title="Icon quarto from simple-icons Iconify.design set."></iconify-icon> to develop training resources</h2>
-<p><code>Quarto</code> is an open source program for creating <code>Python</code> <i class="fa-brands fa-python" aria-label="python"></i> and <i class="fa-brands fa-r-project" aria-label="r-project"></i> reproducible tutorials. It makes it possible to mix seamlessly code and text in the same document and can handle many output formats, including html, pdf or notebook (.ipynb extension). <code>Quarto</code> is strongly recommended for the development of educational resources.</p>
+<p><code>Quarto</code> is an open source program for creating <code>Python</code> <i class="fa-brands fa-python" aria-label="python"></i> and <i class="fa-brands fa-r-project" aria-label="r-project"></i> reproducible tutorials. It makes it possible to mix seamlessly code and text in the same document and can handle many output formats, including html, pdf or notebook (.ipynb extension).</p>
+<p><strong><code>Quarto</code> is strongly recommended for the development of educational resources.</strong></p>
 <p><img src="pics/quarto.png" class="img-fluid"></p>
 <p>This tutorial assumes educational resources will be available in two formats :</p>
 <ul>
-<li><code>Quarto</code> websites, mixing text and code chunks;</li>
+<li><code>Quarto</code> websites - based on multiple <code>Quarto</code> files and mixing text and code chunks;</li>
 <li>Interactive environment (see ☝️).</li>
 </ul>
 </section>
@@ -469,6 +491,22 @@ Note
 <section id="how-to-define-a-configuration" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="how-to-define-a-configuration"><span class="header-section-number">3.2.2</span> How to define a configuration</h3>
 <p>Here is how to define a ready to use development configuration using <code>SSPCloud</code>. A video version is proposed below the text.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Git Configuration
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>If you’re using <code>SSPCloud</code> for the first time, you must configure your personal access token on GitHub in order to access to your GitHub repository (see <a href="https://docs.sspcloud.fr/content/version-control.html">version control</a> for more details). You don’t have to configure your GitHub personal token access every time afterwards.</p>
+</div>
+</div>
+</div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href=""><i class="fa-brands fa-r-project" aria-label="r-project"></i></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href=""><code>Python</code> <i class="fa-brands fa-python" aria-label="python"></i></a></li></ul>
 <div class="tab-content">
@@ -490,7 +528,7 @@ Note
 <li>You’re ready to go!</li>
 </ul>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -499,7 +537,7 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p><strong>Rstudio services may take a lot of time to start</strong> (up to 10 minutes!), because installing dependencies with <code>renv</code> is quite slow. If you get a time-out error, close and re-open the service (but do not delete it!), it will open eventually.</p>
 </div>
@@ -527,7 +565,7 @@ Note
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -536,7 +574,7 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Here’s a video summarizing these manual gestures for configuring the Python environment. Setting up the R environment is very similar. The values entered in the fields, in particular the initialization script, are those given in the example above: adapt these values to your needs.</p>
 <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;"><iframe src="https://zoom.us/clips/embed/wGjagl_4RIemXEN98xvARg" frameborder="0" allowfullscreen="allowfullscreen" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></iframe></div>
@@ -559,7 +597,7 @@ Note
 <li>You’re ready to go!</li>
 </ul>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -568,7 +606,7 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p><strong>Rstudio services may take a lot of time to start</strong> (up to 10 minutes!), because installing dependencies with <code>renv</code> is quite slow. If you get a time-out error, close and re-open the service (but do not delete it!), it will open eventually.</p>
 </div>
@@ -609,7 +647,7 @@ Note
 <p>You can upload a file by navigating clicking on “Upload file” (blue rectangle). You can also create a subfolder by clicking on “Create directory” (red rectangle).</p>
 <p><img src="pics/SSPCloud7.png" class="img-fluid" width="700"></p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -618,7 +656,7 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
 <li>Choose carefully in which subfolder you upload your files, because moving files from one subfolder to another one on S3 is not very convenient.</li>
@@ -682,7 +720,7 @@ Figure&nbsp;2: Accessing website preview
 </figure>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -691,7 +729,7 @@ Figure&nbsp;2: Accessing website preview
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>If the website preview is inaccessible due to a missing link in the README, you may have forgotten to open port 5000 in your configuration. This is easily solved:</p>
 <ul>
@@ -712,13 +750,13 @@ Figure&nbsp;2: Accessing website preview
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <p>Here is how you can produce a Quarto file with <code>R</code> chunks:</p>
 <ul>
-<li>Create a new Quarto file and store it in the <code>notebooks</code> subfolder;</li>
+<li>Create a new Quarto file and store it in the <code>exercices</code> subfolder;</li>
 <li>Develop the content;</li>
 <li>Do <strong>NOT</strong> add the qmd file to the list in the <code>render</code> argument of the <code>_quarto.yml</code> file. This file does not need compilation.</li>
 </ul>
 <p>The <code>notebooks</code> subfolder of the <code>R</code> template already contains an example.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -727,7 +765,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p><strong>You should not use <code>install.packages()</code> <em>anywhere</em> in your <code>R</code> resources</strong> because it is not the proper way to manage package requirements (see below for recommendations on dependency management).</p>
 </div>
@@ -744,7 +782,7 @@ Warning
 </ul>
 <p>The <code>notebooks</code> subfolder of the <code>Python</code> template already contains an example (<code>notebook1.qmd</code>).</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -753,7 +791,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p><strong>You should not use <code>pip install</code> <em>anywhere</em> in your notebooks</strong> because it is not the proper way to manage package requirements (see below for recommendations on dependency management).</p>
 </div>
@@ -787,7 +825,7 @@ Warning
 <li>When you start working on your project with a new service, you should run <code>renv::restore()</code>. This command will reinstall all the packages listed in the <code>renv.lock</code> file.</li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -796,7 +834,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>If you forget to update the <code>renv.lock</code> file, your Github Actions workflow is likely to fail, and you probably won’t be able to execute your <code>R</code> script in a new RStudio service. Keep calm, here is the solution: just run <code>renv::snapshot()</code>, commit and push the changes to the <code>renv.lock</code> file. This should solve the problem.</p>
 </div>
@@ -814,7 +852,7 @@ Warning
 <li><p>When you want to recreate your environment from scratch on a new machine (or in a new service), you must run the command <code>uv sync</code>. This command will install all packages specified in the <code>pyproject.toml</code> file (and their own dependencies). <strong>You do not need to use this command if you use use the Python template</strong> because the initialization script already runs <code>uv sync</code>.</p></li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -823,7 +861,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>If you forget to use <code>uv add [package_name]</code> to add to your <code>pyproject.toml</code> file, your Github Actions workflow is likely to fail, and you probably won’t be able to execute your Python script in a new VSCode service. Keep calm, here is the solution: just identify what are the missing packages, use <code>git add</code>, commit and push the changes to the <code>pyproject.toml</code> file. This should solve the problem.</p>
 </div>
