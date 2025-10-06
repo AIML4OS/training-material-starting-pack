@@ -27,7 +27,7 @@ the automated report and website builder inherited from `R Markdown`.
 Sharing educational resources on `SSPCloud` offers several advantages, particularly for educators and learners working with computational tools like R or Python. The key benefits include :
 
 1. **Instant access via a simple link**
-`SSPCloud` allows users to launch pre-configured workspaces through a simple HTTPS link. This eliminates the need for local installation or complex setup: learners can start working immediately, directly in their browser.
+`SSPCloud` allows users to launch pre-configured workspaces through a simple HTTPS link. This eliminates the need for local installation or complex setup: learners can start working immediately, directly in their browser. You can find some [tutorials](https://www.sspcloud.fr/catalog) examples.
 
 2. **Standardized and reproducible environments**
 Everyone accesses the same cloud-based environment, including all necessary packages, tools, and datasets. This ensures full consistency across learners, removing issues related to differing operating systems, versions, or missing dependencies.
@@ -55,13 +55,21 @@ In the sections that follow, we'll begin by comparing various interactive enviro
 :::: {.panel-tabset}
 ## `Python` {{< fa brands python >}}
 
+### 📓 The final product: the **interactive notebook**
+
 `Jupyter` notebooks[^jupyter] offer an interactive interface that allows you to write `Python` code, test it, and see the result below the instruction rather than in a separate console. `Jupyter` notebooks are essential in the fields of data science and education and research because they greatly simplify exploration and experimentation.
 
 They allow you to combine text in `Markdown` format (a lighter markup text format than `HTML` or $\LaTeX$), `Python` code, and `HTML` code for visualizations and animations in a single document.
 
 [^jupyter]: `Jupyter` originated from the `IPython` project, an interactive environment for `Python` developed by Fernando Pérez in 2001. In 2014, the project evolved to support other programming languages in addition to Python, leading to the creation of the Jupyter project. The name "Jupyter" is an acronym referring to the three main languages it supports: `Julia`, `Python`, and `R`.
 
-Initially, `Jupyter` {{< iconify vscode-icons:file-type-jupyter >}} was the only software offering these interactive features. Now, there are other ways to benefit from notebook advantages while having an IDE with more comprehensive features than `Jupyter`. For this reason, as of 2025, we recommend developing resources with `VSCode` {{< iconify vscode-icons:file-type-vscode >}}, a general-purpose code editor but offering excellent features in `Python`, rather than with `Jupyter`. For more information on using notebooks in VSCode, refer to the [official documentation](https://code.visualstudio.com/docs/datascience/jupyter-notebooks).
+### 🛠️ The development environment: **where you create notebooks**
+
+Initially, `Jupyter` {{< iconify vscode-icons:file-type-jupyter >}} was the only software offering these interactive features. Now, there are other ways to benefit from notebook advantages while having an IDE with more comprehensive features than `Jupyter`. 
+
+> 💡 For this reason, as of 2025, we recommend developing resources with `VSCode` {{< iconify vscode-icons:file-type-vscode >}}, a general-purpose code editor but offering excellent features in `Python`, rather than with `Jupyter`. 
+
+For more information on using notebooks in VSCode, refer to the [official documentation](https://code.visualstudio.com/docs/datascience/jupyter-notebooks).
 
 ::: {.callout-note}
 Although we recommend developing resources with Vscode rather than with Jupyter, final users will be able to open your educational resources with Jupyter if they want to.
@@ -74,6 +82,8 @@ Although we recommend developing resources with Vscode rather than with Jupyter,
 
 
 ## {{< fa brands r-project >}}
+
+### 📓 The final product: the **Quarto Markdown file** or **HTML website**
 
 In {{< fa brands r-project >}}, notebooks are not commonly used - even though they offer several features that are particularly valuable for educational purposes.
 
@@ -89,6 +99,15 @@ When designing {{< fa brands r-project >}}-based training materials, two main op
 
 Since the first option can become cumbersome - especially when learners need to copy and paste large blocks of code - it is generally recommended to use the second option in most cases. Providing direct access to a Quarto Markdown file helps minimize the risk of hard-to-reproduce errors that often arise when learners switch between an HTML tutorial and their R session.
 
+### 🛠️ The development environment: **where you create your resources**
+
+You can develop your educational resources with RStudio IDE or with VSCode, a general-purpose code editor that can also be used with Python.
+
+
+### 🛠️ The development environment: **where you create your resources**
+
+You can develop your educational resources with RStudio IDE or with VSCode, a general-purpose code editor that can also be used with Python.
+
 ![Example with RStudio](/pics/rstudio.png)
 
 
@@ -98,13 +117,15 @@ Since the first option can become cumbersome - especially when learners need to 
 ## Using `Quarto`  {{< iconify simple-icons:quarto style="color:#74aadb;" >}} to develop training resources
 
 `Quarto` is an open source program for creating `Python` {{< fa brands python >}} and {{< fa brands r-project >}} reproducible tutorials. 
-It makes it possible to mix seamlessly code and text in the same document and can handle many output formats, including html, pdf or notebook (.ipynb extension). `Quarto` is strongly recommended for the development of educational resources.
+It makes it possible to mix seamlessly code and text in the same document and can handle many output formats, including html, pdf or notebook (.ipynb extension). 
+
+**`Quarto` is strongly recommended for the development of educational resources.**
 
 ![](pics/quarto.png)
 
 This tutorial assumes educational resources will be available in two formats :
 
-- `Quarto` websites, mixing text and code chunks;
+- `Quarto` websites - based on multiple `Quarto` files and mixing text and code chunks;
 - Interactive environment (see ☝️).
 
 
@@ -179,6 +200,13 @@ Defining a configuration may seem complicated at first, but you’ll quickly get
 ### How to define a configuration
 
 Here is how to define a ready to use development configuration using `SSPCloud`. A video version is proposed below the text.
+
+::: {.callout-caution collapse="false"}
+## Git Configuration
+
+If you're using `SSPCloud` for the first time, you must configure your personal access token on GitHub in order to access to your GitHub repository (see [version control](https://docs.sspcloud.fr/content/version-control.html) for more details).
+You don't have to configure your GitHub personal token access every time afterwards.
+:::
 
 ::: {.panel-tabset}
 
@@ -366,7 +394,7 @@ The second kind of output you may want to produce are interactive environments. 
 
 Here is how you can produce a Quarto file with `R` chunks:
 
-- Create a new Quarto file and store it in the `notebooks` subfolder; 
+- Create a new Quarto file and store it in the `exercices` subfolder; 
 - Develop the content;
 - Do __NOT__ add the qmd file to the list in the `render` argument of the `_quarto.yml` file. This file does not need compilation.
 
