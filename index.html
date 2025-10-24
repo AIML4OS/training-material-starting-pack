@@ -899,7 +899,7 @@ Warning
 <p>You need to define a Github Actions workflow to automate output construction and deployment. A GHA workflow is a list of instructions (for instance: install <code>R</code>, install packages…) that are executed automatically every time a certain event happens (for instance every time you push on the main branch). A GHA workflow is defined using specific <code>yaml</code> scripts, located in the <code>.github/workflows</code> directory of your repository. <strong>The templates already contain standard workflows that you can use as a starting point.</strong> We recommend that you have a careful look at these workflows; comments were added so that they are easy to follow.</p>
 <p>A few important remarks on automated deployment:</p>
 <ul>
-<li>The website is deployed at an URL that depends on the owner and the name of the repository: <code>https://{REPO_OWNER}.github.io/{REPO_NAME}/</code>. Don’t forget to change the <code>site-url</code> in the <code>_quarto.yml</code> file of your template to <code>https://{REPO_OWNER}.github.io/{REPO_NAME}/</code>.</li>
+<li>The website is deployed at an URL that depends on the owner and the name of the repository: <code>https://{Owner}.github.io/{Name}/</code>. Don’t forget to change the <code>site-url</code> in the <code>_quarto.yml</code> file of your template to <code>https://{Owner}.github.io/{Name}/</code>.</li>
 <li>You can monitor Github Actions jobs in the “Actions” tab of the Github repository of your project. Do not be afraid if your jobs fail at first; getting Github Actions to work often requires some debugging.</li>
 </ul>
 </section>
