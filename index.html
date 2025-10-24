@@ -192,7 +192,7 @@ window.Quarto = {
   <li><a href="#step-1-create-a-github-repository-from-a-template" id="toc-step-1-create-a-github-repository-from-a-template" class="nav-link" data-scroll-target="#step-1-create-a-github-repository-from-a-template"><span class="header-section-number">3.1</span> Step 1: create a <code>Github</code> <i class="fa-brands fa-github" aria-label="github"></i> repository from a template</a>
   <ul class="collapse">
   <li><a href="#what-are-templates-and-why-use-them" id="toc-what-are-templates-and-why-use-them" class="nav-link" data-scroll-target="#what-are-templates-and-why-use-them"><span class="header-section-number">3.1.1</span> What are templates and why use them?</a></li>
-  <li><a href="#how-to-use-a-template" id="toc-how-to-use-a-template" class="nav-link" data-scroll-target="#how-to-use-a-template"><span class="header-section-number">3.1.2</span> How to use a template?</a></li>
+  <li><a href="#sec-rename" id="toc-sec-rename" class="nav-link" data-scroll-target="#sec-rename"><span class="header-section-number">3.1.2</span> How to use a template?</a></li>
   </ul></li>
   <li><a href="#step-2-define-your-development-configuration-on-sspcloud" id="toc-step-2-define-your-development-configuration-on-sspcloud" class="nav-link" data-scroll-target="#step-2-define-your-development-configuration-on-sspcloud"><span class="header-section-number">3.2</span> Step 2: define your development configuration on <code>SSPCloud</code></a>
   <ul class="collapse">
@@ -430,8 +430,8 @@ Note
 </div>
 </div>
 </section>
-<section id="how-to-use-a-template" class="level3" data-number="3.1.2">
-<h3 data-number="3.1.2" class="anchored" data-anchor-id="how-to-use-a-template"><span class="header-section-number">3.1.2</span> How to use a template?</h3>
+<section id="sec-rename" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="sec-rename"><span class="header-section-number">3.1.2</span> How to use a template?</h3>
 <p>Here is what to do to re-use a template:</p>
 <ul>
 <li>Go to the <code>Github</code> <i class="fa-brands fa-github" aria-label="github"></i> page of the chosen template;</li>
@@ -633,10 +633,30 @@ Note
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="change-the-urls"><span class="header-section-number">3.3.1</span> Change the URLs</h3>
 <p>The first thing you must do is change the URLs of the repository in the <code>_quarto.yml</code> file:</p>
 <ul>
-<li>Open the <code>_quarto.yml</code>;</li>
-<li>in the <code>site-url</code> and <code>repo-url</code> fields, replace the URL of the template by the URL of your repository. In step 1, you chose the <code>Owner</code> and the <code>Name</code> of your repository, so the URL should be <code>https://github.com/{Owner}/{Name}</code>;</li>
-<li>Commit this change.</li>
+<li><p>Open the <code>_quarto.yml</code>;</p></li>
+<li><p>In section <a href="#sec-rename" class="quarto-xref">Section&nbsp;3.1.2</a>, you chose the <code>Owner</code> and the <code>Name</code> of your repository. So:</p>
+<ul>
+<li>in the <code>repo-url</code> field, replace the URL by <code>https://github.com/{Owner}/{Name}</code>;</li>
+<li>in the <code>site-url</code> field, replace the URL by <code>https://{Owner}.github.io/{Name}</code>;</li>
+</ul></li>
+<li><p>Commit this change.</p></li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>If your repository is hosted by the AIML4OS organization on Github, you just have to replace the <code>Name</code> of the repository.</li>
+<li>The case used in the URLs does not matter: upper case (<code>AIML4OS</code>) and lowercase (<code>aiml4os</code>) are completely equivalent.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="manage-data-if-needed" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="manage-data-if-needed"><span class="header-section-number">3.3.2</span> Manage data (if needed)</h3>
@@ -648,7 +668,7 @@ Note
 <p>You can upload a file by navigating clicking on “Upload file” (blue rectangle). You can also create a subfolder by clicking on “Create directory” (red rectangle).</p>
 <p><img src="pics/SSPCloud7.png" class="img-fluid" width="700"></p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -657,7 +677,7 @@ Note
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
 <li>Choose carefully in which subfolder you upload your files, because moving files from one subfolder to another one on S3 is not very convenient.</li>
@@ -721,7 +741,7 @@ Figure&nbsp;2: Accessing website preview
 </figure>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -730,7 +750,7 @@ Figure&nbsp;2: Accessing website preview
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>If the website preview is inaccessible due to a missing link in the README, you may have forgotten to open port 5000 in your configuration. This is easily solved:</p>
 <ul>
@@ -757,7 +777,7 @@ Figure&nbsp;2: Accessing website preview
 </ul>
 <p>The <code>notebooks</code> subfolder of the <code>R</code> template already contains an example.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -766,7 +786,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p><strong>You should not use <code>install.packages()</code> <em>anywhere</em> in your <code>R</code> resources</strong> because it is not the proper way to manage package requirements (see below for recommendations on dependency management).</p>
 </div>
@@ -783,7 +803,7 @@ Warning
 </ul>
 <p>The <code>notebooks</code> subfolder of the <code>Python</code> template already contains an example (<code>notebook1.qmd</code>).</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -792,7 +812,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p><strong>You should not use <code>pip install</code> <em>anywhere</em> in your notebooks</strong> because it is not the proper way to manage package requirements (see below for recommendations on dependency management).</p>
 </div>
@@ -826,7 +846,7 @@ Warning
 <li>When you start working on your project with a new service, you should run <code>renv::restore()</code>. This command will reinstall all the packages listed in the <code>renv.lock</code> file.</li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -835,7 +855,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>If you forget to update the <code>renv.lock</code> file, your Github Actions workflow is likely to fail, and you probably won’t be able to execute your <code>R</code> script in a new RStudio service. Keep calm, here is the solution: just run <code>renv::snapshot()</code>, commit and push the changes to the <code>renv.lock</code> file. This should solve the problem.</p>
 </div>
@@ -853,7 +873,7 @@ Warning
 <li><p>When you want to recreate your environment from scratch on a new machine (or in a new service), you must run the command <code>uv sync</code>. This command will install all packages specified in the <code>pyproject.toml</code> file (and their own dependencies). <strong>You do not need to use this command if you use use the Python template</strong> because the initialization script already runs <code>uv sync</code>.</p></li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -862,7 +882,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse show">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>If you forget to use <code>uv add [package_name]</code> to add to your <code>pyproject.toml</code> file, your Github Actions workflow is likely to fail, and you probably won’t be able to execute your Python script in a new VSCode service. Keep calm, here is the solution: just identify what are the missing packages, use <code>git add</code>, commit and push the changes to the <code>pyproject.toml</code> file. This should solve the problem.</p>
 </div>
@@ -914,7 +934,7 @@ Warning
 <p>You need to define a Github Actions workflow to automate output construction and deployment. A GHA workflow is a list of instructions (for instance: install <code>R</code>, install packages…) that are executed automatically every time a certain event happens (for instance every time you push on the main branch). A GHA workflow is defined using specific <code>yaml</code> scripts, located in the <code>.github/workflows</code> directory of your repository. <strong>The templates already contain standard workflows that you can use as a starting point.</strong> We recommend that you have a careful look at these workflows; comments were added so that they are easy to follow.</p>
 <p>A few important remarks on automated deployment:</p>
 <ul>
-<li>The website is deployed at an URL that depends on the owner and the name of the repository: <code>https://{REPO_OWNER}.github.io/{REPO_NAME}/</code>. Don’t forget to change the <code>site-url</code> in the <code>_quarto.yml</code> file of your template to <code>https://{REPO_OWNER}.github.io/{REPO_NAME}/</code>.</li>
+<li>The website is deployed at an URL that depends on the owner and the name of the repository: <code>https://{Owner}.github.io/{Name}/</code>. Don’t forget to change the <code>site-url</code> in the <code>_quarto.yml</code> file of your template to <code>https://{Owner}.github.io/{Name}/</code>.</li>
 <li>You can monitor Github Actions jobs in the “Actions” tab of the Github repository of your project. Do not be afraid if your jobs fail at first; getting Github Actions to work often requires some debugging.</li>
 </ul>
 </section>
