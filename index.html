@@ -212,8 +212,9 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#what-are-github-actions-and-github-pages-and-why-are-they-useful" id="toc-what-are-github-actions-and-github-pages-and-why-are-they-useful" class="nav-link" data-scroll-target="#what-are-github-actions-and-github-pages-and-why-are-they-useful"><span class="header-section-number">3.4.1</span> What are Github Actions and Github pages and why are they useful?</a></li>
   <li><a href="#create-the-gh-pages-branch" id="toc-create-the-gh-pages-branch" class="nav-link" data-scroll-target="#create-the-gh-pages-branch"><span class="header-section-number">3.4.2</span> Create the <code>gh-pages</code> branch</a></li>
-  <li><a href="#setting-up-a-github-actions-workflow" id="toc-setting-up-a-github-actions-workflow" class="nav-link" data-scroll-target="#setting-up-a-github-actions-workflow"><span class="header-section-number">3.4.3</span> Setting up a Github Actions workflow</a></li>
-  <li><a href="#add-the-website-url-to-your-github-repository" id="toc-add-the-website-url-to-your-github-repository" class="nav-link" data-scroll-target="#add-the-website-url-to-your-github-repository"><span class="header-section-number">3.4.4</span> Add the website URL to your Github repository</a></li>
+  <li><a href="#check-github-settings" id="toc-check-github-settings" class="nav-link" data-scroll-target="#check-github-settings"><span class="header-section-number">3.4.3</span> Check Github settings</a></li>
+  <li><a href="#set-up-a-github-actions-workflow" id="toc-set-up-a-github-actions-workflow" class="nav-link" data-scroll-target="#set-up-a-github-actions-workflow"><span class="header-section-number">3.4.4</span> Set up a Github Actions workflow</a></li>
+  <li><a href="#add-the-website-url-to-your-github-repository" id="toc-add-the-website-url-to-your-github-repository" class="nav-link" data-scroll-target="#add-the-website-url-to-your-github-repository"><span class="header-section-number">3.4.5</span> Add the website URL to your Github repository</a></li>
   </ul></li>
   <li><a href="#step-5-make-your-interactive-environments-easily-available-on-sspcloud" id="toc-step-5-make-your-interactive-environments-easily-available-on-sspcloud" class="nav-link" data-scroll-target="#step-5-make-your-interactive-environments-easily-available-on-sspcloud"><span class="header-section-number">3.5</span> Step 5: make your interactive environments easily available on <code>SSPCloud</code></a>
   <ul class="collapse">
@@ -894,8 +895,22 @@ Warning
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin gh-pages <span class="co"># Pushing so that the gh-pages branch exists on the remote repo</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="setting-up-a-github-actions-workflow" class="level3" data-number="3.4.3">
-<h3 data-number="3.4.3" class="anchored" data-anchor-id="setting-up-a-github-actions-workflow"><span class="header-section-number">3.4.3</span> Setting up a Github Actions workflow</h3>
+<section id="check-github-settings" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="check-github-settings"><span class="header-section-number">3.4.3</span> Check Github settings</h3>
+<p>After you created the branch <code>gh-pages</code>, you have to check that Github actually understood that the website needed to be deployed from this branch. This is fairly easy:</p>
+<ul>
+<li>Go to your repository on Github and click on <code>Settings</code>;</li>
+</ul>
+<p><img src="pics/SSPCloud11.png" class="img-fluid" width="600"></p>
+<ul>
+<li>Go to the <code>Pages</code> tab (red rectangle);</li>
+<li>Check that the <code>Source</code> setting is set to <code>Deploy from a branch</code> (blue rectangle);</li>
+<li>Check that the <code>Branch</code> setting is set to <code>gh-pages</code> (green rectangle).</li>
+</ul>
+<p><img src="pics/SSPCloud12.png" class="img-fluid" width="600"></p>
+</section>
+<section id="set-up-a-github-actions-workflow" class="level3" data-number="3.4.4">
+<h3 data-number="3.4.4" class="anchored" data-anchor-id="set-up-a-github-actions-workflow"><span class="header-section-number">3.4.4</span> Set up a Github Actions workflow</h3>
 <p>You need to define a Github Actions workflow to automate output construction and deployment. A GHA workflow is a list of instructions (for instance: install <code>R</code>, install packages…) that are executed automatically every time a certain event happens (for instance every time you push on the main branch). A GHA workflow is defined using specific <code>yaml</code> scripts, located in the <code>.github/workflows</code> directory of your repository. <strong>The templates already contain standard workflows that you can use as a starting point.</strong> We recommend that you have a careful look at these workflows; comments were added so that they are easy to follow.</p>
 <p>A few important remarks on automated deployment:</p>
 <ul>
@@ -903,8 +918,8 @@ Warning
 <li>You can monitor Github Actions jobs in the “Actions” tab of the Github repository of your project. Do not be afraid if your jobs fail at first; getting Github Actions to work often requires some debugging.</li>
 </ul>
 </section>
-<section id="add-the-website-url-to-your-github-repository" class="level3" data-number="3.4.4">
-<h3 data-number="3.4.4" class="anchored" data-anchor-id="add-the-website-url-to-your-github-repository"><span class="header-section-number">3.4.4</span> Add the website URL to your Github repository</h3>
+<section id="add-the-website-url-to-your-github-repository" class="level3" data-number="3.4.5">
+<h3 data-number="3.4.5" class="anchored" data-anchor-id="add-the-website-url-to-your-github-repository"><span class="header-section-number">3.4.5</span> Add the website URL to your Github repository</h3>
 <p>You can add the website URL to your Github repository so that it is easier to find. To do so, go to your repository using your browser, click on the little wheel on the far right (see the screenshot below), paste your website URL in the <code>Website</code> field, and save changes.</p>
 <p><img src="pics/SSPCloud10.png" class="img-fluid" width="600"></p>
 </section>
