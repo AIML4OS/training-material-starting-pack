@@ -558,7 +558,7 @@ Up to now, we have explained how to initialize and pre-configure the __trainers'
 
 The script `init-trainees.sh` provided in the `sspcloud` folder of the _template_ helps you to configure the environment for trainees on `SSPCloud`. This script does two things: install the environment needed to run the notebook and download the notebook you want to provide trainees with. 
 
-__You do not need to modify this script.__ This script takes only one argument: the path of the notebook within the website (see next section). If the notebook you want to make available is located at is available at <https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb>, then this argument should be `notebooks/notebook1.ipynb`.
+__You do not need to modify this script.__ This script takes only one argument: the path of the notebook within the website (see next section). If the notebook you want to make available is located at <https://aiml4os.github.io/AIML4OS-template-quarto-python/notebooks/notebook1.ipynb>, then this argument should be `notebooks/notebook1.ipynb`.
 
 ## {{< fa brands r-project >}}
 
