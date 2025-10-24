@@ -302,10 +302,11 @@ The first thing you must do is change the URLs of the repository in the `_quarto
 - Commit this change.
 
 ::: {.callout-note}
-If your repository is hosted by the AIML4OS organization on Github, you just have to replace the `Name` of the repository.
+
+- If your repository is hosted by the AIML4OS organization on Github, you just have to replace the `Name` of the repository.
+- The case used in the URLs does not matter: upper case (`AIML4OS`) and lowercase (`aiml4os`) are completely equivalent.
+
 :::
-
-
 
 ### Manage data (if needed)
 
