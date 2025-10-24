@@ -155,7 +155,7 @@ You can still use the templates - just remove the AIML4OS-styled components.
 
 :::
 
-### How to use a template?
+### How to use a template? {#sec-rename}
 
 Here is what to do to re-use a template:
 
@@ -294,8 +294,19 @@ If you have created a repository from a template and defined a development confi
 The first thing you must do is change the URLs of the repository in the `_quarto.yml` file:
 
 - Open the `_quarto.yml`;
-- in the `site-url` and  `repo-url` fields, replace the URL of the template by the URL of your repository. In step 1, you chose the `Owner` and the `Name` of your repository, so the URL should be `https://github.com/{Owner}/{Name}`;
+- In section @sec-rename, you chose the `Owner` and the `Name` of your repository. So:
+
+  - in the `repo-url` field, replace the URL by `https://github.com/{Owner}/{Name}`;
+  - in the `site-url` field, replace the URL by `https://{Owner}.github.io/{Name}`;
+
 - Commit this change.
+
+::: {.callout-note}
+
+- If your repository is hosted by the AIML4OS organization on Github, you just have to replace the `Name` of the repository.
+- The case used in the URLs does not matter: upper case (`AIML4OS`) and lowercase (`aiml4os`) are completely equivalent.
+
+:::
 
 ### Manage data (if needed)
 
@@ -520,7 +531,7 @@ You need to define a Github Actions workflow to automate output construction and
 
 A few important remarks on automated deployment:
 
-- The website is deployed at an URL that depends on the owner and the name of the repository: `https://{REPO_OWNER}.github.io/{REPO_NAME}/`. Don't forget to change the `site-url` in the `_quarto.yml` file of your template to `https://{REPO_OWNER}.github.io/{REPO_NAME}/`.
+- The website is deployed at an URL that depends on the owner and the name of the repository: `https://{Owner}.github.io/{Name}/`. Don't forget to change the `site-url` in the `_quarto.yml` file of your template to `https://{Owner}.github.io/{Name}/`.
 - You can monitor Github Actions jobs in the "Actions" tab of the Github repository of your project. Do not be afraid if your jobs fail at first; getting Github Actions to work often requires some debugging.
 
 ### Add the website URL to your Github repository
