@@ -155,7 +155,7 @@ You can still use the templates - just remove the AIML4OS-styled components.
 
 :::
 
-### How to use a template?
+### How to use a template? {#sec-rename}
 
 Here is what to do to re-use a template:
 
@@ -294,8 +294,18 @@ If you have created a repository from a template and defined a development confi
 The first thing you must do is change the URLs of the repository in the `_quarto.yml` file:
 
 - Open the `_quarto.yml`;
-- in the `site-url` and  `repo-url` fields, replace the URL of the template by the URL of your repository. In step 1, you chose the `Owner` and the `Name` of your repository, so the URL should be `https://github.com/{Owner}/{Name}`;
+- In section @sec-rename, you chose the `Owner` and the `Name` of your repository. So:
+
+  - in the `repo-url` field, replace the URL by `https://github.com/{Owner}/{Name}`;
+  - in the `site-url` field, replace the URL by `https://{Owner}.github.io/{Name}`;
+
 - Commit this change.
+
+::: {.callout-note}
+If your repository is hosted by the AIML4OS organization on Github, you just have to replace the `Name` of the repository.
+:::
+
+
 
 ### Manage data (if needed)
 
