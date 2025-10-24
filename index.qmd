@@ -506,7 +506,7 @@ You need to define a Github Actions workflow to automate output construction and
 
 A few important remarks on automated deployment:
 
-- The website is deployed at an URL that depends on the owner and the name of the repository: `https://{REPO_OWNER}.github.io/{REPO_NAME}/`. Don't forget to change the `site-url` in the `_quarto.yml` file of your template to `https://{REPO_OWNER}.github.io/{REPO_NAME}/`.
+- The website is deployed at an URL that depends on the owner and the name of the repository: `https://{Owner}.github.io/{Name}/`. Don't forget to change the `site-url` in the `_quarto.yml` file of your template to `https://{Owner}.github.io/{Name}/`.
 - You can monitor Github Actions jobs in the "Actions" tab of the Github repository of your project. Do not be afraid if your jobs fail at first; getting Github Actions to work often requires some debugging.
 
 ### Add the website URL to your Github repository
