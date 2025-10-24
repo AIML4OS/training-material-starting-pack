@@ -500,7 +500,21 @@ git push origin gh-pages # Pushing so that the gh-pages branch exists on the rem
 git checkout main
 ```
 
-### Setting up a Github Actions workflow
+### Check Github settings
+
+After you created the branch `gh-pages`, you have to check that Github actually understood that the website needed to be deployed from this branch. This is fairly easy:
+
+- Go to your repository on Github and click on `Settings`;
+
+![](pics/SSPCloud11.png){width=600}
+
+- Go to the `Pages` tab (red rectangle);
+- Check that the `Source` setting is set to `Deploy from a branch` (blue rectangle);
+- Check that the `Branch` setting is set to `gh-pages` (green rectangle).
+
+![](pics/SSPCloud12.png){width=600}
+
+### Set up a Github Actions workflow
 
 You need to define a Github Actions workflow to automate output construction and deployment. A GHA workflow is a list of instructions (for instance: install `R`, install packages...) that are executed automatically every time a certain event happens (for instance every time you push on the main branch). A GHA workflow is defined using specific `yaml` scripts, located in the `.github/workflows` directory of your repository. __The templates already contain standard workflows that you can use as a starting point.__ We recommend that you have a careful look at these workflows; comments were added so that they are easy to follow.
 
