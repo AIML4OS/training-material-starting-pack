@@ -7,7 +7,7 @@ author:
 ---
 
 
-This tutorial provides a practical guide for developing educational resources in {{< fa brands r-project >}} or `Python` {{< fa brands python >}} and sharing them easily. It also aims to quickly equip you with the skills to build educational resources with __state-of-the-art level of reproducibility__. The next sections explain how to develop educational resources, and how to disseminate them on the SPPCloud. Keep in mind that this tutorial is intended for people developing resources, not for the users of these resources. Required technical prerequisites are detailed in @imp-req.
+This tutorial provides a practical guide for developing and sharing educational resources in {{< fa brands r-project >}} or `Python` {{< fa brands python >}} and sharing them easily. It also aims to quickly equip you with the skills to build educational resources with __state-of-the-art level of reproducibility__. The next sections explain how to develop educational resources, and how to disseminate them on the SPPCloud. Keep in mind that this tutorial is intended for people developing resources, not for the users of these resources. Required technical prerequisites are detailed in @imp-req.
 
 
 ::: {#imp-req .callout-important collapse="false"}
