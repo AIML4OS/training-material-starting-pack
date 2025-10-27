@@ -541,6 +541,16 @@ You can add the website URL to your Github repository so that it is easier to fi
 ![](pics/SSPCloud10.png){width=600}
 
 
+::: {.callout-important}
+## What should you do to update your website? Absolutety nothing!!!
+
+If the settings of your Github Actions and Github Pages are well defined, you do not have to do anything to update the website. You just have to modify your Quarto files (for instance by adding a paragraph), commit and push these changes to the `main` branch: __the site will be updated automatically__. It may take a few minutes for GitHub Actions to propagate the changes to your Github Pages website. That's why it's often more convenient to develop your GitHub Page using Onyxia, where you can preview all your updates instantly within just a few seconds.
+
+You can also follow the Github Actions workflow in the `Actions` tab of your repository.
+
+:::
+
+
 ## Step 5: make your interactive environments easily available on `SSPCloud`
 
 __This step is optional__, depending on whether your resources include interactive environments (Jupyter notebooks for `Python`, interactive Quarto documents with `R` chunks for `R`). You can skip this step if your resources consist only in a Quarto website.
