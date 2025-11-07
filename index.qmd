@@ -303,6 +303,7 @@ The first thing you must do is change the URLs of the repository in the `_quarto
 
 ::: {.callout-note}
 
+- __The link `https://{Owner}.github.io/{Name}` does not work yet__, because the Github Pages website does not exist yet. This link will work once you complete the procedure described in section @sec-website.
 - If your repository is hosted by the AIML4OS organization on Github, you just have to replace the `Name` of the repository.
 - The case used in the URLs does not matter: upper case (`AIML4OS`) and lowercase (`aiml4os`) are completely equivalent.
 
@@ -338,7 +339,7 @@ Once again: no sensitive data!!
 To download data automatically into your service, you just have to adapt the `download_data.sh` file (in the `sspcloud` folder of your template). There are two things you can change:
 
 - `DEST_DIR` is the folder in your service where data will be downloaded (`/home/data/` by default);
-- `DATA_PATH` is the S3 path to your data (where it is downloaded from).
+- `FILES` is the list of S3 path to your data files (where data is downloaded from).
 
 To obtain the S3 path to your data, use the File Explorer to navigate and find the file you want. The S3 path of your file is simply the path of the folder available in the top right corner of the explorer (red rectangle) and the name of the file (blue rectangle). In the screenshot below, the path of the first file is then: `s3/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet`.
 
@@ -485,7 +486,7 @@ If you forget to use `uv add [package_name]` to add to your `pyproject.toml` fil
 
 :::
 
-## Step 4: set up a Github pages website
+## Step 4: set up a Github pages website {#sec-website}
 
 __This step is optional__, depending on whether your resources include a website. You can skip this step if your resources consist only in interactive environments (Jupyter notebooks for `Python`, interactive Quarto documents with `R` chunks for `R`).
 
