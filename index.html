@@ -208,7 +208,7 @@ window.Quarto = {
   <li><a href="#developing-resources" id="toc-developing-resources" class="nav-link" data-scroll-target="#developing-resources"><span class="header-section-number">3.3.4</span> Developing resources</a></li>
   <li><a href="#handling-dependencies-when-developing-resources" id="toc-handling-dependencies-when-developing-resources" class="nav-link" data-scroll-target="#handling-dependencies-when-developing-resources"><span class="header-section-number">3.3.5</span> Handling dependencies when developing resources</a></li>
   </ul></li>
-  <li><a href="#step-4-set-up-a-github-pages-website" id="toc-step-4-set-up-a-github-pages-website" class="nav-link" data-scroll-target="#step-4-set-up-a-github-pages-website"><span class="header-section-number">3.4</span> Step 4: set up a Github pages website</a>
+  <li><a href="#sec-website" id="toc-sec-website" class="nav-link" data-scroll-target="#sec-website"><span class="header-section-number">3.4</span> Step 4: set up a Github pages website</a>
   <ul class="collapse">
   <li><a href="#what-are-github-actions-and-github-pages-and-why-are-they-useful" id="toc-what-are-github-actions-and-github-pages-and-why-are-they-useful" class="nav-link" data-scroll-target="#what-are-github-actions-and-github-pages-and-why-are-they-useful"><span class="header-section-number">3.4.1</span> What are Github Actions and Github pages and why are they useful?</a></li>
   <li><a href="#create-the-gh-pages-branch" id="toc-create-the-gh-pages-branch" class="nav-link" data-scroll-target="#create-the-gh-pages-branch"><span class="header-section-number">3.4.2</span> Create the <code>gh-pages</code> branch</a></li>
@@ -652,6 +652,7 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <ul>
+<li><strong>The link <code>https://{Owner}.github.io/{Name}</code> does not work yet</strong>, because the Github Pages website does not exist yet. This link will work once you complete the procedure described in section <a href="#sec-website" class="quarto-xref">Section&nbsp;3.4</a>.</li>
 <li>If your repository is hosted by the AIML4OS organization on Github, you just have to replace the <code>Name</code> of the repository.</li>
 <li>The case used in the URLs does not matter: upper case (<code>AIML4OS</code>) and lowercase (<code>aiml4os</code>) are completely equivalent.</li>
 </ul>
@@ -694,7 +695,7 @@ Note
 <p>To download data automatically into your service, you just have to adapt the <code>download_data.sh</code> file (in the <code>sspcloud</code> folder of your template). There are two things you can change:</p>
 <ul>
 <li><code>DEST_DIR</code> is the folder in your service where data will be downloaded (<code>/home/data/</code> by default);</li>
-<li><code>DATA_PATH</code> is the S3 path to your data (where it is downloaded from).</li>
+<li><code>FILES</code> is the list of S3 path to your data files (where data is downloaded from).</li>
 </ul>
 <p>To obtain the S3 path to your data, use the File Explorer to navigate and find the file you want. The S3 path of your file is simply the path of the folder available in the top right corner of the explorer (red rectangle) and the name of the file (blue rectangle). In the screenshot below, the path of the first file is then: <code>s3/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet</code>.</p>
 <p><img src="pics/SSPCloud8.png" class="img-fluid" width="700"></p>
@@ -893,8 +894,8 @@ Warning
 </div>
 </section>
 </section>
-<section id="step-4-set-up-a-github-pages-website" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="step-4-set-up-a-github-pages-website"><span class="header-section-number">3.4</span> Step 4: set up a Github pages website</h2>
+<section id="sec-website" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="sec-website"><span class="header-section-number">3.4</span> Step 4: set up a Github pages website</h2>
 <p><strong>This step is optional</strong>, depending on whether your resources include a website. You can skip this step if your resources consist only in interactive environments (Jupyter notebooks for <code>Python</code>, interactive Quarto documents with <code>R</code> chunks for <code>R</code>).</p>
 <section id="what-are-github-actions-and-github-pages-and-why-are-they-useful" class="level3" data-number="3.4.1">
 <h3 data-number="3.4.1" class="anchored" data-anchor-id="what-are-github-actions-and-github-pages-and-why-are-they-useful"><span class="header-section-number">3.4.1</span> What are Github Actions and Github pages and why are they useful?</h3>
