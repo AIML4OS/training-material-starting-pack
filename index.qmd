@@ -204,7 +204,7 @@ Here is how to define a ready to use development configuration using `SSPCloud`.
 ::: {.callout-caution collapse="false"}
 ## Git Configuration
 
-If you're using `SSPCloud` for the first time, you must configure your personal access token on GitHub in order to access to your GitHub repository (see [version control](https://docs.sspcloud.fr/content/version-control.html) for more details).
+If you're using `SSPCloud` for the first time, you must configure your personal access token on GitHub in order to access to your GitHub repository (see [version control](https://www.sspcloud.fr/document?path=SSPCloud%E2%90%A3Documentation%E2%80%BAUsing%E2%90%A3the%E2%90%A3Datalab%E2%80%BAVersion%E2%90%A3control) for more details).
 You don't have to configure your GitHub personal token access every time afterwards.
 :::
 
