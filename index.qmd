@@ -328,7 +328,7 @@ You can upload a file by navigating clicking on "Upload file" (blue rectangle). 
 
 - Choose carefully in which subfolder you upload your files, because moving files from one subfolder to another one on S3 is not very convenient.
 - Remember that only __open data__ can be uploaded on S3.
-- By default, only you can see the files upload in your bucket. If you want other people to access the data, __do not forget to make publicly available__ by clicking on the eye on the right hand side (green rectangle). 
+- By default, all files stored on `SSPCloud` are private, meaning only you can see the files located in your bucket. If you want other people to access the data, __do not forget to make them publicly available__ by clicking on the eye on the right hand side (green rectangle). Your file is public if you see <i class="fa-solid fa-eye"></i>, your file is private if you see <i class="fa-solid fa-eye-slash"></i>.
 
 Once again: no sensitive data!!
 
@@ -339,12 +339,15 @@ Once again: no sensitive data!!
 To download data automatically into your service, you just have to adapt the `download_data.sh` file (in the `sspcloud` folder of your template). There are two things you can change:
 
 - `DEST_DIR` is the folder in your service where data will be downloaded (`/home/data/` by default);
-- `FILES` is the list of S3 path to your data files (where data is downloaded from).
+- `FILES` is the list of URLs of your data files (where data is downloaded from).
 
-To obtain the S3 path to your data, use the File Explorer to navigate and find the file you want. The S3 path of your file is simply the path of the folder available in the top right corner of the explorer (red rectangle) and the name of the file (blue rectangle). In the screenshot below, the path of the first file is then: `s3/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet`.
+To obtain the URL of your data files, do the following:
 
-![](pics/SSPCloud8.png){width=700}
-
+- Use the File Explorer to navigate and navigate to the file you want. 
+- The S3 path of your file is simply the path of the folder available in the top right corner of the explorer (red rectangle) and the name of the file (blue rectangle). In the screenshot below, the S3 path of the first file is then: `s3/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet`.
+- The URL is obtained by replacing `s3/` by `https://minio.lab.sspcloud.fr/`. If the S3 path of the file is `s3/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet`, then the file URL will be `https://minio.lab.sspcloud.fr/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet`.
+- Check that your files are public (green rectangle). For instance, in the screenshot the files are not public.
+- __Do not forget to test that your URLs are working!__
 
 ### How to write Quarto documents?
 
