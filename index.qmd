@@ -350,8 +350,9 @@ To obtain the URL of your data files, do the following:
 - __Do not forget to test that your URLs are working!__
 
 :::: {.callout-warning}
-In the `download_data.sh` script, the file url should begin either with `https://minio.lab.sspcloud.fr/` or with `s3sspcloud`. It **will not** work if the file path starts with s3.
-This is to avoid confusion amoung different S3 settings of your SSPCloud environment. 
+In the `download_data.sh` script, the file url should begin solely with `s3sspcloud`. It **will not** work if the file path starts with `s3`. When you have found the file path using previous comments, replace `s3` with `s3sspcloud`. For example, use `s3sspcloud/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet` and **not** `s3/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet`.
+
+This is to avoid confusion among different S3 settings of your SSPCloud environment. 
 :::
 
 ### How to write Quarto documents?
