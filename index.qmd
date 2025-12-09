@@ -344,10 +344,15 @@ To download data automatically into your service, you just have to adapt the `do
 To obtain the URL of your data files, do the following:
 
 - Use the File Explorer to navigate and navigate to the file you want. 
-- The S3 path of your file is simply the path of the folder available in the top right corner of the explorer (red rectangle) and the name of the file (blue rectangle). In the screenshot below, the S3 path of the first file is then: `s3/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet`.
-- The URL is obtained by replacing `s3/` by `https://minio.lab.sspcloud.fr/`. If the S3 path of the file is `s3/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet`, then the file URL will be `https://minio.lab.sspcloud.fr/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet`.
+- The S3 path of your file is simply the path of the folder available in the top right corner of the explorer (red rectangle) and the name of the file (blue rectangle). In the screenshot above, the S3 path of a file in the data_SILC_PUF folder is : `s3/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet`.
+- The URL is obtained by replacing `s3/` as shown on the web interface by `https://minio.lab.sspcloud.fr/`. If the S3 path of the file is `s3/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet`, then the file URL will be `https://minio.lab.sspcloud.fr/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet`.
 - Check that your files are public (green rectangle). For instance, in the screenshot the files are not public.
 - __Do not forget to test that your URLs are working!__
+
+:::: {.callout-warning}
+In the `download_data.sh` script, the file url should begin either with `https://minio.lab.sspcloud.fr/` or with `s3sspcloud`. It **will not** work if the file path starts with s3.
+This is to avoid confusion amoung different S3 settings of your SSPCloud environment. 
+:::
 
 ### How to write Quarto documents?
 
