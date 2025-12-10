@@ -678,6 +678,12 @@ which, when formatted, will give a button like this
 
 If you are ready to make your resources available to trainees, just send an email to innovation@insee.fr, and the IT Innovation Team of Insee will help you through the process of publishing your resources on `SSPCloud`.
 
+# Replay of past webinars
+
+A webinar tool place on 2015, December 10th to present the starting pack. If you missed it, you can have a look at the replay. 
+
+{{< video https://minio.lab.sspcloud.fr/nicolastlm/diffusion/Webinaire_AIML4OS_WP6_2015_12_10.mp4 >}}
+
 <!-- ## Make a ready to use link to your resources
 
 Let's assume now you want learners to avoid copy-pasting code from your program to their sandbox environment. `SSPCloud` proposes a feature that enables to launch a ready to use sandbox with one click. This enables to start an environment that can be overloaded by some parameters that would make learners ready to start their learning experience. 
