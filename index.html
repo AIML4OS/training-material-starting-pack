@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -74,13 +74,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
+<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -149,8 +151,6 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Training startup</span>
     </a>
@@ -224,6 +224,7 @@ window.Quarto = {
   <li><a href="#add-your-resources-on-the-training-webpage-hosted-on-sspcloud" id="toc-add-your-resources-on-the-training-webpage-hosted-on-sspcloud" class="nav-link" data-scroll-target="#add-your-resources-on-the-training-webpage-hosted-on-sspcloud"><span class="header-section-number">3.5.4</span> Add your resources on the training webpage hosted on <code>SSPCloud</code></a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#replay-of-past-webinars" id="toc-replay-of-past-webinars" class="nav-link" data-scroll-target="#replay-of-past-webinars"><span class="header-section-number">4</span> Replay of past webinars</a></li>
   </ul>
 </nav>
     </div>
@@ -700,11 +701,25 @@ Note
 <p>To obtain the URL of your data files, do the following:</p>
 <ul>
 <li>Use the File Explorer to navigate and navigate to the file you want.</li>
-<li>The S3 path of your file is simply the path of the folder available in the top right corner of the explorer (red rectangle) and the name of the file (blue rectangle). In the screenshot below, the S3 path of the first file is then: <code>s3/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet</code>.</li>
-<li>The URL is obtained by replacing <code>s3/</code> by <code>https://minio.lab.sspcloud.fr/</code>. If the S3 path of the file is <code>s3/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet</code>, then the file URL will be <code>https://minio.lab.sspcloud.fr/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet</code>.</li>
+<li>The S3 path of your file is simply the path of the folder available in the top right corner of the explorer (red rectangle) and the name of the file (blue rectangle). In the screenshot above, the S3 path of a file in the data_SILC_PUF folder is : <code>s3/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet</code>.</li>
+<li>The URL is obtained by replacing <code>s3/</code> as shown on the web interface by <code>https://minio.lab.sspcloud.fr/</code>. If the S3 path of the file is <code>s3/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet</code>, then the file URL will be <code>https://minio.lab.sspcloud.fr/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet</code>.</li>
 <li>Check that your files are public (green rectangle). For instance, in the screenshot the files are not public.</li>
 <li><strong>Do not forget to test that your URLs are working!</strong></li>
 </ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the <code>download_data.sh</code> script, the file url should begin solely with <code>s3sspcloud</code>. It <strong>will not</strong> work if the file path starts with <code>s3</code>. When you have found the file path using previous comments, replace <code>s3</code> with <code>s3sspcloud</code>. For example, use <code>s3sspcloud/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet</code> and <strong>not</strong> <code>s3/oliviermeslin/data_SILC_PUF/data_SILC_d2013.parquet</code>.</p>
+<p>This is to avoid confusion among different S3 settings of your SSPCloud environment.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="how-to-write-quarto-documents" class="level3" data-number="3.3.3">
@@ -748,7 +763,7 @@ Figure&nbsp;2: Accessing website preview
 </figure>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -757,7 +772,7 @@ Figure&nbsp;2: Accessing website preview
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>If the website preview is inaccessible due to a missing link in the README, you may have forgotten to open port 5000 in your configuration. This is easily solved:</p>
 <ul>
@@ -784,7 +799,7 @@ Figure&nbsp;2: Accessing website preview
 </ul>
 <p>The <code>notebooks</code> subfolder of the <code>R</code> template already contains an example.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -793,7 +808,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p><strong>You should not use <code>install.packages()</code> <em>anywhere</em> in your <code>R</code> resources</strong> because it is not the proper way to manage package requirements (see below for recommendations on dependency management).</p>
 </div>
@@ -810,7 +825,7 @@ Warning
 </ul>
 <p>The <code>notebooks</code> subfolder of the <code>Python</code> template already contains an example (<code>notebook1.qmd</code>).</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -819,7 +834,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p><strong>You should not use <code>pip install</code> <em>anywhere</em> in your notebooks</strong> because it is not the proper way to manage package requirements (see below for recommendations on dependency management).</p>
 </div>
@@ -853,7 +868,7 @@ Warning
 <li>When you start working on your project with a new service, you should run <code>renv::restore()</code>. This command will reinstall all the packages listed in the <code>renv.lock</code> file.</li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -862,7 +877,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse show">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>If you forget to update the <code>renv.lock</code> file, your Github Actions workflow is likely to fail, and you probably won’t be able to execute your <code>R</code> script in a new RStudio service. Keep calm, here is the solution: just run <code>renv::snapshot()</code>, commit and push the changes to the <code>renv.lock</code> file. This should solve the problem.</p>
 </div>
@@ -880,7 +895,7 @@ Warning
 <li><p>When you want to recreate your environment from scratch on a new machine (or in a new service), you must run the command <code>uv sync</code>. This command will install all packages specified in the <code>pyproject.toml</code> file (and their own dependencies). <strong>You do not need to use this command if you use use the Python template</strong> because the initialization script already runs <code>uv sync</code>.</p></li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -889,7 +904,7 @@ Warning
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse show">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>If you forget to use <code>uv add [package_name]</code> to add to your <code>pyproject.toml</code> file, your Github Actions workflow is likely to fail, and you probably won’t be able to execute your Python script in a new VSCode service. Keep calm, here is the solution: just identify what are the missing packages, use <code>git add</code>, commit and push the changes to the <code>pyproject.toml</code> file. This should solve the problem.</p>
 </div>
@@ -1085,6 +1100,13 @@ Note
 <section id="add-your-resources-on-the-training-webpage-hosted-on-sspcloud" class="level3" data-number="3.5.4">
 <h3 data-number="3.5.4" class="anchored" data-anchor-id="add-your-resources-on-the-training-webpage-hosted-on-sspcloud"><span class="header-section-number">3.5.4</span> Add your resources on the training webpage hosted on <code>SSPCloud</code></h3>
 <p>If you are ready to make your resources available to trainees, just send an email to innovation@insee.fr, and the IT Innovation Team of Insee will help you through the process of publishing your resources on <code>SSPCloud</code>.</p>
+</section>
+</section>
+</section>
+<section id="replay-of-past-webinars" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Replay of past webinars</h1>
+<p>A webinar tool place on 2015, December 10th to present the starting pack. If you missed it, you can have a look at the replay.</p>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="https://minio.lab.sspcloud.fr/nicolastlm/diffusion/Webinaire_AIML4OS_WP6_2015_12_10.mp4"></video></div>
 <!-- ## Make a ready to use link to your resources
 
 Let's assume now you want learners to avoid copy-pasting code from your program to their sandbox environment. `SSPCloud` proposes a feature that enables to launch a ready to use sandbox with one click. This enables to start an environment that can be overloaded by some parameters that would make learners ready to start their learning experience. 
@@ -1103,8 +1125,6 @@ Let's assume now you want learners to avoid copy-pasting code from your program 
 TO DO -->
 
 
-</section>
-</section>
 </section>
 
 
@@ -1516,6 +1536,7 @@ TO DO -->
   });
   </script>
 </div> <!-- /content -->
+<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
