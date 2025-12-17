@@ -680,7 +680,7 @@ If you are ready to make your resources available to trainees, just send an emai
 
 # Replay of past webinars
 
-A webinar tool place on 2015, December 10th to present the starting pack. If you missed it, you can have a look at the replay. 
+A webinar tool place on 2025, December 10th to present the starting pack. If you missed it, you can have a look at the replay. 
 
 {{< video https://minio.lab.sspcloud.fr/nicolastlm/diffusion/Webinaire_AIML4OS_WP6_2015_12_10.mp4 >}}
 
